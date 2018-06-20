@@ -10,6 +10,7 @@ import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angu
 })
 export class Question1Component implements OnInit {
  index = false;
+ name:string;
   constructor() { }
 
   ngOnInit() {

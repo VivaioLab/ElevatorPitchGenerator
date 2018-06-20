@@ -9,6 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
 import { Question1Component } from './question1/question1.component';
+import { Question2Component } from './question2/question2.component';
+import { Question3Component } from './question3/question3.component';
 
 
 
@@ -17,7 +19,9 @@ import { Question1Component } from './question1/question1.component';
     AppComponent,
     HomeComponent,
     NavComponent,
-    Question1Component
+    Question1Component,
+    Question2Component,
+    Question3Component
   ],
   imports: [
     BrowserModule,
