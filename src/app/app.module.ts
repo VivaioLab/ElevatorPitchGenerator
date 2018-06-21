@@ -14,6 +14,7 @@ import { Question2Component } from './question2/question2.component';
 import { Question3Component } from './question3/question3.component';
 import { Question4Component } from './question4/question4.component';
 import { Question5Component } from './question5/question5.component';
+import { ReviewpageComponent } from './reviewpage/reviewpage.component';
 
 
 
@@ -26,7 +27,8 @@ import { Question5Component } from './question5/question5.component';
     Question2Component,
     Question3Component,
     Question4Component,
-    Question5Component
+    Question5Component,
+    ReviewpageComponent
   ],
   imports: [
     BrowserModule,

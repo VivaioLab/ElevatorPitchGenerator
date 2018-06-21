@@ -5,6 +5,7 @@ import {Question2Component} from './question2/question2.component';
 import {Question3Component} from './question3/question3.component';
 import {Question4Component} from './question4/question4.component';
 import {Question5Component} from './question5/question5.component';
+import {ReviewpageComponent} from './reviewpage/reviewpage.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -14,6 +15,7 @@ const appRoutes: Routes = [
     {path : 'question3', component : Question3Component, data: { state: 'question3'}},
     {path : 'question4', component : Question4Component, data: { state: 'question4'}},
     {path : 'question5', component : Question5Component, data: { state: 'question5'}},
+    {path : 'reviewpage', component : ReviewpageComponent, data: { state: 'reviewpage'}},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
