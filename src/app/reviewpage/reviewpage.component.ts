@@ -29,7 +29,7 @@ question5 : string;
     localStorage.setItem('question1', JSON.stringify(this.question1) );
     console.log(localStorage.getItem('question1'));
 
-    localStorage.setItem('question2', JSON.stringify(this.question2 );
+    localStorage.setItem('question2', JSON.stringify(this.question2 ));
     console.log(localStorage.getItem('question2'));
 
     localStorage.setItem('question3', JSON.stringify(this.question3) );
