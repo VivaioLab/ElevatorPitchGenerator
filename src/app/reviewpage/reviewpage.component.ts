@@ -24,12 +24,22 @@ question5 : string;
   }
   saveChanges(){
     
-    console.log(this.question1);
-    console.log(this.question2);
-    console.log(this.question3);
-    console.log(this.question4);
-    console.log(this.question5);
+    
 
+    localStorage.setItem('question1', JSON.stringify(this.question1) );
+    console.log(localStorage.getItem('question1'));
+
+    localStorage.setItem('question2', JSON.stringify(this.question2 );
+    console.log(localStorage.getItem('question2'));
+
+    localStorage.setItem('question3', JSON.stringify(this.question3) );
+    console.log(localStorage.getItem('question3'));
+
+    localStorage.setItem('question4', JSON.stringify(this.question4) );
+    console.log(localStorage.getItem('question4'));
+
+    localStorage.setItem('question5', JSON.stringify(this.question5) );
+    console.log(localStorage.getItem('question5'));
    
     
   }
