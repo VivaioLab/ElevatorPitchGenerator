@@ -6,6 +6,6 @@
            <label >Hola,</label><br />
            <label>My name is</label>
            <input [(ngModel)] = "value" name = "value" type="text"  placeholder="Jay" /><br />
-           <button routerLink="/question5" routerLinkActive="active" type="button" class="btn btn-success btn-lg btn-block">next</button>
+           <button routerLink="/question5" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>
          </form>
        </div>

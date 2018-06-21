@@ -14,5 +14,12 @@ export class Question4Component implements OnInit {
 
   ngOnInit() {
   }
+  saveChanges(){
+    
+    localStorage.setItem('question4',JSON.stringify(this.value) );
+
+   
+    console.log(localStorage.getItem('question4'));
+  }
 
 }

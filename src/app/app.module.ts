@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { routing } from './app.routing';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { StorageServiceModule} from 'angular-webstorage-service';
 
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
@@ -33,7 +34,8 @@ import { Question5Component } from './question5/question5.component';
     ReactiveFormsModule,
     HttpClientModule,
     routing,
-    FormsModule]
+    FormsModule,
+    StorageServiceModule]
   ,
   providers: [],
   bootstrap: [AppComponent]

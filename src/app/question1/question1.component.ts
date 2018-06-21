@@ -17,4 +17,11 @@ export class Question1Component implements OnInit {
     this.index = true;
   }
 
+  saveChanges(){
+    
+    localStorage.setItem('question1',JSON.stringify(this.name) );
+
+   
+    console.log(localStorage.getItem('question1'));
+  }
 }
