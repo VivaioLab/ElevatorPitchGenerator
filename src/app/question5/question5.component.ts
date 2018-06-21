@@ -16,7 +16,7 @@ export class Question5Component implements OnInit {
   }
   saveChanges(){
     
-    localStorage.setItem('question5','Hey my name is '+ JSON.stringify(this.proof) );
+    localStorage.setItem('question5', JSON.stringify(this.proof) );
 
    
     console.log(localStorage.getItem('question5'));
