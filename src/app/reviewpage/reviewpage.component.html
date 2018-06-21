@@ -1,0 +1,16 @@
+
+      <app-nav></app-nav>
+      <!--The content below is only a placeholder and can be replaced.-->
+      <div id="reviewpage">
+           <form class="label">
+             <p>
+               My name is {{question1}}<br/>
+               I got really frustrated when {{question2}}<br/>
+               With our product {{question3}}<br/>
+               Ultimatly the biggest value for the customer is that {{question4}}<br/>
+               Right now {{question5}}
+
+             </p>
+           <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>
+         </form>
+       </div>
