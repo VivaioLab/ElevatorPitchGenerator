@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-question3',
-  templateUrl: './question3.component.html',
-  styleUrls: ['./question3.component.css']
+  selector: 'app-question5',
+  templateUrl: './question5.component.html',
+  styleUrls: ['./question5.component.css']
 })
-export class Question3Component implements OnInit {
+export class Question5Component implements OnInit {
 
   index = false;
-  solution:string;
+  proof:string;
   constructor() { }
 
   ngOnInit() {
