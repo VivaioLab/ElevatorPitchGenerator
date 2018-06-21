@@ -9,6 +9,8 @@ import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angu
 })
 export class Question2Component implements OnInit {
 
+  index = false;
+  problem:string;
   constructor() { }
 
   ngOnInit() {
