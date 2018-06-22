@@ -31,7 +31,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     Question4Component,
     Question5Component,
     ReviewpageComponent,
-    ThankyouComponent
+    ThankyouComponent,
   ],
   imports: [
     BrowserModule,
