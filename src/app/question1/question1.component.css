@@ -63,5 +63,16 @@ input {
   color: #fff;
   outline: none;
 }
+.popup-body{
+    color: white;
+    background-color: black;
+    font-family: 'Roboto Mono', monospace;
 
-  
+}
+.modal-title{
+    text-align: center;
+}
+
+.content{
+    text-align: center;
+}

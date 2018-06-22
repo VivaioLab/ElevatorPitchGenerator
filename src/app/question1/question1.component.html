@@ -6,6 +6,9 @@
           <label >Ciao,</label><br />
           <label>My name is</label>
           <input [(ngModel)] = "name" name = "name" type="text"  placeholder="Santa" /><br />
+          <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
+            <i class="material-icons">A</i>
+            </button>
           <button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>
         </form>
       </div>
@@ -19,3 +22,24 @@
         
   
         </div>
+
+
+        <ng-template #template>
+            <div class="modal-header">
+              
+              <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body popup-body">
+                <h4 class="modal-title">Problem</h4>
+              <p class="content">This is the moment to explain <br/>your product of service. Think <br/>about the problem you are solving!<br/> Explain the benifites for the user(s). Try to <br/>answer this is one sentance</p>
+                
+                
+              </div>
+          
+            <div class="modal-footer">
+               <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
+                <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
+            </div>
+          </ng-template>

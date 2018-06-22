@@ -16,6 +16,7 @@ import { Question4Component } from './question4/question4.component';
 import { Question5Component } from './question5/question5.component';
 import { ReviewpageComponent } from './reviewpage/reviewpage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import {ModalModule} from 'ngx-bootstrap/modal';
 
 
 
@@ -39,7 +40,8 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     HttpClientModule,
     routing,
     FormsModule,
-    StorageServiceModule]
+    StorageServiceModule,
+    ModalModule.forRoot()]
   ,
   providers: [],
   bootstrap: [AppComponent]
