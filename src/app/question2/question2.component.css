@@ -8,7 +8,7 @@ input {
     border: none; 
     border-bottom: 1px solid black;
     overflow: auto;  
-    font-size: 40px;  
+    font-size: 20px;  
     text-align: center;    
   }
 
@@ -81,17 +81,27 @@ input {
 
 
 .notes {
-    background-image: -webkit-linear-gradient(white, rgb(20, 9, 9) 30px, rgb(8, 6, 6) 30px,black 31px, black 31px);
-    background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
-    background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
-    background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
-    background-image: linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
-    background-size: 100% 31px;
-    border: 1px white;
-    border-radius: 0px;
-    line-height: 40px;
-    padding: 0px;
-}
+  
+      background-image: -webkit-linear-gradient(left, white 10px, transparent 10px), -webkit-linear-gradient(right, white 10px, transparent 10px), -webkit-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -moz-linear-gradient(left, white 10px, transparent 10px), -moz-linear-gradient(right, white 10px, transparent 10px), -moz-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -ms-linear-gradient(left, white 10px, transparent 10px), -ms-linear-gradient(right, white 10px, transparent 10px), -ms-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -o-linear-gradient(left, white 10px, transparent 10px), -o-linear-gradient(right, white 10px, transparent 10px), -o-linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: linear-gradient(left, white 10px, transparent 10px), linear-gradient(right, white 10px, transparent 10px), linear-gradient(white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-size: 100% 100%, 100% 100%, 100% 31px;
+      width: 100%;
+      height:50%;
+      border:none;
+
+      
+  }
+  .notes:focus
+  {
+      outline: none;
+  }
+
+   
+
+    
 
 
 
