@@ -18,6 +18,7 @@ import { ReviewpageComponent } from './reviewpage/reviewpage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
+import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule} from '@angular/material';
 
 
 
@@ -43,8 +44,19 @@ import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
     routing,
     FormsModule,
     StorageServiceModule,
-    ModalModule.forRoot()]
+    ModalModule.forRoot(),
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule
+  ]
   ,
+  exports: [
+    MatToolbarModule,
+    MatButtonModule,
+    MatInputModule,
+    MatIconModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
