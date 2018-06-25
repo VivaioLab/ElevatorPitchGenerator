@@ -6,10 +6,15 @@
            <label>Right now </label>
            <textarea [(ngModel)] = "proof" name = "proof" cols="40" rows="3" class="notes" placeholder="after 3 months we have 100 beta users on our platform and gained real interest on some big retail companies"></textarea>
            <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
-           <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
+           <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
               <i class="material-icons">A</i>
-              </button>
-           <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>
+              </button> -->
+              <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+          <br/>
+          <div style="text-align:center;padding:30px;">
+            <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Next  </button>
+         </div>
+           <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>-->
          </form>
        </div>
 

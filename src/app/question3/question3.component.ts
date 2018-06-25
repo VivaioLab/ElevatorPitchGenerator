@@ -2,6 +2,9 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
+
 
 
 @Component({
@@ -14,7 +17,12 @@ export class Question3Component implements OnInit {
   index = false;
   solution:string;
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
+    this.matIconRegistry.addSvgIcon(
+      "questions",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/question info.svg")
+    );
+   }
 
   ngOnInit() {
   }
