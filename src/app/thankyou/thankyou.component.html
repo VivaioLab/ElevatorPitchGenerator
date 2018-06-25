@@ -2,12 +2,12 @@
       <!--The content below is only a placeholder and can be replaced.-->
       <div class="container" id="question5">
          <form class="label">
-           <label>Thank you for using elevatorly <br/>We hope it would be helpful to you <br/><br/>Do you want the pitch <br/>to be emailed to you?</label><br/>
+           <label>Thank you for using elevatorly<br/> We hope it would be helpful to you. <br/><br/>Do you want the pitch <br/>to be emailed to you?</label><br/>
            <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
           <!-- <button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block"></button><br/>-->
-           <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+           <button type="button" (click)="openModal(template)" style="float: center;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
               <i class="material-icons">Yes Email To Me</i>
-              </button>
+              </button><br/>
            <a href="url">No Thank You</a>
          </form>
        </div>
@@ -29,6 +29,6 @@
         
           <div class="modal-footer">
              <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
-              <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Send</button>
+              <button routerLink="/confirmpage" routerLinkActive="active" type="button" class="btn btn-danger" (click)="modalRef.hide()">Send</button>
           </div>
         </ng-template>
