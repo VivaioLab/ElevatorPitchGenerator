@@ -6,10 +6,15 @@
            <label>Ultimatly the biggest value for the customer is that</label>
            <textarea [(ngModel)] = "value" name = "value" cols="40" rows="2" class="notes" placeholder="this way you will never have to advance money for your gift again"></textarea>
           <!-- <input [(ngModel)] = "value" name = "value" type="text"  placeholder="this way you will never have to advance money for your gift again" /><br />-->
-           <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
+          <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+          <br/>
+          <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
               <i class="material-icons">A</i>
-              </button>
-           <button routerLink="/question5" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>
+              </button> -->
+              <div style="text-align:center;padding:30px;">
+                <button routerLink="/question5" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Next  </button>
+             </div>
+           <!--<button routerLink="/question5" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
          </form>
        </div>
 

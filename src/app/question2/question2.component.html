@@ -6,10 +6,15 @@
            <label>I got really frustrated when</label>
            <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea>
            <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
-           <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
+           <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+          <br/>
+           <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
               <i class="material-icons">A</i>
-              </button>
-           <button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>
+              </button> -->
+              <div style="text-align:center;padding:30px;">
+                <button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Next  </button>
+             </div>
+           <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
          </form>
        </div>
        <ng-template #template>
