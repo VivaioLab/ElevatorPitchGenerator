@@ -76,3 +76,16 @@ input {
 .content{
     text-align: center;
 }
+mat-icon{
+  height: 10%;
+  width: 10%;
+}
+
+@media only screen 
+and (min-width : 1224px) {
+    /* Styles */
+    mat-icon{
+      height: 4%;
+  width: 4%;
+    }
+}

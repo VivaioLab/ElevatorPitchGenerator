@@ -5,11 +5,16 @@
         <form class="label">
           <label >Ciao,</label><br />
           <label>My name is</label>
-          <input [(ngModel)] = "name" name = "name" type="text"  placeholder="Santa" /><br /><br/><br/>
-          <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
+          <input [(ngModel)] = "name" name = "name" type="text"  placeholder="Santa" /><br />
+          <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+          <br/>
+       <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
             <i class="material-icons">A</i>
-            </button>
-          <button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>
+            </button>-->
+            <div style="text-align:center;padding:30px;">
+              <button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Next  </button>
+           </div>
+          <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
         </form>
       </div>
       <div class="dot-container">
