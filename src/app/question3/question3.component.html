@@ -4,7 +4,7 @@
       <div class="container" id="question3">
          <form class="label">
            <label>With our product</label>
-           <textarea cols="40" rows="3" class="notes" placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."></textarea>
+           <textarea [(ngModel)] = "solution" name = "solution" cols="40" rows="3" class="notes" placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."></textarea>
            <!--<input [(ngModel)] = "solution" name = "solution" type="text"  placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure." /><br />-->
            <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
               <i class="material-icons">A</i>

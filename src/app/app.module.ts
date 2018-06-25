@@ -17,6 +17,7 @@ import { Question5Component } from './question5/question5.component';
 import { ReviewpageComponent } from './reviewpage/reviewpage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
+import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 
 
 
@@ -32,6 +33,7 @@ import {ModalModule} from 'ngx-bootstrap/modal';
     Question5Component,
     ReviewpageComponent,
     ThankyouComponent,
+    ConfirmpageComponent,
   ],
   imports: [
     BrowserModule,

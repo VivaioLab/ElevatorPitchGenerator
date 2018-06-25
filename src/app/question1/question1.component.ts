@@ -14,10 +14,13 @@ export class Question1Component implements OnInit {
  index = false;
  name:string;
  modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) { }
+  constructor(private modalService: BsModalService) {
+   
+   }
 
   ngOnInit() {
     this.index = true;
+  
   }
 
   saveChanges(){
