@@ -13,7 +13,29 @@
              </p>
            <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
            <div style="text-align:center;padding:30px;">
-            <button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>
+            <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>-->
+            <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
+              <i class="material-icons">Save</i>
+              </button>
          </div>
          </form>
        </div>
+       <ng-template #template>
+        <div class="modal-header">
+          
+          <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body popup-body">
+          <div class="container">
+              <app-finalversion></app-finalversion>
+          </div>
+
+          </div>
+      
+        <div class="modal-footer">
+           <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
+            <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
+        </div>
+      </ng-template>
