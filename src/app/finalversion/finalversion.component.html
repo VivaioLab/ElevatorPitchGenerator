@@ -1,3 +1,12 @@
-<p>
-  finalversion works!
-</p>
+<div class="container" id="confirmpage">
+  <h4 >Is this your final version?</h4>
+    <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" class="btn btn-success btn-lg btn-block">Yes!Submit</button>-->
+    <div style="text-align:center;padding:10px;">
+        <button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:70%;">  Yes! Submit  </button>
+     </div>
+    <h3>or</h3>
+    <div style="text-align:center;padding:10px;"></div>
+        <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:70%;">  No!Keep Editing  </button>
+     </div>
+    <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" style="float: right;" class="btn btn-success btn-lg btn-block">No!Keep Editing</button>-->
+   

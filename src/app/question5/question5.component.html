@@ -5,7 +5,7 @@
          <form class="label">
            <label>Right now </label>
            <!--<textarea [(ngModel)] = "proof" name = "proof" cols="40" rows="3" class="notes" placeholder="after 3 months we have 100 beta users on our platform and gained real interest on some big retail companies"></textarea>-->
-           <textarea matInput placeholder="after 3 months we have 100 beta users on our platform and gained real interest on some big retail companies" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+           <textarea matInput placeholder="after 3 months we have 100 beta users on our platform and gained real interest on some big retail companies" [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
       ></textarea>
            <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
            <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
@@ -34,8 +34,8 @@
               
             </div>
         
-          <div class="modal-footer">
+          <!-- <div class="modal-footer">
              <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
-              <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
-          </div>
+              <!-- <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
+          </div> -->
         </ng-template>
