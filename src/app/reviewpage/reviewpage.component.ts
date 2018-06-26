@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 
 @Component({
@@ -13,7 +15,8 @@ question2 : string;
 question3 : string;
 question4 : string;
 question5 : string;
-  constructor() { }
+modalRef: BsModalRef;
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
     this.question1 = localStorage.getItem('question1');
@@ -22,5 +25,9 @@ question5 : string;
     this.question4 = localStorage.getItem('question4');
     this.question5 = localStorage.getItem('question5');
   }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+}
   
 }

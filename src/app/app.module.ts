@@ -19,7 +19,7 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule} from '@angular/material';
-
+import { FinalversionComponent } from './finalversion/finalversion.component';
 
 
 @NgModule({
@@ -35,6 +35,7 @@ import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule} from '@an
     ReviewpageComponent,
     ThankyouComponent,
     ConfirmpageComponent,
+    FinalversionComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,3 +62,8 @@ import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule} from '@an
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export class App {
+  getState(outlet) {
+    return outlet.activatedRouteData.state;
+  }
+}

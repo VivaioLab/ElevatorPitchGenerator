@@ -7,7 +7,8 @@ import {Question4Component} from './question4/question4.component';
 import {Question5Component} from './question5/question5.component';
 import {ReviewpageComponent} from './reviewpage/reviewpage.component';
 import {ThankyouComponent} from './thankyou/thankyou.component';
-import {ConfirmpageComponent} from './confirmpage/confirmpage.component'
+import {ConfirmpageComponent} from './confirmpage/confirmpage.component';
+import {FinalversionComponent} from './finalversion/finalversion.component';
 
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     {path : 'reviewpage', component : ReviewpageComponent, data: { state: 'reviewpage'}},
     {path : 'thankyou', component : ThankyouComponent, data: { state: 'thankyou'}},
     {path : 'confirmpage', component : ConfirmpageComponent, data: { state: 'confirmpage'}},
+    {path : 'finalversion', component : FinalversionComponent, data: { state: 'finalversion'}},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
