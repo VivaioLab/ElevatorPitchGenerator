@@ -52,7 +52,7 @@
         <label>With our product</label>
         <!-- <textarea [(ngModel)] = "solution" name = "solution" cols="40" rows="3" class="notes" placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."></textarea>
             -->
-        <textarea matInput placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."
+        <textarea matInput class="outline1" placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."
           [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <!--<input [(ngModel)] = "solution" name = "solution" type="text"  placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure." /><br />-->
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
@@ -78,7 +78,7 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 <ng-template #template style="border: 3px white;" >
-  <div class="modal-header" style="background-color:black" >
+  <div class="modal-header" >
 
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
@@ -86,7 +86,14 @@
   </div>
   <div class="modal-body popup-body">
     <h4 class="modal-title" >Problem</h4>
+    <!-- <mat-icon  svgIcon= "problem-icon" class="nav-icons" ></mat-icon> -->
+    <div style="text-align:center;padding-left:60px;">
+        <div style="background-color:white; border-radius: 5.5rem;width: 7rem !important;height: 7rem !important;text-align:center;padding-top:27px; ">
+            <img src="../assets/images/problem icon.svg " height="62" width="62">
+        </div>
+    </div>
     
+   
     <p class="content popup" >This is the moment to explain
       <br/>your product of service. Think
       <br/>about the problem you are solving!

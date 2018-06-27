@@ -5,6 +5,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 const query = (s,a,o={optional:true})=>q(s,a,o);
 
 
+
 export const homeTransition = trigger('homeTransition', [
   transition(':enter', [
     query('.block', style({ opacity: 0 })),
@@ -32,13 +33,13 @@ export const homeTransition = trigger('homeTransition', [
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
+  constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "menu icon",
+      "menu-icon",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/menu icon.svg")
     );
    }
