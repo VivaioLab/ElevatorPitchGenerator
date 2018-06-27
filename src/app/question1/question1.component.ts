@@ -55,8 +55,9 @@ export class Question1Component implements OnInit {
 
 
   saveChanges(){
-    
-    localStorage.setItem('question1',JSON.stringify(this.name) );
+    if(!!this.name) {
+      localStorage.setItem('question1', JSON.stringify(this.name) );
+    }
 
    
     console.log(localStorage.getItem('question1'));

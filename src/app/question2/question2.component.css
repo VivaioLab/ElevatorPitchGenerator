@@ -38,7 +38,6 @@ mat-icon{
 .label{
   font-size: 20px;
   margin: 40px;
-  margin-top: 100px;
   font-family: 'Roboto Mono', monospace;
 }
 input { 
@@ -135,7 +134,7 @@ width: 4%;
   .label{
     font-size: 40px;
     margin: 40px;
-    margin-top: 100px;
+    
     font-family: 'Roboto Mono', monospace;
     
 }
@@ -156,4 +155,13 @@ input {
     font-size: 40px;  
     text-align: center;    
   }
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  white-space:pre-line;  
+  position:relative;
+  top:-7px;
+  display: block;
+  
 }
