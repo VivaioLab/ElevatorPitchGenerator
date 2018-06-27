@@ -1,24 +1,24 @@
 
       <mat-toolbar >
           <mat-toolbar-row>
-            <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
+            <mat-icon svgIcon="elevetorly" routerLink="/home" routerLinkActive="active" class="svg_icon"></mat-icon>
             <span class="spacer"></span>
             <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()" ></mat-icon>
           </mat-toolbar-row>
         </mat-toolbar>
         <mat-sidenav-container autosize class="main">
             <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-                <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm"></mat-icon>
+                <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
                 <label class="col-md-sm label-class">Name</label><br/>
-                <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm"></mat-icon>
+                <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
                 <label class="col-md-sm label-class">Problem</label><br/>
-                <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm"></mat-icon>
+                <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
                 <label class="col-md-sm label-class">Solution</label>
                 <br/>
-                <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm"></mat-icon>
+                <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
                 <label class="col-md-sm label-class">Value</label>
                 <br/>
-                <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm"></mat-icon>
+                <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
                 <label class="col-md-sm label-class">Proof&Ask</label>
               </mat-sidenav>
           <mat-sidenav-content>
@@ -26,10 +26,13 @@
       <div class="container" id="question1">
          <form class="label">
            <label>I got really frustrated when</label>
-           <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
-           <textarea matInput placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-      ></textarea>
-           <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
+           <!--<textarea [(ngModel)] = "problem" name = "problem" cols="10" rows="8" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea>-->
+           <!-- <textarea placeholder="a couple of months &#10; ago I wanted to collect &#10; some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+      ></textarea> -->
+      
+        <textarea matInput [(ngModel)] = "problem" name = "problem" rows="10" cols="21" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." ></textarea>
+  
+         
            <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
           <br/>
            <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  

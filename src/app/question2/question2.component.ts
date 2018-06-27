@@ -7,7 +7,6 @@ import { DomSanitizer } from "@angular/platform-browser";
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 
 
-
 @Component({
   selector: 'app-question2',
   templateUrl: './question2.component.html',
@@ -55,7 +54,9 @@ export class Question2Component implements OnInit {
 
   saveChanges(){
     
-    localStorage.setItem('question2',JSON.stringify(this.problem) );
+    if(!!this.problem) {
+      localStorage.setItem('question2', JSON.stringify(this.problem) );
+    }
 
    
     console.log(localStorage.getItem('question2'));

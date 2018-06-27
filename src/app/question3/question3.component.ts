@@ -53,7 +53,9 @@ export class Question3Component implements OnInit {
   }
   saveChanges(){
     
-    localStorage.setItem('question3',JSON.stringify(this.solution) );
+    if(!!this.solution) {
+      localStorage.setItem('question3', JSON.stringify(this.solution) );
+    }
 
    
     console.log(localStorage.getItem('question3'));

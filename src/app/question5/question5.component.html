@@ -1,23 +1,23 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
+    <mat-icon svgIcon="elevetorly" routerLink="/home" routerLinkActive="active" class="svg_icon"></mat-icon>
     <span class="spacer"></span>
     <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()"></mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container autosize class="main">
     <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-        <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm"></mat-icon>
+        <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
         <label class="col-md-sm label-class">Name</label><br/>
-        <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm"></mat-icon>
+        <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
         <label class="col-md-sm label-class">Problem</label><br/>
-        <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm"></mat-icon>
+        <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
         <label class="col-md-sm label-class">Solution</label>
         <br/>
-        <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm"></mat-icon>
+        <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
         <label class="col-md-sm label-class">Value</label>
         <br/>
-        <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm"></mat-icon>
+        <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
         <label class="col-md-sm label-class">Proof&Ask</label>
       </mat-sidenav>
   <mat-sidenav-content>
