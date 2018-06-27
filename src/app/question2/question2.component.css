@@ -1,3 +1,40 @@
+logoimage {
+	width: 20%;
+	height: 10%;
+  }
+  .menu_icon{
+	height: 2.5rem;
+	width: 4rem;
+	padding-right: 5px;
+  }
+  .icon-align{
+	margin-right: 40px;
+  }
+.main{
+  background-color: white;
+  color: black;
+}
+.side-nav{
+  background-color: black;
+  color: white;
+  width: 250px;
+  display: block;
+  text-align: center;
+}
+.nav-icons{
+  padding: 20px;
+  border-radius: 6rem;
+  width: 4rem;
+  height: auto;
+}
+.svg_icon{
+	width: 8rem;
+	height: auto;
+	padding: 10px;
+  }
+mat-icon{
+  width: 10%;
+}
 .label{
   font-size: 20px;
   margin: 40px;

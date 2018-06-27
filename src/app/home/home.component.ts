@@ -1,5 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import {trigger, stagger, animate, style, group, query as q, transition, keyframes} from '@angular/animations';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 const query = (s,a,o={optional:true})=>q(s,a,o);
 
 
@@ -30,7 +32,16 @@ export const homeTransition = trigger('homeTransition', [
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
+    this.matIconRegistry.addSvgIcon(
+      "elevetorly",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "menu icon",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/menu icon.svg")
+    );
+   }
 
   ngOnInit() {
   }

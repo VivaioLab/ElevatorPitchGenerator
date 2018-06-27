@@ -1,5 +1,27 @@
 
-      <app-nav></app-nav>
+      <mat-toolbar >
+          <mat-toolbar-row>
+            <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
+            <span class="spacer"></span>
+            <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()" ></mat-icon>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <mat-sidenav-container autosize class="main">
+            <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
+                <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm"></mat-icon>
+                <label class="col-md-sm label-class">Name</label><br/>
+                <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm"></mat-icon>
+                <label class="col-md-sm label-class">Problem</label><br/>
+                <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm"></mat-icon>
+                <label class="col-md-sm label-class">Solution</label>
+                <br/>
+                <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm"></mat-icon>
+                <label class="col-md-sm label-class">Value</label>
+                <br/>
+                <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm"></mat-icon>
+                <label class="col-md-sm label-class">Proof&Ask</label>
+              </mat-sidenav>
+          <mat-sidenav-content>
       <!--The content below is only a placeholder and can be replaced.-->
       <div class="container" id="question1">
          <form class="label">
@@ -19,6 +41,8 @@
            <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
          </form>
        </div>
+       </mat-sidenav-content>
+       </mat-sidenav-container>
        <ng-template #template>
           <div class="modal-header">
             

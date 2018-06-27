@@ -18,7 +18,7 @@ import { ReviewpageComponent } from './reviewpage/reviewpage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
-import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule} from '@angular/material';
+import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule, MatSidenavModule} from '@angular/material';
 import { FinalversionComponent } from './finalversion/finalversion.component';
 
 
@@ -49,7 +49,8 @@ import { FinalversionComponent } from './finalversion/finalversion.component';
     MatToolbarModule,
     MatButtonModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
   ]
   ,
   exports: [

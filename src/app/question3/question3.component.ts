@@ -21,8 +21,31 @@ export class Question3Component implements OnInit {
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
+      "elevetorly",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "menu icon",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/menu icon.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
       "questions",
       this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/question info.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/nameicon.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/problem icon.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/solution.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/value icon.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/proof and ask.svg")
     );
    }
 
