@@ -6,7 +6,24 @@
 // @import url('http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,800,800italic');
 
 
-
+logoimage {
+	width: 20%;
+	height: 10%;
+  }
+  .svg_icon{
+	width: 8rem;
+	height: auto;
+	padding: 10px;
+  }
+  
+  .menu_icon{
+	height: 2.5rem;
+	width: 4rem;
+	padding-right: 20px;
+  }
+  .icon-align{
+	margin-right: 40px;
+  }
 
 
 	@include skel-breakpoints((

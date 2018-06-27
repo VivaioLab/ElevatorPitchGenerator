@@ -1,23 +1,31 @@
-<app-nav></app-nav>
-      <!--The content below is only a placeholder and can be replaced.-->
-      <div class="container" id="question5">
-          <mat-icon svgIcon="thanks" class="thanks"></mat-icon>
-         <form class="label">
-            
-           <label>for using elevatorly<br/> We hope it would be helpful to you. <br/><br/>Do you want the pitch <br/>to be emailed to you?</label><br/>
-           <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
-          <!-- <button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block"></button><br/>-->
-          <div style="text-align:center;padding:10px;">
-              <button type="button" style="float: center;" mat-raised-button style="width:60%;"> <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body={{ques}}">Yes! Email To Us </a>  </button>
-           </div> 
-           <a href="url" style="color: grey">No! Thank You</a>
-          <!-- <button type="button" (click)="openModal(template)" style="float: center;" class="btn btn-danger">
-              <i class="material-icons">Yes Email To Me</i>
-              </button><br/> -->
-           
-         </form>
-       </div>
+  <mat-toolbar >
+    <mat-toolbar-row>
+      <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
+      <span class="spacer"></span>
+     
+    </mat-toolbar-row>
+  </mat-toolbar>
 
+        <div class="container" id="question5">
+            <mat-icon svgIcon="thanks" class="thanks"></mat-icon>
+           <form class="label">
+              
+             <label>for using elevatorly<br/> We hope it would be helpful to you. <br/><br/>Do you want the pitch <br/>to be emailed to you?</label><br/>
+             <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
+            <!-- <button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block"></button><br/>-->
+            <div style="text-align:center;padding:10px;">
+                <button type="button" style="float: center;" mat-raised-button style="width:60%;"> <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body={{ques}}">Yes! Email To Us </a>  </button>
+             </div> 
+             <a href="url" style="color: grey">No! Thank You</a>
+            <!-- <button type="button" (click)="openModal(template)" style="float: center;" class="btn btn-danger">
+                <i class="material-icons">Yes Email To Me</i>
+                </button><br/> -->
+             
+           </form>
+         </div>
+ 
+      <!--The content below is only a placeholder and can be replaced.-->
+     
        <ng-template #template>
           <div class="modal-header">
             
