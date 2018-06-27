@@ -19,21 +19,39 @@ logoimage {
   color: white;
   width: 250px;
   display: block;
-  text-align: center;
+
+}
+.index-button{
+  background:transparent;
+  border:none;
+  padding-top:30px;
+}
+.index-button:hover{
+  border: none;
+}
+.index-button:before{
+  border: none !important;
 }
 .nav-icons{
   padding: 20px;
-  border-radius: 6rem;
-  width: 4rem;
-  height: auto;
+  border-radius: 5.5rem;
+  width: 4.5rem !important;
+  height: 4.5rem !important;
 }
 .svg_icon{
-	width: 8rem;
-	height: auto;
+	width: 8rem !important;
+	height: auto !important;
 	padding: 10px;
   }
 mat-icon{
   width: 10%;
+}
+mat-icon.disabled {
+  pointer-events: none;
+  cursor:default;
+}
+.questions{
+  width: 3rem !important;
 }
 .label{
   font-size: 20px;
@@ -51,11 +69,28 @@ input {
 textarea{
   border: none; 
   border-bottom: 1px solid black;
-   
+  overflow:hidden;
   font-size: 20px;  
-  text-align: center;    
+  text-align: center;
+  outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;    
 }
-
+.modal-content{
+  border: 20px solid white !important;
+  border-radius: none;
+}
+.popup{
+  height: 470px !important;
+  display: block;
+  text-align: center;
+  justify-content: initial;
+}
+.next-button{
+  text-align:center;
+  padding-top: 285px;
+}
 .btn-success {
 background-color: #25a08d;
 background-image: none;
