@@ -52,7 +52,20 @@
   </div>
   <div class="modal-body popup-body">
     <div class="container">
-      <app-finalversion></app-finalversion>
+        <p class="para">Is this your final version?</p>
+        <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" class="btn btn-success btn-lg btn-block">Yes!Submit</button>-->
+        <!-- <div style="text-align:center;padding:10px;">
+            <button routerLink="" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:70%;">  Yes! Submit  </button>
+         </div> -->
+         <div style="text-align:center;padding:10px;">
+            <button type="button" style="float: center;" mat-raised-button style="width:70%;" (click)="modalRef.hide()" > <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body={{ques}}">Yes! Email To Us </a>  </button>
+         </div>
+        <p class="para">or</p>
+        <div style="text-align:center;padding:10px;">
+            <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)= "modalRef.hide()" mat-raised-button style="width:70%;">  No!Keep Editing  </button>
+         </div>
+        <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" style="float: right;" class="btn btn-success btn-lg btn-block">No!Keep Editing</button>-->
+       
     </div>
 
   </div>

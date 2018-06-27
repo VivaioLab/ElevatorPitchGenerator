@@ -18,6 +18,7 @@ question3 : string;
 question4 : string;
 question5 : string;
 modalRef: BsModalRef;
+ques:string;
   constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
@@ -49,15 +50,25 @@ modalRef: BsModalRef;
   }
 
   ngOnInit() {
+    this.ques="Hi Vivaio Team"
+    +"My name is "+ localStorage.getItem('question1')
+    +"\n Here is my pitch\n" 
+    +"I got really frustrated when "+ localStorage.getItem('question2')+"With our product "+ localStorage.getItem('question3')+"Ultimately the biggest value for the customer is that "+ localStorage.getItem('question4')+"Right now "+ localStorage.getItem('question5') 
+    + "\n looking forward to hearing from you.\n"
+    + "Thanks\n"
+    +"Name:";
     this.question1 = JSON.parse(localStorage.getItem('question1'));
     this.question2 = JSON.parse(localStorage.getItem('question2'));
     this.question3 = JSON.parse(localStorage.getItem('question3'));
     this.question4 = JSON.parse(localStorage.getItem('question4'));
     this.question5 = JSON.parse(localStorage.getItem('question5'));
+
+    
   }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
 }
-  
+
+
 }

@@ -30,7 +30,7 @@
            <!-- <textarea placeholder="a couple of months &#10; ago I wanted to collect &#10; some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
       ></textarea> -->
       
-        <textarea matInput [(ngModel)] = "problem" name = "problem" rows="10" cols="21" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." ></textarea>
+        <textarea style="white-space: pre-line" matInput [(ngModel)] = "problem" name = "problem" rows="10" cols="21" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." ></textarea>
   
          
            <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
