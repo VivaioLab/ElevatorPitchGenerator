@@ -43,6 +43,7 @@
     <div class="container" id="question1">
       <form class="label2">
         <label>I got really frustrated when</label>
+        <br/>
         <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
         <textarea matInput placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
@@ -55,7 +56,7 @@
           <label (click)="showWordCount()"> Show Word count : </label>
           <label *ngIf="wordnumber">{{words}}</label>
         </div>
-        <div class="next-button">
+        <div class="next-q2-button">
           <button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>
         </div>
