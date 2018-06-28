@@ -19,7 +19,7 @@ export class Question2Component implements OnInit {
   index = false;
   problem:string;
   wordnumber = false;
-  words: string;
+  words: number;
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
@@ -51,15 +51,20 @@ export class Question2Component implements OnInit {
     );
   }
   showWordCount(){
-    this.words = this.wordCount(this.problem);
+    this.words = this.wor(this.problem);
     this.wordnumber = true;
   }
-  wordCount(s) {
-    if (!s) {
-      return 0;
+  wor(s){
+    let count =0;
+    for(let i=0;i<s.length;i++)
+    {
+      if(s[i]===" " || s[i]==="," || s[i]==="." || s[i] ==="\n" || s[i]==="  " )
+      {
+        count = count +1;
+      }
     }
-    return s.split(' ').length;
-  } 
+    return count+1;
+  }
 
   ngOnInit() {
     this.wordnumber = false;

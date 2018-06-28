@@ -18,7 +18,7 @@ export class Question1Component implements OnInit {
  name:string;
  show = true;
  wordnumber = false;
- words: string;
+ words: number;
  modalRef: BsModalRef;
   constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer,private ngZone: NgZone,private modalService: BsModalService)
    {
@@ -61,14 +61,19 @@ export class Question1Component implements OnInit {
   }
   
   showWordCount(){
-    this.words = this.wordCount(this.name);
+    this.words = this.wor(this.name);
     this.wordnumber = true;
   }
-  wordCount(s) {
-    if (!s) {
-      return 0;
+  wor(s){
+    let count =0;
+    for(let i=0;i<s.length;i++)
+    {
+      if(s[i]===" " || s[i]==="," || s[i]==="." || s[i] ==="\n" || s[i]==="  " )
+      {
+        count = count +1;
+      }
     }
-    return s.split(' ').length;
+    return count+1;
   }
 
   ngOnInit() {

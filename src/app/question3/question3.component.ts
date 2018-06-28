@@ -20,7 +20,7 @@ export class Question3Component implements OnInit {
   index = false;
   solution:string;
   wordnumber = false;
-  words: string;
+  words: number;
 
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
@@ -53,16 +53,21 @@ export class Question3Component implements OnInit {
     );
   }
 
-   showWordCount(){
-    this.words = this.wordCount(this.solution);
+  showWordCount(){
+    this.words = this.wor(this.solution);
     this.wordnumber = true;
   }
-  wordCount(s) {
-    if (!s) {
-      return 0;
+  wor(s){
+    let count =0;
+    for(let i=0;i<s.length;i++)
+    {
+      if(s[i]===" " || s[i]==="," || s[i]==="." || s[i] ==="\n" || s[i]==="  " )
+      {
+        count = count +1;
+      }
     }
-    return s.split(' ').length;
-  } 
+    return count+1;
+  }
 
   ngOnInit() {
     this.wordnumber = false;
