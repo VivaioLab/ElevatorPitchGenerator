@@ -46,14 +46,14 @@ input {
   border-bottom: 1px solid black;
   overflow: auto;  
   font-size: 20px;  
-  text-align: center;    
+  text-align: left;    
 }
 textarea{
   border: none; 
   border-bottom: 1px solid black;
    
   font-size: 20px;  
-  text-align: center;    
+  text-align: left;    
 }
 
 .btn-success {
@@ -147,13 +147,13 @@ input {
     border-bottom: 1px solid black;
     overflow: auto;  
     font-size: 40px;  
-    text-align: center;    
+    text-align: left;    
   }
   textarea{
     border: none; 
     border-bottom: 1px solid black;
       
     font-size: 40px;  
-    text-align: center;    
+    text-align: left;    
   }
 }
