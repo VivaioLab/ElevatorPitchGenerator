@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild,ViewEncapsulation } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
@@ -10,6 +10,7 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 @Component({
   selector: 'app-question2',
   templateUrl: './question2.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./question2.component.css']
 })
 export class Question2Component implements OnInit {
@@ -17,6 +18,8 @@ export class Question2Component implements OnInit {
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
   problem:string;
+  wordnumber = false;
+  words: string;
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
@@ -47,10 +50,20 @@ export class Question2Component implements OnInit {
       "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/proof and ask.svg")
     );
   }
+  showWordCount(){
+    this.words = this.wordCount(this.problem);
+    this.wordnumber = true;
+  }
+  wordCount(s) {
+    if (!s) {
+      return 0;
+    }
+    return s.split(' ').length;
+  } 
 
   ngOnInit() {
+    this.wordnumber = false;
   }
-
 
   saveChanges(){
     
