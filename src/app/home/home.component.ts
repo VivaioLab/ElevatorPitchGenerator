@@ -37,11 +37,14 @@ export class HomeComponent implements OnInit {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevatorly logo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "menu-icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/menu icon.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
+    );
+    this.matIconRegistry.addSvgIcon(
+      "building-Home",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/buildingHome.svg")
     );
    }
 

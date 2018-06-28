@@ -10,50 +10,50 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 
 @Component({
   selector: 'app-question5',
-  templateUrl: './question5.component.html',
   encapsulation: ViewEncapsulation.None,
+  templateUrl: './question5.component.html',
   styleUrls: ['./question5.component.css']
 })
 export class Question5Component implements OnInit {
 
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
+  value:string;
   proof:string;
+  modalRef: BsModalRef;
   wordnumber = false;
   words: number;
-  modalRef: BsModalRef;
   constructor(private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "menu icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/menu icon.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "questions",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/question info.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/nameicon.svg")
+      "name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/problem icon.svg")
+      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/solution.svg")
+      "solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/value icon.svg")
+      "value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/proof and ask.svg")
+      "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")
     );
    }
-
    showWordCount(){
-    this.words = this.wor(this.proof);
+    this.words = this.wor(this.value);
     this.wordnumber = true;
   }
   wor(s){
@@ -71,11 +71,13 @@ export class Question5Component implements OnInit {
   ngOnInit() {
     this.wordnumber = false;
     if(JSON.parse(localStorage.getItem('question5'))){
-      this.proof=JSON.parse(localStorage.getItem('question5'));
+      this.value=JSON.parse(localStorage.getItem('question5'));
     }
   }
   saveChanges(){
     // white-space: pre-line;
+    // pitch@vivaiolab.com
+    // Pitch Submition
     if(!!this.proof) {
       localStorage.setItem('question5', JSON.stringify(this.proof) );
     }
