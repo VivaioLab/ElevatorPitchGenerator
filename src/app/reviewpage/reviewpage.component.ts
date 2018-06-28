@@ -22,34 +22,34 @@ ques:string;
   constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "menu icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/menu icon.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "questions",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/question info.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/nameicon.svg")
+      "name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/problem icon.svg")
+      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/solution.svg")
+      "solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/value icon.svg")
+      "value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg")
     );
     this.matIconRegistry.addSvgIcon(
-      "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/proof and ask.svg")
+      "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "edit-icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/edit icon.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg")
     );
   }
 
@@ -61,7 +61,7 @@ ques:string;
     +"looking forward to hearing from you."
     +"Thanks"
     +"Name:";
-    
+
     this.question1 = JSON.parse(localStorage.getItem('question1'));
     this.question2 = JSON.parse(localStorage.getItem('question2'));
     this.question3 = JSON.parse(localStorage.getItem('question3'));
