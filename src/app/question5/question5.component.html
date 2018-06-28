@@ -10,59 +10,51 @@
         <div style="padding-left:55px;">
           <button routerLink="/question1" routerLinkActive="active" class="index-button">
             <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class">Name</label>
+            <label class="col-md-sm label-class" style="color:white;">Name</label>
             <br/>
           </button>
           <button routerLink="/question2" routerLinkActive="active" class="index-button">
             <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class">Problem</label>
+            <label class="col-md-sm label-class" style="color:white;">Problem</label>
             <br/>
           </button>
           <button routerLink="/question3" routerLinkActive="active" class="index-button">
             <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class">Solution</label>
+            <label class="col-md-sm label-class" style="color:white;">Solution</label>
             <br/>
           </button>
           <br/>
           <button routerLink="/question4" routerLinkActive="active" class="index-button">
             <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class">Value</label>
+            <label class="col-md-sm label-class" style="color:white;">Value</label>
             <br/>
           </button>
           <br/>
           <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
             <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" style="background-color: yellow;" ></mat-icon>
-            <label class="col-md-sm label-class">Proof</label>
+            <label class="col-md-sm label-class" style="color:yellow;">Proof</label>
             <br/>
           </button>
         </div>
       </mat-sidenav>
   <mat-sidenav-content>
-    <!--The content below is only a placeholder and can be replaced.-->
     <div class="container" id="question5">
-      <form class="label">
+      <form class="label5">
         <label>Right now </label>
-        <!--<textarea [(ngModel)] = "proof" name = "proof" cols="40" rows="3" class="notes" placeholder="after 3 months we have 100 beta users on our platform and gained real interest on some big retail companies"></textarea>-->
         <textarea matInput placeholder="after 3 months we have 100 beta users on our platform and gained real interest on some big retail companies"
           [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
-        <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
-        <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
-              <i class="material-icons">A</i>
-              </button> -->
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-        <br/>
-        <br/>
-        <br/>
+        <br/><br/><br/>
         <div>
           <label (click)="showWordCount()"> Show Word count : </label>
           <label *ngIf="wordnumber">{{words}}</label>
         </div>
-        <div class="next-button">
+        <div class="next-q5-button">
           <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>
         </div>
         <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>-->
-      </form>
+     </form>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

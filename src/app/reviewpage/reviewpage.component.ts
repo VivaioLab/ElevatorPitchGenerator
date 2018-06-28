@@ -47,6 +47,10 @@ ques:string;
     this.matIconRegistry.addSvgIcon(
       "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/proof and ask.svg")
     );
+    this.matIconRegistry.addSvgIcon(
+      "edit-icon",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/edit icon.svg")
+    );
   }
 
   ngOnInit() {
