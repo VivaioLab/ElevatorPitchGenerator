@@ -40,4 +40,12 @@ export class ThankyouComponent implements OnInit {
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
 }
+clearAll()
+{
+  localStorage.removeItem('question1');
+  localStorage.removeItem('question2');
+  localStorage.removeItem('question3');
+  localStorage.removeItem('question4');
+  localStorage.removeItem('question5');
+}
 }
