@@ -24,7 +24,7 @@ export class Question1Component implements OnInit {
    {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevatorlylogo.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "menu icon",

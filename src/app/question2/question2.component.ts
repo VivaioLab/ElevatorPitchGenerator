@@ -23,8 +23,8 @@ export class Question2Component implements OnInit {
   modalRef: BsModalRef;
   constructor(private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
-      "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+      "elevetorly-logo",
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevatorly.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "menu icon",

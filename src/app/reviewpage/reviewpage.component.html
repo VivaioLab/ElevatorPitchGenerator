@@ -7,18 +7,35 @@
 </mat-toolbar>
 <mat-sidenav-container autosize class="main">
     <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-        <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Name</label><br/>
-        <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Problem</label><br/>
-        <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Solution</label>
-        <br/>
-        <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Value</label>
-        <br/>
-        <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Proof&Ask</label>
+        <div style="padding-left:55px;">
+          <button routerLink="/question1" routerLinkActive="active" class="index-button">
+            <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+            <label class="col-md-sm label-class" style="color:white;">Name</label>
+            <br/>
+          </button>
+          <button routerLink="/question2" routerLinkActive="active" class="index-button">
+            <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+            <label class="col-md-sm label-class" style="color:white;">Problem</label>
+            <br/>
+          </button>
+          <button routerLink="/question3" routerLinkActive="active" class="index-button">
+            <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+            <label class="col-md-sm label-class" style="color:white;">Solution</label>
+            <br/>
+          </button>
+          <br/>
+          <button routerLink="/question4" routerLinkActive="active" class="index-button">
+            <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+            <label class="col-md-sm label-class" style="color:white;">Value</label>
+            <br/>
+          </button>
+          <br/>
+          <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
+            <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" style="background-color: white;" ></mat-icon>
+            <label class="col-md-sm label-class" style="color:white;">Proof</label>
+            <br/>
+          </button>
+        </div>
       </mat-sidenav>
   <mat-sidenav-content>
     <!--The content below is only a placeholder and can be replaced.-->
@@ -39,7 +56,7 @@
 
         </p>
         <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
-        <div style="text-align:center;padding-top:180px;">
+        <div style="text-align:center;padding-top:225px;">
           <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>-->
           <button type="button" (click)="openModal(template)" style="float: right;" mat-raised-button style="width:40%;">
             <i class="material-icons">Save</i>
