@@ -19,6 +19,9 @@ textarea{
   font-size: 20px;  
   text-align: left;    
 }
+ .edit-icon:hover{
+  background-color: yellow;
+ }
 
 .btn-success {
 background-color: #25a08d;

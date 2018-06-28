@@ -10,36 +10,36 @@
     <div style="padding-left:55px;">
       <button routerLink="/question1" routerLinkActive="active" class="index-button">
         <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Name</label>
+        <label class="col-md-sm label-class" style="color:white;">Name</label>
         <br/>
       </button>
       <button routerLink="/question2" routerLinkActive="active" class="index-button">
         <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Problem</label>
+        <label class="col-md-sm label-class" style="color:white;">Problem</label>
         <br/>
       </button>
       <button routerLink="/question3" routerLinkActive="active" class="index-button">
         <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" style="background-color: yellow;" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class">Solution</label>
+        <label class="col-md-sm label-class" style="color:white;">Solution</label>
         <br/>
       </button>
       <br/>
       <button routerLink="/question4" routerLinkActive="active" class="index-button" disabled>
         <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm"></mat-icon>
-        <label class="col-md-sm label-class">Value</label>
+        <label class="col-md-sm label-class" >Value</label>
         <br/>
       </button>
       <br/>
       <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
         <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm"></mat-icon>
-        <label class="col-md-sm label-class">Proof</label>
+        <label class="col-md-sm label-class" >Proof</label>
         <br/>
       </button>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="container" id="question3">
-      <form class="label">
+      <form class="label3">
         <label>With our product</label>
         <textarea matInput class="outline1" placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."
           [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
@@ -51,7 +51,7 @@
           <label (click)="showWordCount()"> Show Word count : </label>
           <label *ngIf="wordnumber">{{words}}</label>
         </div>
-        <div class="next-button">
+        <div class="next-q3-button">
           <button routerLink="/question4" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
             Next </button>
         </div>

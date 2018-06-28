@@ -15,7 +15,7 @@ logoimage {
   color: black;
 }
 .side-nav{
-  background-color: black;
+  background-color: black !important;
   color: white ;
   width: 250px;
   display: block;
@@ -53,7 +53,7 @@ mat-icon.disabled {
 .questions{
   width: 3rem !important;
 }
-.label{
+.label1{
   font-size: 20px;
   margin: 40px;
   margin-top: 100px;

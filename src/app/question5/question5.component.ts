@@ -70,6 +70,9 @@ export class Question5Component implements OnInit {
 
   ngOnInit() {
     this.wordnumber = false;
+    if(JSON.parse(localStorage.getItem('question5'))){
+      this.proof=JSON.parse(localStorage.getItem('question5'));
+    }
   }
   saveChanges(){
     // white-space: pre-line;
