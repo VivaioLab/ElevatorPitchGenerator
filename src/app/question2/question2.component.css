@@ -1,3 +1,6 @@
+button{
+  outline: none;
+}
 logoimage {
 	width: 20%;
 	height: 10%;
@@ -56,7 +59,7 @@ mat-icon.disabled {
 .label2{
   font-size: 20px;
   margin: 40px;
-  margin-top: 100px;
+  margin-bottom: 0px;
   font-family: 'Roboto Mono', monospace;
 }
 input { 
@@ -67,6 +70,7 @@ input {
   text-align: left;    
 }
 textarea{
+  width: 210px;
   border: none; 
   border-bottom: 1px solid black;
   overflow:hidden;
@@ -90,7 +94,7 @@ textarea{
 }
 .next-button{
   text-align:center;
-  padding-top: 160px;
+  padding-top: 210px;
 }
 .btn-success {
 background-color: #25a08d;

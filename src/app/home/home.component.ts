@@ -37,7 +37,7 @@ export class HomeComponent implements OnInit {
   constructor(private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevetorlylogo.svg")
+      this.domSanitizer.bypassSecurityTrustResourceUrl("../assets/images/elevatorly logo.svg")
     );
     this.matIconRegistry.addSvgIcon(
       "menu-icon",
