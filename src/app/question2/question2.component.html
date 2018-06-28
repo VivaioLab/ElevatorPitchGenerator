@@ -1,44 +1,61 @@
 
       <mat-toolbar >
           <mat-toolbar-row>
-            <mat-icon svgIcon="elevetorly" routerLink="/home" routerLinkActive="active" class="svg_icon"></mat-icon>
+            <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
             <span class="spacer"></span>
             <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()" ></mat-icon>
           </mat-toolbar-row>
         </mat-toolbar>
         <mat-sidenav-container autosize class="main">
             <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-                <mat-icon routerLink="/question1" routerLinkActive="active" svgIcon= "name-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-                <label class="col-md-sm label-class">Name</label><br/>
-                <mat-icon routerLink="/question2" routerLinkActive="active" svgIcon= "problem-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-                <label class="col-md-sm label-class">Problem</label><br/>
-                <mat-icon routerLink="/question3" routerLinkActive="active" svgIcon= "solution-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-                <label class="col-md-sm label-class">Solution</label>
-                <br/>
-                <mat-icon routerLink="/question4" routerLinkActive="active" svgIcon= "value-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-                <label class="col-md-sm label-class">Value</label>
-                <br/>
-                <mat-icon routerLink="/question5" routerLinkActive="active" svgIcon= "proof-icon" class="nav-icons col-md-sm" (click)="sidenavright.close()"></mat-icon>
-                <label class="col-md-sm label-class">Proof&Ask</label>
+                <div style="padding-left:55px;">
+                  <button routerLink="/question1" routerLinkActive="active" class="index-button">
+                    <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+                    <label class="col-md-sm label-class">Name</label>
+                    <br/>
+                  </button>
+                  <button routerLink="/question2" routerLinkActive="active" class="index-button">
+                    <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: yellow;" (click)="sidenavright.close()"></mat-icon>
+                    <label class="col-md-sm label-class">Problem</label>
+                    <br/>
+                  </button>
+                  <button  class="index-button" disabled>
+                    <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" style="background-color: white;"></mat-icon>
+                    <label class="col-md-sm label-class">Solution</label>
+                    <br/>
+                  </button>
+                  <br/>
+                  <button  class="index-button" disabled>
+                    <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" style="background-color: white;"></mat-icon>
+                    <label class="col-md-sm label-class">Value</label>
+                    <br/>
+                  </button>
+                  <br/>
+                  <button  class="index-button" disabled>
+                    <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" style="background-color: white;"></mat-icon>
+                    <label class="col-md-sm label-class">Proof</label>
+                    <br/>
+                  </button>
+                </div>
               </mat-sidenav>
           <mat-sidenav-content>
       <!--The content below is only a placeholder and can be replaced.-->
       <div class="container" id="question1">
          <form class="label">
            <label>I got really frustrated when</label>
-           <!--<textarea [(ngModel)] = "problem" name = "problem" cols="10" rows="8" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea>-->
-           <!-- <textarea placeholder="a couple of months &#10; ago I wanted to collect &#10; some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-      ></textarea> -->
-      
-        <textarea style="white-space: pre-line" matInput [(ngModel)] = "problem" name = "problem" rows="10" cols="21" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." ></textarea>
-  
-         
-           <mat-icon svgIcon="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-          <br/>
-           <!-- <button type="button" (click)="openModal(template)" style="float: right;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">  
-              <i class="material-icons">A</i>
-              </button> -->
-              <div style="text-align:center;padding:30px;">
+           <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
+           <textarea matInput placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
+      ></textarea>
+           <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
+           <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+           <br/>
+           <br/>
+           <br/>
+           <div>
+             <label (click)="showWordCount()"> Show Word count : </label>
+             <label *ngIf="wordnumber">{{words}}</label>
+           </div>
+           <div class="next-button">
                 <button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Next  </button>
              </div>
            <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
@@ -46,22 +63,23 @@
        </div>
        </mat-sidenav-content>
        </mat-sidenav-container>
-       <ng-template #template>
+       <ng-template #template style="border: 3px white;">
           <div class="modal-header">
-            
-            <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
+            <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body popup-body">
-              <h4 class="modal-title">Problem</h4>
-            <p class="content">This is the moment to explain <br/>your product of service. Think <br/>about the problem you are solving!<br/> Explain the benifites for the user(s). Try to <br/>answer this is one sentance</p>
-              
-              
+            <h4 class="modal-title">Problem</h4>
+            <div style="text-align:center;padding-left:60px;">
+              <div style="background-color:white; border-radius: 5.5rem;width: 7rem !important;height: 7rem !important;text-align:center;padding-top:27px; ">
+                <img src="../assets/images/problem icon.svg " height="62" width="62">
+              </div>
             </div>
-        
-          <!-- <div class="modal-footer">
-             <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
-              <!-- <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
-          </div> -->
+            <p class="content popup">This is the moment to explain
+              <br/>your product of service. Think
+              <br/>about the problem you are solving!
+              <br/> Explain the benifites for the user(s). Try to
+              <br/>answer this is one sentance</p>
+          </div>
         </ng-template>
