@@ -52,6 +52,13 @@ export class Question1Component implements OnInit {
    }
 
 
+   saveChanges(){
+    
+    if(!!this.name) {
+      localStorage.setItem('question1', JSON.stringify(this.name) );
+      console.log(JSON.parse(localStorage.getItem('question1')));
+    }
+  }
   
   showWordCount(){
     this.words = this.wordCount(this.name);
@@ -66,6 +73,10 @@ export class Question1Component implements OnInit {
 
   ngOnInit() {
     this.wordnumber = false;
+    if(JSON.parse(localStorage.getItem('question1'))){
+      this.name=JSON.parse(localStorage.getItem('question1'));
+    }
+    
     }
 
    

@@ -63,6 +63,9 @@ export class Question2Component implements OnInit {
 
   ngOnInit() {
     this.wordnumber = false;
+    if(JSON.parse(localStorage.getItem('question2'))){
+      this.problem=JSON.parse(localStorage.getItem('question2'));
+    }
   }
 
   saveChanges(){

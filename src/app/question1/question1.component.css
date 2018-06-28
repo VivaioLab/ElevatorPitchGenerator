@@ -64,14 +64,14 @@ input {
   border-bottom: 1px solid black;
   overflow: auto;  
   font-size: 20px;  
-  text-align: center;    
+  text-align: left;    
 }
 textarea{
   border: none; 
   border-bottom: 1px solid black;
   overflow:hidden;
   font-size: 20px;  
-  text-align: center;
+  text-align: left;
   outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -154,7 +154,7 @@ outline: none;
 }
 
 .content{
-  text-align: center;
+  text-align: left;
 }
 mat-icon{
 height: 10%;
@@ -186,14 +186,14 @@ input {
     border-bottom: 1px solid black;
     overflow: auto;  
     font-size: 40px;  
-    text-align: center;    
+    text-align: left;    
   }
   textarea{
     border: none; 
     border-bottom: 1px solid black;
       
     font-size: 40px;  
-    text-align: center;    
+    text-align: left;    
   }
 }
 @media only screen 
