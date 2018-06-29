@@ -95,7 +95,7 @@ textarea{
 }
 .next-button{
   text-align:center;
-  padding-top: 210px;
+  /* padding-top: 210px; */
 }
 .btn-success {
 background-color: #25a08d;
