@@ -43,20 +43,15 @@
             <form class="label1">
               <label >Ciao,</label><br />
               <label>My name is</label>
-              <textarea matInput placeholder="Santa" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"
-          ></textarea> 
-          <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-          <br/>
-          <br/>
-          <br/>
-          <div>
-            <label (click)="showWordCount()"> Show Word count : </label>
-            <label *ngIf="wordnumber">{{words}}</label>
-          </div>
+              <textarea matInput placeholder="Santa" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea> 
+              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+              <br/>
+              <br/>
+              <br/>
               <div class="next-button">
-                  <button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
-                     Next  </button>
-               </div>
+                <button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
+                    Next  </button>
+              </div>
               <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
             </form>
           </div>
