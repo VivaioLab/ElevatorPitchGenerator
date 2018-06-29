@@ -185,7 +185,7 @@ logoimage {
 		font-family: _font(family-fixed);
 		font-size: 0.9em;
 		letter-spacing: 0;
-		margin: 0 0.25em;
+		// margin: 0 0.25em;
 		padding: 0.25em 0.65em;
 	}
 
@@ -697,7 +697,7 @@ logoimage {
 		@include vendor('flex-direction', 'column');
 		@include vendor('justify-content', 'center');
 		cursor: default;
-	//	height: 100vh;
+
 		min-height: 35em;
 		overflow: hidden;
 		position: relative;
@@ -817,113 +817,41 @@ logoimage {
 	
 
 	.landing{
+		position: fixed;
 		text-align: center;
-		padding-top: 30px;
-		//margin-right: 45px;
-
+		bottom: 50px;
+		width: 100vw;
 	}
+
 	.title{
 		text-align: center;
+		width: 100vw;
 	}
 
 	.head{
 		text-align: center;
 	}
-	// .background{
-	// 	background-image: url("../../assets/images/buildingHome.svg");
-	// 	background-size: 1500px;
-	// 	max-height: 100%;
-	// 	//color: _palette(fg);
-	// 	font-family: _font(family);
-	// 	font-size: 15pt;
-	// 	font-weight: _font(weight);
-	// 	letter-spacing: _size(letter-spacing);
-	// 	line-height: 1.65em;
-	// }
-	
-	.body1 {
-		line-height: 1.65em;
-		height: 390px;
-		width: 345px;
 
-	}
 
 
 	.background{
 		border-bottom: 1px solid black;
+		position: relative;
 		text-align: center;
-		height: 390px;
-		width: 330px;
+		width: 100vw;
+		height: 60vh;
+		margin-top: 15vh;
+		
+			img {
+				position: absolute;
+				bottom: -2px;
+				left: 50%;
+				height: 100%;
+				transform: translateX(-50%);
+				padding-left: 30px;
+			}
 	}
 	.title-center {
 		flex: 1 1 auto;
 		text-align: center;
-		margin-right: 28px;
-	  }
-
-	@media only screen 
-and (min-width : 1000px){
-	.body1 {
-		line-height: 1.65em;
-		height: 560px !important;
-		width: 100%;
-		text-align: center;
-		
-
 	}
-
-	.background{
-		border-bottom: 1px solid black;
-		text-align: center;
-		width: 1440px;
-		height: 560px !important;
-		
-		
-
-		
-		
-		
-	}
-	.landing{
-		text-align: center;
-		width: 1400px;
-
-//	margin-left: 280px;
-	}
-	.title{
-		text-align: center;
-		margin-left: 270px;
-		width: 880px;
-	
-	}
-}
-@media only screen 
-and (min-width : 374px){
-.title{
-	text-align: center;
-
-}
-.landing{
-	text-align: center;
-	padding-top: 50px;
-//	margin-right: 32px;
-}
-.body1 {
-	line-height: 1.65em;
-	height: 460px;
-	width: 375px;
-
-}
-
-
-.background{
-	border-bottom: 1px solid black;
-	text-align: center;
-	height: 460px;;
-}
-.title-center {
-	flex: 1 1 auto;
-	text-align: center;
-	margin-right: 28px;
-  }
-}
