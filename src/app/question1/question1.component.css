@@ -22,13 +22,19 @@ logoimage {
   color: white ;
   width: 250px;
   display: block;
-
+  
+}
+.review-button{
+margin-top: 20px;
 }
 .name-icon{
   color: white !important;
 }
 .label-class{
   color: grey;
+}
+.review{
+  text-align: center !important;
 }
 .activ-class{
   background-color: white !important;

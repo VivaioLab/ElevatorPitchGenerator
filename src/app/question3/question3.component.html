@@ -37,6 +37,9 @@
         <br/>
       </button>
     </div>
+  </div>
+  <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
+  </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div class="container" id="question3">

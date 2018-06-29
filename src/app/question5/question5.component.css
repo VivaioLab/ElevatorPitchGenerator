@@ -257,6 +257,9 @@ and (min-width : 1000px){
     justify-content: initial;
   }
 }
+.review-button{
+  margin-top: 20px;
+  }
 /* ogoimage {
 	width: 20%;
 	height: 10%;
