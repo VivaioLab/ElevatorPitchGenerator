@@ -74,6 +74,22 @@ export class Question3Component implements OnInit {
     if(JSON.parse(localStorage.getItem('question3'))){
       this.solution=JSON.parse(localStorage.getItem('question3'));
     }
+    if(JSON.parse(localStorage.getItem('question1')))
+    {
+      this.isValid1 = true;
+    }
+    if(JSON.parse(localStorage.getItem('question3')))
+    {
+      this.isValid3 = true;
+    }
+    if(JSON.parse(localStorage.getItem('question4')))
+    {
+      this.isValid4 = true;
+    }
+    if(JSON.parse(localStorage.getItem('question4')))
+    {
+      this.isValid5 = true;
+    }
   }
   
   @Input()
