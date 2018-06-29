@@ -79,22 +79,18 @@ export class Question2Component implements OnInit {
     if(JSON.parse(localStorage.getItem('question1')))
     {
       this.isValid1 = true;
-      console.log("question 1 =" + this.isValid1);
     }
     if(JSON.parse(localStorage.getItem('question3')))
     {
       this.isValid3 = true;
-      console.log("question 3 =" + this.isValid3);
     }
     if(JSON.parse(localStorage.getItem('question4')))
     {
       this.isValid4 = true;
-      console.log("question 3 =" + this.isValid4);
     }
     if(JSON.parse(localStorage.getItem('question4')))
     {
       this.isValid5 = true;
-      console.log("question 3 =" + this.isValid5);
     }
   }
   
