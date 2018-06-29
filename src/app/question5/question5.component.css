@@ -73,6 +73,7 @@ input {
   text-align: center;    
 }
 textarea{
+  width: 100%;
   border: none; 
   border-bottom: 1px solid black;
   overflow:hidden;
