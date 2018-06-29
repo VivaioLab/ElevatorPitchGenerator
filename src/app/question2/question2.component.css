@@ -37,7 +37,6 @@ logoimage {
   color: white;
   width: 250px;
   display: block;
-
 }
 .label-class{
   color: grey;
@@ -164,7 +163,7 @@ and (min-width : 1295px) {
     margin: 40px;
     font-family: 'Roboto Mono', monospace;  
 }
-label{
+.content-margin{
   padding-right: 80px;
 }
   textarea{
@@ -184,7 +183,7 @@ label{
 @media only screen 
 and (min-height : 560px){
   .popup{
-    height: 260px !important;
+    height: 240px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -197,7 +196,7 @@ and (min-width : 374px){
     padding-top: 320px !important;
   }
   .popup{
-    height: 360px !important;
+    height: 340px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -210,7 +209,7 @@ and (min-width: 414px){
     padding-top: 320px;
   }
   .popup{
-    height: 490px !important;
+    height: 408px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -223,7 +222,16 @@ and (min-height : 800px){
     padding-top: 370px;
   }
   .popup{
-    height: 613px !important;
+    height: 483px !important;
+    display: block;
+    text-align: center;
+    justify-content: initial;
+  }
+}
+@media only screen 
+and (min-width : 1000px){
+  .popup{
+    height: 368px !important;
     display: block;
     text-align: center;
     justify-content: initial;
