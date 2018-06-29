@@ -64,6 +64,7 @@
         </div>
         <div class="next-q2-button">
           <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+          <br>
           <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
           <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>

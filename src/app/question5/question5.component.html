@@ -44,7 +44,7 @@
   <mat-sidenav-content>
     <div class="container" id="question5">
       <form class="label5">
-        <label class="content-margin">We are looking for  </label>
+        <label class="content-margin">We are looking for  </label><br/>
         <textarea matInput placeholder=" $10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers"
           [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
@@ -55,6 +55,7 @@
         </div>
         <div class="next-q5-button">
           <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+          <br>
           <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
           <!--<button *ngIf="!maxwordsError" routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>-->
