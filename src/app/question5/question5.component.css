@@ -97,7 +97,7 @@ textarea{
 }
 .next-q5-button{
   text-align:center;
-  padding-top: 248px;
+  /* padding-top: 248px; */
   padding-bottom: 14px;
 }
 .btn-success {
@@ -214,7 +214,7 @@ and (min-height : 560px){
 and (min-height : 660px){
   .next-q5-button{
     text-align:center;
-    padding-top: 330px;
+    /* padding-top: 330px; */
   }
   .popup{
     height: 340px !important;
@@ -227,7 +227,7 @@ and (min-height : 660px){
 and (min-height : 720px){
   .next-button{
     text-align:center;
-    padding-top: 320px;
+    /* padding-top: 320px; */
   }
   .popup{
     height: 408px !important;
@@ -240,7 +240,7 @@ and (min-height : 720px){
 and (min-height : 800px){
   .next-button{
     text-align:center;
-    padding-top: 370px;
+    /* padding-top: 370px; */
   }
   .popup{
     height: 483px !important;
