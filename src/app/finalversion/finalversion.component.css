@@ -57,7 +57,7 @@
 
 }
 .modal-title{
-    text-align: center;
+    text-align: left;
 }
 
 .content{
@@ -67,4 +67,41 @@
 #confirmpage{
     text-align: center;
     padding-top: 10px;
+}
+
+@media only screen 
+and (min-height : 560px){
+  .popup{
+    height: 260px !important;
+    display: block;
+    text-align: center;
+    justify-content: initial;
+  }
+}
+@media only screen 
+and (min-height : 660px){
+  .popup{
+    height: 360px !important;
+    display: block;
+    text-align: center;
+    justify-content: initial;
+  }
+}
+@media only screen 
+and (min-height : 720px){
+  .popup{
+    height: 490px !important;
+    display: block;
+    text-align: center;
+    justify-content: initial;
+  }
+}
+@media only screen 
+and (min-height : 800px){
+  .popup{
+    height: 613px !important;
+    display: block;
+    text-align: center;
+    justify-content: initial;
+  }
 }

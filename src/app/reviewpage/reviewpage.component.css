@@ -244,6 +244,9 @@ and (min-height : 800px){
     justify-content: initial;
   }
 }
+.para{
+  text-align: center;
+}
 
 /* ogoimage {
 	width: 20%;
