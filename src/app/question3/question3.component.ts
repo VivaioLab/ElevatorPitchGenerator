@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, ViewChild,ViewEncapsulation } from '@angular/core';
+import { Input, Component, OnInit, TemplateRef, ViewChild,ViewEncapsulation } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
@@ -15,7 +15,7 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
   styleUrls: ['./question3.component.css']
 })
 export class Question3Component implements OnInit {
-
+  wordLimit = 120;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
   solution:string;
@@ -75,9 +75,20 @@ export class Question3Component implements OnInit {
       this.solution=JSON.parse(localStorage.getItem('question3'));
     }
   }
+  
+  @Input()
+  get totalWords() {
+    return this.wor(this.solution || '') - 1;
+  }
+  
+  @Input()
+  get maxwordsError() {
+    return this.totalWords > this.wordLimit;
+  }
+  
   saveChanges(){
     
-    if(!!this.solution) {
+    if(!!this.solution && !this.maxwordsError) {
       localStorage.setItem('question3', JSON.stringify(this.solution) );
     }
 

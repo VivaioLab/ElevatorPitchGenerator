@@ -45,19 +45,20 @@
         <label>I got really frustrated when</label>
         <br/>
         <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
-        <textarea matInput placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."
+        <textarea matInput [ngClass]="{'text-danger': maxwordsError}" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
         <br/>
         <br/>
         <br/>
-        <div>
-          <label (click)="showWordCount()"> Show Word count : </label>
-          <label *ngIf="wordnumber">{{words}}</label>
+        <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+          <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+          <label>{{totalWords}}/{{wordLimit}}</label>
         </div>
         <div class="next-q2-button">
-          <button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
+          <button *ngIf="!maxwordsError" routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>
         </div>
         <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->

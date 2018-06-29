@@ -46,12 +46,13 @@
           [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
         <br/><br/><br/>
-        <div>
-          <label (click)="showWordCount()"> Show Word count : </label>
-          <label *ngIf="wordnumber">{{words}}</label>
+        <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+          <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+          <label>{{totalWords}}/{{wordLimit}}</label>
         </div>
         <div class="next-q5-button">
-          <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
+          <button *ngIf="!maxwordsError" routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>
         </div>
         <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>-->
