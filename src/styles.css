@@ -12,3 +12,11 @@ mat-toolbar{
 .nav-icons {
     margin-right: 1rem;
 }
+
+.mat-drawer-content {
+    height: 100vh !important;
+}
+
+.side-nav {
+    width: 310px !important;
+}
