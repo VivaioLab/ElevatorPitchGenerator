@@ -194,7 +194,7 @@ and (min-width : 1295px) {
   /* Styles */
   .next-button{
     text-align:center;
-    padding-top: 341px !important;
+    /* padding-top: 341px !important; */
   }
   button{
     outline: none !important;
@@ -250,7 +250,7 @@ and (min-height : 560px){
 and (min-height : 660px){
   .next-button{
     text-align:center;
-    padding-top: 285px;
+    /* padding-top: 285px; */
   }
   .popup{
     height: 340px !important;
@@ -263,7 +263,7 @@ and (min-height : 660px){
 and (min-height : 720px){
   .next-button{
     text-align:center;
-    padding-top: 320px;
+    /* padding-top: 320px; */
   }
   .popup{
     height: 408px !important;
@@ -276,7 +276,7 @@ and (min-height : 720px){
 and (min-height : 800px){
   .next-button{
     text-align:center;
-    padding-top: 370px;
+    /* padding-top: 370px; */
   }
   .popup{
     height: 483px !important;

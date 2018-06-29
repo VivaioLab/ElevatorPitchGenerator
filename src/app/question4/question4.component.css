@@ -88,7 +88,7 @@ textarea{
   border-bottom: 1px solid black;
   overflow:hidden;
   font-size: 20px;  
-  text-align: center;
+  text-align: left;
   outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -107,7 +107,7 @@ textarea{
 }
 .next-q4-button{
   text-align:center;
-  padding-top: 160px;
+  /* padding-top: 160px; */
 }
 .btn-success {
 background-color: #25a08d;
@@ -207,7 +207,7 @@ input {
     border-bottom: 1px solid black;
       
     font-size: 40px;  
-    text-align: center;    
+    text-align: left;    
   }
 }
 @media only screen 
@@ -223,7 +223,7 @@ and (min-height : 560px){
 and (min-height : 660px){
   .next-q4-button{
     text-align:center;
-    padding-top: 270px;
+    /* padding-top: 270px; */
   }
   .popup{
     height: 340px !important;
@@ -236,7 +236,7 @@ and (min-height : 660px){
 and (min-height : 720px){
   .next-button{
     text-align:center;
-    padding-top: 320px;
+    /* padding-top: 320px; */
   }
   .popup{
     height: 408px !important;
@@ -249,7 +249,7 @@ and (min-height : 720px){
 and (min-height : 800px){
   .next-button{
     text-align:center;
-    padding-top: 370px;
+    /* padding-top: 370px; */
   }
   .popup{
     height: 483px !important;

@@ -120,7 +120,7 @@ textarea{
 }
 .next-q2-button{
   text-align:center;
-  padding-top: 210px;
+  /* padding-top: 210px; */
   margin-bottom: 23px;
 }
 .popup-body{
@@ -146,7 +146,7 @@ and (min-width : 1295px) {
   /* Styles */
   .next-button{
     text-align:center;
-    padding-top: 379px !important;
+    /* padding-top: 379px !important; */
   }
   .side-nav{
     background-color: black !important;
@@ -193,7 +193,7 @@ and (min-height : 560px){
 and (min-width : 374px){
   .next-q2-button{
     text-align:center;
-    padding-top: 320px !important;
+    /* padding-top: 320px !important; */
   }
   .popup{
     height: 340px !important;
@@ -206,7 +206,7 @@ and (min-width : 374px){
 and (min-width: 414px){
   .next-button{
     text-align:center;
-    padding-top: 320px;
+    /* padding-top: 320px; */
   }
   .popup{
     height: 408px !important;
@@ -219,7 +219,7 @@ and (min-width: 414px){
 and (min-height : 800px){
   .next-button{
     text-align:center;
-    padding-top: 370px;
+    /* padding-top: 370px; */
   }
   .popup{
     height: 483px !important;
