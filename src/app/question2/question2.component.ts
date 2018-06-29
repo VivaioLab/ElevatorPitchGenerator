@@ -1,11 +1,10 @@
-import { Component, OnInit, TemplateRef, ViewChild,ViewEncapsulation } from '@angular/core';
+import { Input, Component, OnInit, TemplateRef, ViewChild,ViewEncapsulation } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-
 
 @Component({
   selector: 'app-question2',
@@ -14,7 +13,7 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
   styleUrls: ['./question2.component.css']
 })
 export class Question2Component implements OnInit {
-
+  wordLimit = 120;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
   problem:string;
@@ -72,15 +71,22 @@ export class Question2Component implements OnInit {
       this.problem=JSON.parse(localStorage.getItem('question2'));
     }
   }
+  
+  @Input()
+  get totalWords() {
+    return this.wor(this.problem || '') - 1;
+  }
+  
+  @Input()
+  get maxwordsError() {
+    return this.totalWords > this.wordLimit;
+  }
 
   saveChanges(){
     
-    if(!!this.problem) {
+    if(!!this.problem && !this.maxwordsError) {
       localStorage.setItem('question2', JSON.stringify(this.problem) );
     }
-
-   
-    console.log(localStorage.getItem('question2'));
   }
 
   openModal(template: TemplateRef<any>) {

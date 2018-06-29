@@ -48,12 +48,13 @@
         <br/>
         <br/>
         <br/>
-        <div>
-          <label (click)="showWordCount()"> Show Word count : </label>
-          <label *ngIf="wordnumber">{{words}}</label>
+        <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+          <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+          <label>{{totalWords}}/{{wordLimit}}</label>
         </div>
         <div class="next-q3-button">
-          <button routerLink="/question4" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
+          <button *ngIf="!maxwordsError" routerLink="/question4" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
             Next </button>
         </div>
       </form>
