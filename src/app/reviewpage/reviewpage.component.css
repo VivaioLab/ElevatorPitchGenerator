@@ -202,7 +202,7 @@ input {
 @media only screen 
 and (min-height : 560px){
   .popup{
-    height: 260px !important;
+    height: 450px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -215,7 +215,7 @@ and (min-height : 660px){
     padding-top: 285px;
   }
   .popup{
-    height: 360px !important;
+    height: 548px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -228,7 +228,7 @@ and (min-height : 720px){
     padding-top: 320px;
   }
   .popup{
-    height: 490px !important;
+    height: 618px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -241,7 +241,7 @@ and (min-height : 800px){
     padding-top: 370px;
   }
   .popup{
-    height: 613px !important;
+    height: 695px !important;
     display: block;
     text-align: center;
     justify-content: initial;
@@ -249,6 +249,15 @@ and (min-height : 800px){
 }
 .para{
   text-align: center;
+}
+@media only screen 
+and (min-width : 1000px){
+  .popup{
+    height: 581px !important;
+    display: block;
+    text-align: center;
+    justify-content: initial;
+  }
 }
 
 /* ogoimage {
