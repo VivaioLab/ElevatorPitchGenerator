@@ -48,6 +48,7 @@
               <br/>
               <br/>
               <div class="next-button">
+                  <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
                   <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
                      Next  </button>
                </div>

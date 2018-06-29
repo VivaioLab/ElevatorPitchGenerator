@@ -15,6 +15,7 @@ import {Router} from '@angular/router';
 })
 export class Question1Component implements OnInit {
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
+ emptyAnswerError = false;
  index = false;
  name:string;
  show = true;
@@ -59,14 +60,13 @@ export class Question1Component implements OnInit {
 
 
    saveChanges(){
-    
     if(!!this.name) {
       localStorage.setItem('question1', JSON.stringify(this.name) );
       this.router.navigate(['/question2']);
       console.log(JSON.parse(localStorage.getItem('question1')));
-    }
-    else{
-      alert("Please enter a value");
+    } else {
+      this.emptyAnswerError = true;
+      setTimeout(() => this.emptyAnswerError = false, 1500);
     }
   }
   

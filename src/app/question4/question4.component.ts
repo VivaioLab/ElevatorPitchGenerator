@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-
+import {Router } from '@angular/router';
 
 @Component({
   selector: 'app-question4',
@@ -15,13 +15,14 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
 })
 export class Question4Component implements OnInit {
   wordLimit = 120;
+  emptyAnswerError = false;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
   value:string;
   wordnumber = false;
   words: number;
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
+  constructor(private router : Router, private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
@@ -104,10 +105,11 @@ export class Question4Component implements OnInit {
     
     if(!!this.value && !this.maxwordsError) {
       localStorage.setItem('question4', JSON.stringify(this.value) );
+      this.router.navigate(['/question5']);
+    } else {
+      this.emptyAnswerError = true;
+      setTimeout(() => this.emptyAnswerError = false, 1500);
     }
-
-   
-    console.log(localStorage.getItem('question4'));
   }
 
   openModal(template: TemplateRef<any>) {
