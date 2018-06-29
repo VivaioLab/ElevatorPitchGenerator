@@ -20,3 +20,24 @@ mat-toolbar{
 .side-nav {
     width: 310px !important;
 }
+
+textarea::placeholder {
+    color: gray !important;
+    opacity: 0.4 !important;
+}
+textarea::-webkit-input-placeholder {
+    color: gray !important;
+    opacity: 0.4 !important;
+}
+textarea:-moz-placeholder { /* Firefox 18- */
+    color: gray !important;
+    opacity: 0.4 !important;
+}
+textarea::-moz-placeholder {  /* Firefox 19+ */
+    color: gray !important;
+    opacity: 0.4 !important;
+}
+textarea:-ms-input-placeholder {
+    color: gray !important;
+    opacity: 0.4 !important;
+}
