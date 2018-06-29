@@ -85,14 +85,14 @@ input {
 }
 textarea{
   border: none; 
+  width: 100%;
   border-bottom: 1px solid black;
   overflow:hidden;
   font-size: 20px;  
-  text-align: center;
   outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;    
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;    
 }
 .modal-content{
   border: 20px solid white !important;
@@ -207,7 +207,6 @@ input {
     border-bottom: 1px solid black;
       
     font-size: 40px;  
-    text-align: center;    
   }
 }
 @media only screen 
