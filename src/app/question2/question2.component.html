@@ -9,31 +9,31 @@
 <mat-sidenav-container autosize class="main">
   <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
     <div style="padding-left:55px;">
-      <button routerLink="/question1" routerLinkActive="active" class="index-button">
-        <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class" style="color:white;">Name</label>
+      <button routerLink="/question1"  [disabled] = "!isValid1" routerLinkActive="active" class="index-button">
+        <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon" [ngClass]="{'activ-class': isValid1}"     style="background-color: grey;" (click)="isValid1 && sidenavright.close()"></mat-icon>
+        <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Name</label>
         <br/>
       </button>
       <button routerLink="/question2" routerLinkActive="active" class="index-button">
-        <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: yellow;" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm label-class" style="color:white;">Problem</label>
+        <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+        <label class="col-md-sm " [ngClass]="{'label-class': !isValid2}" >Problem</label>
         <br/>
       </button>
-      <button class="index-button" disabled>
-        <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" ></mat-icon>
-        <label class="col-md-sm label-class" >Solution</label>
-        <br/>
-      </button>
-      <br/>
-      <button class="index-button" disabled>
-        <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm"></mat-icon>
-        <label class="col-md-sm label-class" >Value</label>
+      <button class="index-button"  [disabled] = "!isValid3">
+        <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid3}"     style="background-color: grey;" (click)="isValid3 && sidenavright.close()" ></mat-icon>
+        <label class="col-md-sm " [ngClass]="{'label-class': !isValid3}" >Solution</label>
         <br/>
       </button>
       <br/>
-      <button class="index-button" disabled>
-        <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" ></mat-icon>
-        <label class="col-md-sm label-class" >Proof</label>
+      <button class="index-button" [disabled] = "!isValid4">
+        <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid4}"     style="background-color: grey;" (click)="isValid4 && sidenavright.close()" ></mat-icon>
+        <label class="col-md-sm" [ngClass]="{'label-class': !isValid4}" >Value</label>
+        <br/>
+      </button>
+      <br/>
+      <button class="index-button" [disabled] = "!isValid5">
+        <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"     style="background-color: grey;" (click)="isValid5 && sidenavright.close()"  ></mat-icon>
+        <label class="col-md-sm" [ngClass]="{'label-class': !isValid5}" >Proof</label>
         <br/>
       </button>
     </div>
@@ -58,7 +58,7 @@
         </div>
         <div class="next-q2-button">
           <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
-          <button *ngIf="!maxwordsError" routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>
         </div>
         <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->

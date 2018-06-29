@@ -24,7 +24,27 @@ logoimage {
   display: block;
 
 }
+.name-icon{
+  color: white !important;
+}
+.label-class{
+  color: grey;
+}
+.activ-class{
+  background-color: white !important;
+  color: black !important;
+}
+.inactiv-class{
+  background-color: grey !important;
+  color: white !important;
+}
 .index-button{
+  background:transparent;
+  border:none;
+  padding-top:20px;
+  color: white !important;
+}
+.index-button:disabled{
   background:transparent;
   border:none;
   padding-top:20px;

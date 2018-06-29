@@ -5,6 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-question1',
   templateUrl: './question1.component.html',
@@ -19,8 +20,13 @@ export class Question1Component implements OnInit {
  show = true;
  wordnumber = false;
  words: number;
+ isValid1 = true;
+ isValid2 = false;
+ isValid3 = false;
+ isValid4 = false;
+ isValid5 = false;
  modalRef: BsModalRef;
-  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer,private ngZone: NgZone,private modalService: BsModalService)
+  constructor(private router : Router,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer,private ngZone: NgZone,private modalService: BsModalService)
    {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
@@ -56,7 +62,11 @@ export class Question1Component implements OnInit {
     
     if(!!this.name) {
       localStorage.setItem('question1', JSON.stringify(this.name) );
+      this.router.navigate(['/question2']);
       console.log(JSON.parse(localStorage.getItem('question1')));
+    }
+    else{
+      alert("Please enter a value");
     }
   }
   
@@ -80,6 +90,26 @@ export class Question1Component implements OnInit {
     this.wordnumber = false;
     if(JSON.parse(localStorage.getItem('question1'))){
       this.name=JSON.parse(localStorage.getItem('question1'));
+    }
+    if(JSON.parse(localStorage.getItem('question2')))
+    {
+      this.isValid2 = true;
+      console.log("question 1 =" + this.isValid2);
+    }
+    if(JSON.parse(localStorage.getItem('question3')))
+    {
+      this.isValid3 = true;
+      console.log("question 3 =" + this.isValid3);
+    }
+    if(JSON.parse(localStorage.getItem('question4')))
+    {
+      this.isValid4 = true;
+      console.log("question 3 =" + this.isValid4);
+    }
+    if(JSON.parse(localStorage.getItem('question4')))
+    {
+      this.isValid5 = true;
+      console.log("question 3 =" + this.isValid5);
     }
     
     }
