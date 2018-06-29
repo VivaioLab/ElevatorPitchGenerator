@@ -24,6 +24,13 @@ export class Question5Component implements OnInit {
   modalRef: BsModalRef;
   wordnumber = false;
   words: number;
+  
+  isValid1 = false;
+  isValid2 = false;
+  isValid3 = false;
+  isValid4 = false;
+  isValid5 = false;
+  
   constructor(private router : Router, private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
