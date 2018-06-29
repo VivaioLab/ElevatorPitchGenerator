@@ -6,53 +6,54 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container autosize class="main">
-    <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-        <div style="padding-left:55px;">
-          <button routerLink="/question1" routerLinkActive="active" class="index-button">
-            <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class" style="color:white;">Name</label>
-            <br/>
-          </button>
-          <button routerLink="/question2" routerLinkActive="active" class="index-button">
-            <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class" style="color:white;">Problem</label>
-            <br/>
-          </button>
-          <button routerLink="/question3" routerLinkActive="active" class="index-button">
-            <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class" style="color:white;">Solution</label>
-            <br/>
-          </button>
-          <br/>
-          <button routerLink="/question4" routerLinkActive="active" class="index-button">
-            <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
-            <label class="col-md-sm label-class" style="color:white;">Value</label>
-            <br/>
-          </button>
-          <br/>
-          <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
-            <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" style="background-color: white;" ></mat-icon>
-            <label class="col-md-sm label-class" style="color:white;">Proof</label>
-            <br/>
-          </button>
-        </div>
-      </mat-sidenav>
+  <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
+    <div style="padding-left:55px;">
+      <button routerLink="/question1" routerLinkActive="active" class="index-button">
+        <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+        <label class="col-md-sm label-class" style="color:white;">Name</label>
+        <br/>
+      </button>
+      <button routerLink="/question2" routerLinkActive="active" class="index-button">
+        <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+        <label class="col-md-sm label-class" style="color:white;">Problem</label>
+        <br/>
+      </button>
+      <button routerLink="/question3" routerLinkActive="active" class="index-button">
+        <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+        <label class="col-md-sm label-class" style="color:white;">Solution</label>
+        <br/>
+      </button>
+      <br/>
+      <button routerLink="/question4" routerLinkActive="active" class="index-button">
+        <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" style="background-color: white;" (click)="sidenavright.close()"></mat-icon>
+        <label class="col-md-sm label-class" style="color:white;">Value</label>
+        <br/>
+      </button>
+      <br/>
+      <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
+        <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" style="background-color: white;"></mat-icon>
+        <label class="col-md-sm label-class" style="color:white;">Proof</label>
+        <br/>
+      </button>
+    </div>
+  </mat-sidenav>
   <mat-sidenav-content>
     <!--The content below is only a placeholder and can be replaced.-->
     <div class="container" id="reviewpage">
       <form class="label">
         <p style="font-size: 15px;">
           My name is {{question1}}
-          <img routerLink="/question1" class="edit-icon" routerLinkActive="active"  src="assets/images/edit icon.svg" height="15" width="15">
-          
+          <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
+
           <br/> I got really frustrated when {{question2}}
-          <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit"  src="assets/images/edit icon.svg" height="15" width="15">
+          <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit" src="assets/images/edit icon.svg" height="15"
+            width="15">
           <br/> With our product {{question3}}
-          <img routerLink="/question3" class="edit-icon" routerLinkActive="active"  src="assets/images/edit icon.svg" height="15" width="15">
+          <img routerLink="/question3" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
           <br/> Ultimatly the biggest value for the customer is that {{question4}}
-          <img routerLink="/question4" class="edit-icon" routerLinkActive="active"  src="assets/images/edit icon.svg" height="15" width="15">
+          <img routerLink="/question4" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
           <br/> Right now {{question5}}
-          <img routerLink="/question5" class="edit-icon" routerLinkActive="active"  src="assets/images/edit icon.svg" height="15" width="15">
+          <img routerLink="/question5" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
 
         </p>
         <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
@@ -66,35 +67,47 @@
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
-<ng-template #template>
+<ng-template #template style="border: 3px #ffffff;">
   <div class="modal-header">
-
+    <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body popup popup-body">
+    <div class="container">
+      <p class="para">Is this your final version?</p>
+      <div style="text-align:center;">
+        <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:70%;" (click)="modalRef.hide()">
+          <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch%0D%0DI got really frustrated when {{question2}}%0DWith our product {{question3}}%0DUltimately the biggest value for the customer is that {{question4}}%0DRight now {{question5}}%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>
+        </button>
+      </div>
+      <p style="text-align: center;">or</p>
+      <div style="text-align:center;">
+        <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="modalRef.hide()" mat-raised-button style="width:70%;">
+        No!Keep Editing </button>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<!-- <ng-template #template>
+  <div class="modal-header">
     <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body popup-body">
     <div class="container">
-        <p class="para">Is this your final version?</p>
-        <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" class="btn btn-success btn-lg btn-block">Yes!Submit</button>-->
-        <!-- <div style="text-align:center;padding:10px;">
-            <button routerLink="" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:70%;">  Yes! Submit  </button>
-         </div> -->
-         <div style="text-align:center;">
-            <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:70%;" (click)="modalRef.hide()" > <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch%0D%0DI got really frustrated when {{question2}}%0DWith our product {{question3}}%0DUltimately the biggest value for the customer is that {{question4}}%0DRight now {{question5}}%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>  </button>
-         </div>
-        <p style="text-align: center;">or</p>
-        <div style="text-align:center;">
-            <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)= "modalRef.hide()" mat-raised-button style="width:70%;">  No!Keep Editing  </button>
-         </div>
-        <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" style="float: right;" class="btn btn-success btn-lg btn-block">No!Keep Editing</button>-->
-       
+      <p class="para">Is this your final version?</p>
+      <div style="text-align:center;">
+        <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:70%;" (click)="modalRef.hide()">
+          <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch%0D%0DI got really frustrated when {{question2}}%0DWith our product {{question3}}%0DUltimately the biggest value for the customer is that {{question4}}%0DRight now {{question5}}%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>
+        </button>
+      </div>
+      <p style="text-align: center;">or</p>
+      <div style="text-align:center;">
+        <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="modalRef.hide()" mat-raised-button style="width:70%;">
+        No!Keep Editing </button>
+      </div>
     </div>
-
   </div>
-
-  <!-- <div class="modal-footer">
-           <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
-  <!-- <button type="button" class="btn btn-danger" (click)="modalRef.hide()">Close</button>
-        </div> -->
-</ng-template>
+</ng-template> -->

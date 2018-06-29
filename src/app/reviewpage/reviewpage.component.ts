@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, OnInit, TemplateRef,ViewEncapsulation } from '@angular/core';
 import { FormControl, FormArray, FormBuilder, FormGroup,Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
@@ -9,6 +9,7 @@ import { DomSanitizer } from "@angular/platform-browser";
 @Component({
   selector: 'app-reviewpage',
   templateUrl: './reviewpage.component.html',
+  encapsulation: ViewEncapsulation.None,
   styleUrls: ['./reviewpage.component.css']
 })
 export class ReviewpageComponent implements OnInit {
