@@ -96,7 +96,7 @@ input {
   text-align: left;    
 }
 textarea{
-  width: 210px;
+  width: 100%;
   border: none; 
   border-bottom: 1px solid black;
   overflow:hidden;
