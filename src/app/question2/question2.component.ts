@@ -14,6 +14,7 @@ import {Router } from '@angular/router';
 })
 export class Question2Component implements OnInit {
   wordLimit = 120;
+  emptyAnswerError = false;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
   problem:string;
@@ -109,9 +110,9 @@ export class Question2Component implements OnInit {
     if(!!this.problem && !this.maxwordsError) {
       localStorage.setItem('question2', JSON.stringify(this.problem) );
       this.router.navigate(['/question3']);
-    }
-    else{
-      alert("please enter a value");
+    } else {
+      this.emptyAnswerError = true;
+      setTimeout(() => this.emptyAnswerError = false, 1500);
     }
   }
 

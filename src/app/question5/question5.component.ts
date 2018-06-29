@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-
+import {Router } from '@angular/router';
 
 
 @Component({
@@ -15,6 +15,7 @@ import {CdkTextareaAutosize} from '@angular/cdk/text-field';
   styleUrls: ['./question5.component.css']
 })
 export class Question5Component implements OnInit {
+  emptyAnswerError = false;
   wordLimit = 120;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
@@ -23,7 +24,7 @@ export class Question5Component implements OnInit {
   modalRef: BsModalRef;
   wordnumber = false;
   words: number;
-  constructor(private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
+  constructor(private router : Router, private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
@@ -107,6 +108,10 @@ export class Question5Component implements OnInit {
     // Pitch Submition
     if(!!this.proof && !this.maxwordsError) {
       localStorage.setItem('question5', JSON.stringify(this.proof) );
+      this.router.navigate(['/reviewpage']);
+    } else {
+      this.emptyAnswerError = true;
+      setTimeout(() => this.emptyAnswerError = false, 1500);
     }
 
    

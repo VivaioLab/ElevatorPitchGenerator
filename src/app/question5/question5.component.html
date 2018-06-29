@@ -51,8 +51,11 @@
           <label>{{totalWords}}/{{wordLimit}}</label>
         </div>
         <div class="next-q5-button">
+          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
           <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
-          <button *ngIf="!maxwordsError" routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          <!--<button *ngIf="!maxwordsError" routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          Next </button>-->
+          <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
           Next </button>
         </div>
         <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>-->
