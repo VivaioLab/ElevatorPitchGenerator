@@ -25,15 +25,15 @@
         <br/>
       </button>
       <br/>
-      <button routerLink="/question4" routerLinkActive="active" class="index-button" disabled>
-        <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm"></mat-icon>
-        <label class="col-md-sm label-class" >Value</label>
+      <button routerLink="/question4" routerLinkActive="active" class="index-button" [disabled]="!isValid4">
+        <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid4}"></mat-icon>
+        <label class="col-md-sm" [ngClass]="{'label-class': !isValid4}">Value</label>
         <br/>
       </button>
       <br/>
-      <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
-        <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm"></mat-icon>
-        <label class="col-md-sm label-class" >Proof</label>
+      <button routerLink="/question5" routerLinkActive="active" class="index-button" [disabled]="!isValid5">
+        <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"></mat-icon>
+        <label class="col-md-sm" [ngClass]="{'label-class': !isValid5}">Proof</label>
         <br/>
       </button>
     </div>
