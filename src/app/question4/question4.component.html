@@ -31,9 +31,9 @@
             <br/>
           </button>
           <br/>
-          <button routerLink="/question5" routerLinkActive="active" class="index-button" disabled>
-            <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" ></mat-icon>
-            <label class="col-md-sm label-class" >Proof</label>
+          <button routerLink="/question5" routerLinkActive="active" class="index-button" [disabled]="!isValid5">
+            <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"></mat-icon>
+            <label class="col-md-sm label-class" [ngClass]="{'label-class': !isValid5}">Proof</label>
             <br/>
           </button>
         </div>

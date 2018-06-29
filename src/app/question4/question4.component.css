@@ -22,9 +22,21 @@ logoimage {
   color: white;
   width: 250px;
   display: block;
-
+}
+.label-class{
+  color: grey;
+}
+.activ-class{
+  background-color: white !important;
+  color: black !important;
 }
 .index-button{
+  background:transparent;
+  border:none;
+  padding-top:20px;
+  color: white !important;
+}
+.index-button:disabled{
   background:transparent;
   border:none;
   padding-top:20px;
