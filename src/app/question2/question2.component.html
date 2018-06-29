@@ -42,10 +42,10 @@
     <!--The content below is only a placeholder and can be replaced.-->
     <div class="container" id="question1">
       <form class="label2">
-        <label>I got really frustrated when</label>
+        <label>I noticed</label>
         <br/>
         <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
-        <textarea matInput [ngClass]="{'text-danger': maxwordsError}" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."
+        <textarea matInput [ngClass]="{'text-danger': maxwordsError}" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
@@ -79,10 +79,6 @@
         <img src="assets/images/problem icon.svg " height="62" width="62">
       </div>
     </div>
-    <p class="content popup">This is the moment to explain
-      <br/>your product of service. Think
-      <br/>about the problem you are solving!
-      <br/> Explain the benifites for the user(s). Try to
-      <br/>answer this is one sentance</p>
+    <p class="content popup">Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!</p>
   </div>
 </ng-template>
