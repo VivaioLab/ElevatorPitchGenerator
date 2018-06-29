@@ -22,9 +22,21 @@ logoimage {
   color: white;
   width: 250px;
   display: block;
-
+}
+.label-class{
+  color: grey;
+}
+.activ-class{
+  background-color: white !important;
+  color: black !important;
 }
 .index-button{
+  background:transparent;
+  border:none;
+  padding-top:20px;
+  color: white !important;
+}
+.index-button:disabled{
   background:transparent;
   border:none;
   padding-top:20px;
@@ -34,6 +46,9 @@ logoimage {
 }
 .index-button:before{
   border: none !important;
+}
+.index-button:focus {
+  outline: none;
 }
 .nav-icons{
   padding: 20px;

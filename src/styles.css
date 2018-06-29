@@ -8,3 +8,7 @@ mat-toolbar{
     background-color: white !important;
     color: black !important;
 }
+
+.nav-icons {
+    margin-right: 1rem;
+}
