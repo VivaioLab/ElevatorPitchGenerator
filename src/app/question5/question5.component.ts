@@ -30,7 +30,7 @@ export class Question5Component implements OnInit {
   isValid3 = false;
   isValid4 = false;
   isValid5 = false;
-  
+  review = false;
   constructor(private router : Router, private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
@@ -97,6 +97,15 @@ export class Question5Component implements OnInit {
     {
       this.isValid5 = true;
     }
+    if(JSON.parse(localStorage.getItem('question1')) && 
+    JSON.parse(localStorage.getItem('question2')) && 
+    JSON.parse(localStorage.getItem('question3')) &&
+    JSON.parse(localStorage.getItem('question4')) &&
+    JSON.parse(localStorage.getItem('question5')))
+ {
+   this.review = true;
+   console.log( "review" + this.review);
+ }
   }
   
   @Input()
@@ -123,6 +132,9 @@ export class Question5Component implements OnInit {
 
    
     console.log(localStorage.getItem('question5'));
+  }
+  reviewChanges(){
+    this.router.navigate(['/reviewpage']);
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

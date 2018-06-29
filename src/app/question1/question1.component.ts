@@ -26,6 +26,7 @@ export class Question1Component implements OnInit {
  isValid3 = false;
  isValid4 = false;
  isValid5 = false;
+ review = false;
  modalRef: BsModalRef;
   constructor(private router : Router,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer,private ngZone: NgZone,private modalService: BsModalService)
    {
@@ -111,12 +112,24 @@ export class Question1Component implements OnInit {
       this.isValid5 = true;
       console.log("question 3 =" + this.isValid5);
     }
+    if(JSON.parse(localStorage.getItem('question1')) && 
+       JSON.parse(localStorage.getItem('question2')) && 
+       JSON.parse(localStorage.getItem('question3')) &&
+       JSON.parse(localStorage.getItem('question4')) &&
+       JSON.parse(localStorage.getItem('question5')))
+    {
+      this.review = true;
+      console.log( "review" + this.review);
+    }
     
     }
 
-   
+    reviewChanges(){
+      this.router.navigate(['/reviewpage']);
+    }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
 }
+
 }

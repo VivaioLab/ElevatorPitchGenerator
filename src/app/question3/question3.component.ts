@@ -28,7 +28,7 @@ export class Question3Component implements OnInit {
   isValid3 = false;
   isValid4 = false;
   isValid5 = false;
-
+  review = false;
   modalRef: BsModalRef;
   constructor(private router : Router, private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
@@ -64,6 +64,7 @@ export class Question3Component implements OnInit {
     this.words = this.wor(this.solution);
     this.wordnumber = true;
   }
+  
   wor(s){
     let count =0;
     for(let i=0;i<s.length;i++)
@@ -97,6 +98,15 @@ export class Question3Component implements OnInit {
     {
       this.isValid5 = true;
     }
+    if(JSON.parse(localStorage.getItem('question1')) && 
+    JSON.parse(localStorage.getItem('question2')) && 
+    JSON.parse(localStorage.getItem('question3')) &&
+    JSON.parse(localStorage.getItem('question4')) &&
+    JSON.parse(localStorage.getItem('question5')))
+ {
+   this.review = true;
+   console.log( "review" + this.review);
+ }
   }
   
   @Input()
@@ -118,6 +128,9 @@ export class Question3Component implements OnInit {
       this.emptyAnswerError = true;
       setTimeout(() => this.emptyAnswerError = false, 1500);
     }
+  }
+  reviewChanges(){
+    this.router.navigate(['/reviewpage']);
   }
 
   openModal(template: TemplateRef<any>) {

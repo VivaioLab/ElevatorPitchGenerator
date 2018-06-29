@@ -35,7 +35,10 @@
           <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"     style="background-color: grey;" (click)="isValid5 && sidenavright.close()"  ></mat-icon>
           <label class="col-md-sm" [ngClass]="{'label-class': !isValid5}" >Proof</label>
           <br/>
-        </button>
+          
+        </button>  
+      </div>
+      <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
       </div>
     </mat-sidenav>
     <mat-sidenav-content>
