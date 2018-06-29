@@ -7,37 +7,37 @@
     </mat-toolbar-row>
   </mat-toolbar>
   <mat-sidenav-container autosize class="main">
-      <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-          <div style="padding-left:55px;">
-            <button routerLink="/question1" routerLinkActive="active" class="index-button">
-              <mat-icon svgIcon="name-icon" class="nav-icons col-md-sm" style="background-color: yellow;" (click)="sidenavright.close()"></mat-icon>
-              <label class="col-md-sm label-class" style="color:white;">Name</label>
-              <br/>
-            </button>
-            <button  class="index-button" disabled>
-              <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" ></mat-icon>
-              <label class="col-md-sm label-class" >Problem</label>
-              <br/>
-            </button>
-            <button class="index-button" disabled>
-              <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm"  ></mat-icon>
-              <label class="col-md-sm label-class" >Solution</label>
-              <br/>
-            </button>
-            <br/>
-            <button class="index-button" disabled>
-              <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" ></mat-icon>
-              <label class="col-md-sm label-class" >Value</label>
-              <br/>
-            </button>
-            <br/>
-            <button  class="index-button" disabled>
-              <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" ></mat-icon>
-              <label class="col-md-sm label-class" >Proof</label>
-              <br/>
-            </button>
-          </div>
-        </mat-sidenav>
+    <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
+      <div style="padding-left:55px;">
+        <button routerLink="/question1"   routerLinkActive="active" class="index-button">
+          <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+          <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Name</label>
+          <br/>
+        </button>
+        <button routerLink="/question2" routerLinkActive="active" [disabled] = "!isValid2" class="index-button">
+          <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm"  [ngClass]="{'activ-class': isValid2}"  style="background-color: grey;"  (click)="isValid2 && sidenavright.close()"></mat-icon>
+          <label class="col-md-sm " [ngClass]="{'label-class': !isValid2}" >Problem</label>
+          <br/>
+        </button>
+        <button class="index-button"  [disabled] = "!isValid3">
+          <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid3}"     style="background-color: grey;" (click)="isValid3 && sidenavright.close()" ></mat-icon>
+          <label class="col-md-sm " [ngClass]="{'label-class': !isValid3}" >Solution</label>
+          <br/>
+        </button>
+        <br/>
+        <button class="index-button" [disabled] = "!isValid4">
+          <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid4}"     style="background-color: grey;" (click)="isValid4 && sidenavright.close()" ></mat-icon>
+          <label class="col-md-sm" [ngClass]="{'label-class': !isValid4}" >Value</label>
+          <br/>
+        </button>
+        <br/>
+        <button class="index-button" [disabled] = "!isValid5">
+          <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"     style="background-color: grey;" (click)="isValid5 && sidenavright.close()"  ></mat-icon>
+          <label class="col-md-sm" [ngClass]="{'label-class': !isValid5}" >Proof</label>
+          <br/>
+        </button>
+      </div>
+    </mat-sidenav>
     <mat-sidenav-content>
         <div class="container" id="question1">
             <form class="label1">
@@ -49,9 +49,9 @@
               <br/>
               <br/>
               <div class="next-button">
-                <button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
-                    Next  </button>
-              </div>
+                  <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
+                     Next  </button>
+               </div>
               <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
             </form>
           </div>

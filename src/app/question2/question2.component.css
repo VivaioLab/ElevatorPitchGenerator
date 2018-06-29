@@ -1,6 +1,13 @@
 button{
   outline: none;
 }
+grey{
+  color: green !important;
+}
+.name-icon{
+  color: white !important;
+}
+
 logoimage {
 	width: 20%;
 	height: 10%;
@@ -13,6 +20,14 @@ logoimage {
   .icon-align{
 	margin-right: 40px;
   }
+  .activ-class{
+    background-color: white !important;
+    color: black !important;
+  }
+  .inactiv-class{
+    background-color: grey !important;
+    color: white !important;
+  }
 .main{
   background-color: white;
   color: black;
@@ -24,7 +39,16 @@ logoimage {
   display: block;
 
 }
+.label-class{
+  color: grey;
+}
 .index-button{
+  background:transparent;
+  border:none;
+  padding-top:20px;
+  color: white !important;
+}
+.index-button:disabled{
   background:transparent;
   border:none;
   padding-top:20px;

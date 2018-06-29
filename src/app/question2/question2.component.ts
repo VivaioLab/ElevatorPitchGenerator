@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import {CdkTextareaAutosize} from '@angular/cdk/text-field';
-
+import {Router } from '@angular/router';
 @Component({
   selector: 'app-question2',
   templateUrl: './question2.component.html',
@@ -19,8 +19,13 @@ export class Question2Component implements OnInit {
   problem:string;
   wordnumber = false;
   words: number;
+  isValid1 = false;
+  isValid2 = true;
+  isValid3 = false;
+  isValid4 = false;
+  isValid5 = false;
   modalRef: BsModalRef;
-  constructor(private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
+  constructor(private router : Router,private modalService: BsModalService,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
     this.matIconRegistry.addSvgIcon(
       "elevetorly-logo",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevatorlylogo.svg")
@@ -52,6 +57,7 @@ export class Question2Component implements OnInit {
   showWordCount(){
     this.words = this.wor(this.problem);
     this.wordnumber = true;
+    
   }
   wor(s){
     let count =0;
@@ -70,6 +76,26 @@ export class Question2Component implements OnInit {
     if(JSON.parse(localStorage.getItem('question2'))){
       this.problem=JSON.parse(localStorage.getItem('question2'));
     }
+    if(JSON.parse(localStorage.getItem('question1')))
+    {
+      this.isValid1 = true;
+      console.log("question 1 =" + this.isValid1);
+    }
+    if(JSON.parse(localStorage.getItem('question3')))
+    {
+      this.isValid3 = true;
+      console.log("question 3 =" + this.isValid3);
+    }
+    if(JSON.parse(localStorage.getItem('question4')))
+    {
+      this.isValid4 = true;
+      console.log("question 3 =" + this.isValid4);
+    }
+    if(JSON.parse(localStorage.getItem('question4')))
+    {
+      this.isValid5 = true;
+      console.log("question 3 =" + this.isValid5);
+    }
   }
   
   @Input()
@@ -86,6 +112,10 @@ export class Question2Component implements OnInit {
     
     if(!!this.problem && !this.maxwordsError) {
       localStorage.setItem('question2', JSON.stringify(this.problem) );
+      this.router.navigate(['/question3']);
+    }
+    else{
+      alert("please enter a value");
     }
   }
 
