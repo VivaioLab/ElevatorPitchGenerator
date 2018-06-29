@@ -41,8 +41,8 @@
   <mat-sidenav-content>
     <div class="container" id="question3">
       <form class="label3">
-        <label>With our product</label><br/>
-        <textarea matInput class="outline1" placeholder="You can collect money from friends for every occasion and buy gifts from our partners send it as a gift voucher or just transfer the money to your bank account. It's fast, easy and secure."
+        <label>The problem can be solved</label><br/>
+        <textarea matInput class="outline1" placeholder="with a subscription services business that will automatically replenish the supplies every time is needed"
           [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
         <br/>
@@ -68,16 +68,12 @@
     </button>
   </div>
   <div class="modal-body popup-body">
-    <h4 class="modal-title">Problem</h4>
+    <h4 class="modal-title">Solution</h4>
     <div style="text-align:center;padding-left:60px;">
       <div style="background-color:white; border-radius: 5.5rem;width: 7rem !important;height: 7rem !important;text-align:center;padding-top:27px; ">
         <img src="assets/images/problem icon.svg " height="62" width="62">
       </div>
     </div>
-    <p class="content popup">This is the moment to explain
-      <br/>your product of service. Think
-      <br/>about the problem you are solving!
-      <br/> Explain the benifites for the user(s). Try to
-      <br/>answer this is one sentance</p>
+    <p class="content popup">This is the moment to explain your product or service. Explain how you are solving the problem for the user(s).</p>
   </div>
 </ng-template>
