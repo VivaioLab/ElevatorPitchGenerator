@@ -839,8 +839,8 @@ logoimage {
 		position: relative;
 		text-align: center;
 		width: 100vw;
-		height: 60vh;
-		margin-top: 15vh;
+    height: calc(100vh - 150px - 20px - 50px);
+    margin-top: 20px;
 		
 			img {
 				position: absolute;
@@ -848,7 +848,7 @@ logoimage {
 				left: 50%;
 				height: 100%;
 				transform: translateX(-50%);
-				padding-left: 30px;
+				padding-left: 5vh;
 			}
 	}
 	.title-center {
