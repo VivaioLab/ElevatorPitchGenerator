@@ -96,6 +96,7 @@ input {
   text-align: left;    
 }
 textarea{
+  min-height: 230px;
   width: 100%;
   border: none; 
   border-bottom: 1px solid black;
@@ -105,7 +106,18 @@ textarea{
   outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
-    box-shadow: none;    
+    box-shadow: none;  
+    background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -moz-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -ms-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: -o-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-image: linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    background-size: 100% 31px;
+    /* border: 1px solid #ccc;
+    border-radius: 8px; */
+    border: none;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 29px;  
 }
 .modal-content{
   border: 20px solid white !important;
@@ -167,6 +179,7 @@ and (min-width : 1295px) {
   padding-right: 80px;
 }
   textarea{
+    min-height: 230px;
     width: 700px;
     border: none; 
     border-bottom: 1px solid black;
@@ -176,7 +189,19 @@ and (min-width : 1295px) {
     outline: none;
       -webkit-box-shadow: none;
       -moz-box-shadow: none;
-      box-shadow: none;    
+      box-shadow: none; 
+      background-image: -webkit-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -moz-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -ms-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: -o-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-image: linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+      background-size: 100% 31px;
+      /* border: 1px solid #ccc; */
+      /* border-radius: 8px;
+       */
+       border: none;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+      line-height: 29px;   
   }   
   
 }
