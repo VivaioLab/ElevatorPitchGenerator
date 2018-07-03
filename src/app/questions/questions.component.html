@@ -1,18 +1,65 @@
-<div class="container" id="question1">
-    <form class="label1">
-      <label class="content-margin">My name is</label>
-      <br/>
-      <textarea matInput placeholder="Santa Claus" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea> 
-      <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-      <br/>
-      <br/>
-      <br/>
-      <div class="next-button">
-          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-          <br>
-          <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
-             Next  </button>
-       </div>
-      <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
-    </form>
-  </div>
+<div class="container" *ngIf="isquestion1" id="question1">
+  <form class="label1">
+    <label class="content-margin">My name is :</label>
+    <textarea matInput placeholder="Santa Claus" [(ngModel)]="question1" name="question1" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"></textarea>
+    <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+    <div class="next-button">
+      <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+      <button type="button" (click)="saveChanges1()" mat-raised-button style="width:40%;">
+        Next </button>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="isquestion2" id="question1">
+  <form class="label1">
+    <label class="content-margin">I noticed that :</label>
+    <textarea matInput placeholder="Santa Claus" [(ngModel)]="question2" name="question2" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"></textarea>
+    <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+    <div class="next-button">
+      <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+      <button type="button" (click)="saveChanges2()" mat-raised-button style="width:40%;">
+        Next </button>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="isquestion3" id="question1">
+  <form class="label1">
+    <label class="content-margin">The problem can be solved :</label>
+    <textarea matInput placeholder="Santa Claus" [(ngModel)]="question3" name="question3" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"></textarea>
+    <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+    <div class="next-button">
+      <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+      <button type="button" (click)="saveChanges3()" mat-raised-button style="width:40%;">
+        Next </button>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="isquestion4" id="question1">
+  <form class="label1">
+    <label class="content-margin">In this way :</label>
+    <textarea matInput placeholder="Santa Claus" [(ngModel)]="question4" name="question4" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"></textarea>
+    <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+    <div class="next-button">
+      <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+      <button type="button" (click)="saveChanges4()" mat-raised-button style="width:40%;">
+        Next </button>
+    </div>
+  </form>
+</div>
+<div class="container" *ngIf="isquestion5" id="question1">
+  <form class="label1">
+    <label class="content-margin">Finally :</label>
+    <textarea matInput placeholder="Santa Claus" [(ngModel)]="question5" name="question5" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+      cdkAutosizeMinRows="1"></textarea>
+    <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+    <div class="next-button">
+      <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+      <button type="button" (click)="saveChanges5()" mat-raised-button style="width:40%;">
+        Next </button>
+    </div>
+  </form>
+</div>
