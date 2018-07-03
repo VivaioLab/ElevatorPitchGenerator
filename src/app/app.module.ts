@@ -20,6 +20,9 @@ import {ModalModule} from 'ngx-bootstrap/modal';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule, MatSidenavModule} from '@angular/material';
 import { FinalversionComponent } from './finalversion/finalversion.component';
+import { QuestionsComponent } from './questions/questions.component';
+import { Home2Component } from './home2/home2.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { FinalversionComponent } from './finalversion/finalversion.component';
     ThankyouComponent,
     ConfirmpageComponent,
     FinalversionComponent,
+    QuestionsComponent,
+    Home2Component,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

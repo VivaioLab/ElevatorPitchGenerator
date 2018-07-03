@@ -1,0 +1,10 @@
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenavright mode="push" position="end">
+    <app-sidenav  ></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+      <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+    <app-questions></app-questions>
+  </mat-sidenav-content>
+</mat-sidenav-container>

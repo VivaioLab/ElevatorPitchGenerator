@@ -1,14 +1,13 @@
-import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
-
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-home2',
+  templateUrl: './home2.component.html',
+  styleUrls: ['./home2.component.css']
 })
-export class NavComponent implements OnInit {
-  @Output() navToggle = new EventEmitter<boolean>();
+export class Home2Component implements OnInit {
+
   constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
       "elevetorly",
@@ -19,9 +18,6 @@ export class NavComponent implements OnInit {
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
     );
    }
-   navOpen() {
-    this.navToggle.emit(true);
-  }
 
   ngOnInit() {
   }

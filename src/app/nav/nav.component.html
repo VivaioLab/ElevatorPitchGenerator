@@ -1,20 +1,8 @@
-<!-- <nav>
-  <div class="nav-wrapper">
-    <a href="#" routerLink="/home" routerLinkActive="active" class="brand-logo"><img class="logoimage" src="../../assets/images/snpshpwp_logo.png"></a>
-    <ul id="nav-mobile" class="right hide-on-med-and-down">
-      
-        <li><a href="#" routerLink="/searchProduct" routerLinkActive="active"><i class="fa fa-search icon-align" aria-hidden="true"></i></a></li>
-        
-        <!-- <li><a class="waves-effect waves-light btn">Sign In </a></li> -->
-    <!-- </ul>
-  </div>
-  
-</nav>
-  --> 
-  <!-- <mat-toolbar >
-    <mat-toolbar-row>
-      <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
-      <span class="spacer"></span>
-      <mat-icon svgIcon="menu icon" class="menu_icon"></mat-icon>
-    </mat-toolbar-row>
-  </mat-toolbar> -->
+<mat-toolbar >
+  <mat-toolbar-row>
+      <!-- <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon> -->
+      <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
+    <span class="spacer"></span>
+    <mat-icon svgIcon="menu icon" class="menu_icon" (click)="navOpen()"></mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
