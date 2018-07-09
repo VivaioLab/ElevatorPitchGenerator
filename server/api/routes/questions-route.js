@@ -4,5 +4,7 @@ module.exports = function (app) {
    
     app.route('/questions')
     .post(questionsController.saveQuestions);
+    app.route('/getUser')
+    .get(questionsController.getUser);
 
 };
