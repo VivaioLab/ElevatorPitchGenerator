@@ -16,3 +16,13 @@ exports.saveQuestions = function (request, response) {
         };
         questionsService.addQuestions(params, callback);
 };
+
+exports.getUser = function (request, response)
+{
+
+    let callback = function (data) {
+        response.status(200);
+        response.json(data);
+    };
+    questionsService.getUser({}, callback);
+};

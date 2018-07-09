@@ -16,7 +16,7 @@ let throwError = function(error) {
 /**
  * Returns an array of sticky object matching the search parameters.
  *
- * @param {Object} userObj {Search parameters}
+ * 
  *
  * @param {function} callback {Sucess callback function}
  */
@@ -24,7 +24,7 @@ let throwError = function(error) {
 exports.addQuestions = function (params, callback) {
 
     let questions = new Questions(params.questions);
-    console.log(user);
+
     let resultCallback = function (err, questions) {
         if (err) {
             console.log('Saving Questions failed');
@@ -35,4 +35,13 @@ exports.addQuestions = function (params, callback) {
     }
     questions.save(resultCallback);
 
+};
+exports.getUser = function (params, callback) {
+    
+    let resultCallback = function (err, data) {
+        throwError(err);
+        callback(data);
+    };
+
+    Questions.find(params, resultCallback);
 };

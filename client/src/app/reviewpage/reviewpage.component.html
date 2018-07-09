@@ -59,7 +59,7 @@
         <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
         <div class="next-review-button">
           <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>-->
-          <button type="button" (click)="openModal(template)" style="float: right;" mat-raised-button style="width:40%;">
+          <button type="button" (click)="savToBackend() && openModal(template)" style="float: right;" mat-raised-button style="width:40%;">
             <i class="material-icons">Save</i>
           </button>
         </div>
