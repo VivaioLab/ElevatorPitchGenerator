@@ -1,12 +1,12 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <mat-toolbar-row>
     <!-- <mat-icon svgIcon="elevetorly" class="svg_icon" routerLink="/home" (click)="saveChangers();" routerLinkActive="active"></mat-icon> -->
-    <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
+    <!-- <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
     <span class="spacer"></span>
     <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()"></mat-icon>
   </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container autosize class="main">
+</mat-toolbar> -->
+<!-- <mat-sidenav-container autosize class="main">
   <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
     <div style="padding-left:55px;">
       <button routerLink="/question1" routerLinkActive="active" class="index-button">
@@ -40,32 +40,43 @@
   <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
   </div>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="container" id="question3">
-      <form class="label3">
-        <label class="content-margin">The problem can be solved</label><br/>
-        <textarea matInput class="outline1" placeholder="with a subscription services business that will automatically replenish the supplies every time is needed"
-          [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
-        <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-        <br/>
-        <br/>
-        <br/>
-        <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
-          <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
-          <label>{{totalWords}}/{{wordLimit}}</label>
-        </div>
-        <div class="next-q3-button">
-          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-          <br>
-          <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
-          <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
-            Next </button>
-        </div>
-      </form>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
-<ng-template #template style="border: 3px white;">
+  <mat-sidenav-content> -->
+<!-- 
+<mat-sidenav-container>
+    <mat-sidenav #sidenavright mode="push" position="end">
+      <app-sidenav  ></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+        <div class="container" id="question3">
+            <form class="label3">
+              <label class="content-margin">The problem can be solved</label><br/>
+              <textarea matInput class="outline1" placeholder="with a subscription services business that will automatically replenish the supplies every time is needed"
+                [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea>
+              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+              <br/>
+              <br/>
+              <br/>
+              <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+                <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+                <label>{{totalWords}}/{{wordLimit}}</label>
+              </div>
+              <div class="next-q3-button">
+                <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+                <br>
+                <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
+                <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+                  Next </button>
+              </div>
+            </form>
+          </div> -->
+      <!-- <app-question1></app-question1> -->
+    <!-- </mat-sidenav-content>
+  </mat-sidenav-container> -->
+    
+  <!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
+<!-- <ng-template #template style="border: 3px white;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
@@ -80,4 +91,57 @@
     </div>
     <p class="content popup">This is the moment to explain your product or service. Explain how you are solving the problem for the user(s).</p>
   </div>
+</ng-template> -->
+
+
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenavright mode="push" position="end">
+      <app-sidenav  ></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+        <div class="container" id="question1">
+            <form class="label1">
+              <label class="content-margin">The problem can be solved</label>
+              <br/>
+              <textarea matInput placeholder="with a subscription services business that will automatically replenish the supplies every time is needed" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
+              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+              <br/>
+              <br/>
+              <br/>
+              <div class="next-button">
+                  <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+                  <br>
+                  <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
+                     Next  </button>
+               </div>
+              <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
+            </form>
+          </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+<!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
+<ng-template #template style="border: 3px white;">
+  <div class="modal-header">
+    <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body popup-body">
+    <h4 class="modal-title">Solution</h4>
+    <div style="text-align:center;margin-top:10px;">
+      <label style="background-color:white; border-radius: 5.5rem;width: 7rem !important;height: 7rem !important;text-align:center;padding-top:27px; ">
+        <img src="assets/images/nameicon.svg " height="62" width="62">
+      </label>
+    </div>
+    <p class="content popup"> Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet! </p>
+  </div>
 </ng-template>
+
+
+   
+
+

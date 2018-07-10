@@ -19,16 +19,30 @@ logoimage {
 }
 .side-nav{
   background-color: black !important;
-  color: white;
+  color: white ;
   width: 250px;
   display: block;
+  
+}
+.review-button{
+margin-top: 20px;
+}
+.name-icon{
+  color: white !important;
 }
 .label-class{
   color: grey;
 }
+.review{
+  text-align: center !important;
+}
 .activ-class{
   background-color: white !important;
   color: black !important;
+}
+.inactiv-class{
+  background-color: grey !important;
+  color: white !important;
 }
 .index-button{
   background:transparent;
@@ -59,7 +73,9 @@ logoimage {
 .svg_icon{
 	width: 8rem !important;
 	height: auto !important;
-	padding: 10px;
+  padding: 10px !important;
+  color: black;
+  border: none;
   }
 mat-icon{
   width: 10%;
@@ -71,28 +87,29 @@ mat-icon.disabled {
 .questions{
   width: 3rem !important;
 }
-.label4{
+.label1{
   font-size: 20px;
   margin: 40px;
   font-family: 'Roboto Mono', monospace;
 }
 input { 
   border: none; 
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   overflow: auto;  
   font-size: 20px;  
-  text-align: center;    
+  text-align: left;    
 }
 textarea{
-  border: none; 
-  width: 100%;
-  border-bottom: 1px solid black;
+  width:100%;
+  border: none;  
+  /* border-bottom: 1px solid black; */
   overflow:hidden;
   font-size: 20px;  
+  text-align: left;
   outline: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;    
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;    
 }
 .modal-content{
   border: 20px solid white !important;
@@ -105,335 +122,23 @@ textarea{
   text-align: center;
   justify-content: initial;
 }
-.next-q4-button{
-  text-align:center;
-  /* padding-top: 160px; */
-}
-.btn-success {
-background-color: #25a08d;
-background-image: none;
-padding: 8px 50px;
-margin-top: 20px;
-border-radius: 40px;
-border: 1px solid #25a08d;
--webkit-transition: all ease 0.8s;
--moz-transition: all ease 0.8s;
-transition: all ease 0.8s;
-}
-.btn-success:focus, .btn-success:hover {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success.active {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success.active:hover {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success:active {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success:active:hover, .btn-success:active:focus {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.popup-body{
-  color: white;
-  background-color: black;
-  font-family: 'Roboto Mono', monospace;
-
-}
-.modal-title{
-  text-align: center;
-}
-
-.content{
-  text-align: center;
-}
-mat-icon{
-height: 10%;
-width: 10%;
-}
-
-@media only screen 
-and (min-width : 1224px) {
-  /* Styles */
-  mat-icon{
-    height: 4%;
-width: 4%;
-  }
-  .label{
-    font-size: 40px;
-    margin: 40px;
-    margin-top: 100px;
-    font-family: 'Roboto Mono', monospace;
-    
-}
-.content-margin{
-  padding-right: 80px;
-}
-input { 
-    border: none; 
-    border-bottom: 1px solid black;
-    overflow: auto;  
-    font-size: 40px;  
-    text-align: center;    
-  }
-  textarea{
-    border: none; 
-    border-bottom: 1px solid black;
-      
-    font-size: 40px;  
-  }
-}
-@media only screen 
-and (min-height : 560px){
-  .popup{
-    height: 240px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-height : 660px){
-  .next-q4-button{
-    text-align:center;
-    /* padding-top: 270px; */
-  }
-  .popup{
-    height: 340px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-height : 720px){
-  .next-button{
-    text-align:center;
-    /* padding-top: 320px; */
-  }
-  .popup{
-    height: 408px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-height : 800px){
-  .next-button{
-    text-align:center;
-    /* padding-top: 370px; */
-  }
-  .popup{
-    height: 483px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-width : 1000px){
-  .popup{
-    height: 368px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-.review-button{
-  margin-top: 20px;
-  }
-
-/* logoimage {
-	width: 20%;
-	height: 10%;
-  }
-  .menu_icon{
-	height: 2.5rem;
-	width: 4rem;
-	padding-right: 5px;
-  }
-  .icon-align{
-	margin-right: 40px;
-  }
-.main{
-  background-color: white;
-  color: black;
-}
-.side-nav{
-  background-color: black;
-  color: white;
-  width: 250px;
-  display: block;
-  text-align: center;
-}
-.nav-icons{
-  padding: 20px;
-  border-radius: 6rem;
-  width: 4rem;
-  height: auto;
-}
-.svg_icon{
-	width: 8rem;
-	height: auto;
-	padding: 10px;
-  }
-mat-icon{
-  width: 10%;
-}
-.label{
-  font-size: 20px;
-  margin: 40px;
-  margin-top: 100px;
-  font-family: 'Roboto Mono', monospace;
-}
-input { 
-  border: none; 
-  border-bottom: 1px solid black;
-  overflow: auto;  
-  font-size: 20px;  
-  text-align: center;    
-}
-textarea{
-  border: none; 
-  border-bottom: 1px solid black;
-  overflow:hidden;
-  font-size: 20px;  
-  text-align: center;
-  outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;    
-}
 .next-button{
   text-align:center;
-  padding-top: 300px;
-}
-
-.btn-success {
-background-color: #25a08d;
-background-image: none;
-padding: 8px 50px;
-margin-top: 20px;
-border-radius: 40px;
-border: 1px solid #25a08d;
--webkit-transition: all ease 0.8s;
--moz-transition: all ease 0.8s;
-transition: all ease 0.8s;
-}
-.btn-success:focus, .btn-success:hover {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success.active {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success.active:hover {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success:active {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
-}
-.btn-success:active:hover, .btn-success:active:focus {
-background-color: #25a08d;
-border-color: #25a08d;
-box-shadow: 0px 5px 35px -5px #25a08d;
-text-shadow: 0 0 8px #fff;
-color: #fff;
-outline: none;
+  /* padding-top: 210px; */
 }
 .popup-body{
   color: white;
   background-color: black;
   font-family: 'Roboto Mono', monospace;
+}
+.mat-drawer-container{
+  background-color: white;
 
 }
-.modal-title{
-  text-align: center;
+.content-margin{
+  color: black;
+  font-size: 20px;
 }
 
-.content{
-  text-align: center;
-}
-mat-icon{
-height: 10%;
-width: 10%;
-}
 
-@media only screen 
-and (min-width : 1224px) {
-  
-  mat-icon{
-    height: 4%;
-width: 4%;
-  }
-  .label{
-    font-size: 40px;
-    margin: 40px;
-    margin-top: 100px;
-    font-family: 'Roboto Mono', monospace;
-    
-}
-label{
-  padding-right: 80px;
-}
-input { 
-    border: none; 
-    border-bottom: 1px solid black;
-    overflow: auto;  
-    font-size: 40px;  
-    text-align: center;    
-  }
-  textarea{
-    border: none; 
-    border-bottom: 1px solid black;
-      
-    font-size: 40px;  
-    text-align: center;    
-  }
-} */
+
