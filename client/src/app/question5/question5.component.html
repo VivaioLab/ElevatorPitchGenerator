@@ -1,12 +1,12 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <mat-toolbar-row>
     <!-- <mat-icon svgIcon="elevetorly" routerLink="/home" routerLinkActive="active" class="svg_icon"></mat-icon> -->
-    <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
+    <!-- <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
     <span class="spacer"></span>
     <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()"></mat-icon>
   </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container autosize class="main">
+</mat-toolbar> -->
+<!-- <mat-sidenav-container autosize class="main">
     <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
         <div style="padding-left:55px;">
           <button routerLink="/question1" routerLinkActive="active" class="index-button">
@@ -40,32 +40,44 @@
       <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
       </div>
       </mat-sidenav>
-  <mat-sidenav-content>
-    <div class="container" id="question5">
-      <form class="label5">
-        <label class="content-margin">We are looking for  </label><br/>
-        <textarea matInput placeholder=" $10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers"
-          [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
-        <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-        <br/><br/><br/>
-        <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
-          <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
-          <label>{{totalWords}}/{{wordLimit}}</label>
-        </div>
-        <div class="next-q5-button">
-          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-          <br>
-          <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
-          <!--<button *ngIf="!maxwordsError" routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
-          Next </button>-->
-          <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
-          Next </button>
-        </div>
-        <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>-->
-     </form>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  <mat-sidenav-content> -->
+
+      <mat-sidenav-container>
+          <mat-sidenav #sidenavright mode="push" position="end">
+            <app-sidenav  ></app-sidenav>
+          </mat-sidenav>
+          <mat-sidenav-content>
+              <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+            <!-- <app-question1></app-question1> -->
+            <div class="container" id="question5">
+                <form class="label5">
+                  <label class="content-margin">We are looking for  </label><br/>
+                  <textarea matInput placeholder=" $10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers"
+                    [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea>
+                  <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+                  <br/><br/><br/>
+                  <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+                    <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+                    <label>{{totalWords}}/{{wordLimit}}</label>
+                  </div>
+                  <div class="next-q5-button">
+                    <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+                    <br>
+                    <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
+                    <!--<button *ngIf="!maxwordsError" routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+                    Next </button>-->
+                    <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+                    Next </button>
+                  </div>
+                  <!--<button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Review</button>-->
+               </form>
+              </div>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+
+    
+  <!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
 <ng-template #template style="border: 3px white;">
     <div class="modal-header">
       <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">

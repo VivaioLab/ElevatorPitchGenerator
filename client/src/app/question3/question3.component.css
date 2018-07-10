@@ -19,13 +19,22 @@ logoimage {
 }
 .side-nav{
   background-color: black !important;
-  color: white;
+  color: white ;
   width: 250px;
   display: block;
-
+  
+}
+.review-button{
+margin-top: 20px;
+}
+.name-icon{
+  color: white !important;
 }
 .label-class{
   color: grey;
+}
+.review{
+  text-align: center !important;
 }
 .activ-class{
   background-color: white !important;
@@ -64,7 +73,9 @@ logoimage {
 .svg_icon{
 	width: 8rem !important;
 	height: auto !important;
-	padding: 10px;
+  padding: 10px !important;
+  color: black;
+  border: none;
   }
 mat-icon{
   width: 10%;
@@ -76,25 +87,25 @@ mat-icon.disabled {
 .questions{
   width: 3rem !important;
 }
-.label3{
+.label1{
   font-size: 20px;
   margin: 40px;
-  margin-bottom: 13px;
   font-family: 'Roboto Mono', monospace;
 }
 input { 
   border: none; 
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   overflow: auto;  
   font-size: 20px;  
   text-align: left;    
 }
 textarea{
-  border: none; 
-  border-bottom: 1px solid black;
+  width:100%;
+  border: none;  
+  /* border-bottom: 1px solid black; */
   overflow:hidden;
   font-size: 20px;  
-  width: 100%;
+  text-align: left;
   outline: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
@@ -111,123 +122,23 @@ textarea{
   text-align: center;
   justify-content: initial;
 }
-.next-q3-button{
+.next-button{
   text-align:center;
-  /* padding-top: 250px; */
+  /* padding-top: 210px; */
 }
 .popup-body{
   color: white;
   background-color: black;
   font-family: 'Roboto Mono', monospace;
+}
+.mat-drawer-container{
+  background-color: white;
 
-}
-.modal-title{
-  text-align: center;
-}
-
-.content{
-  text-align: center;
-}
-mat-icon{
-height: 10%;
-width: 10%;
-}
-
-@media only screen 
-and (min-width : 1295px) {
-  /* Styles */
-  .next-q3-button{
-    text-align:center;
-    /* padding-top: 390px !important;
-     */
-    padding-bottom: 15px;
-  }
-  .side-nav{
-    background-color: black !important;
-    color: white;
-    width: 250px;
-    display: block;
-  
-  }
-  button{
-    outline: none !important;
-  }
-  .label2{
-    font-size: 20px;
-    margin: 40px;
-    font-family: 'Roboto Mono', monospace;  
 }
 .content-margin{
-  padding-right: 80px;
+  color: black;
+  font-size: 20px;
 }
-  textarea{
-    border: none; 
-    border-bottom: 1px solid black;
-    overflow:hidden;
-    font-size: 20px;  
-    outline: none;
-      -webkit-box-shadow: none;
-      -moz-box-shadow: none;
-      box-shadow: none;    
-  } 
-}
-@media only screen 
-and (min-height : 560px){
-  .popup{
-    height: 240px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-height : 660px){
-  .next-q3-button{
-    text-align:center;
-    /* padding-top: 330px; */
-  }
-  .popup{
-    height: 340px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-height : 720px){
-  .next-button{
-    text-align:center;
-    /* padding-top: 320px; */
-  }
-  .popup{
-    height: 408px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-height : 800px){
-  .next-button{
-    text-align:center;
-    /* padding-top: 370px; */
-  }
-  .popup{
-    height: 483px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-@media only screen 
-and (min-width : 1000px){
-  .popup{
-    height: 368px !important;
-    display: block;
-    text-align: center;
-    justify-content: initial;
-  }
-}
-.review-button{
-  margin-top: 20px;
-  }
+
+
+
