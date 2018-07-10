@@ -50,7 +50,7 @@
         <label class="content-margin">I noticed</label>
         <br/>
         <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
-        <textarea matInput [ngClass]="{'text-danger': maxwordsError}" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+        <textarea rows="5" cols="30" [ngClass]="{'text-danger': maxwordsError}" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
         <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
