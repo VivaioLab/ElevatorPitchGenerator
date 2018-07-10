@@ -142,5 +142,8 @@ textarea{
 .body{
   text-align: center;
 }
-
-
+.modal-title{
+  text-align: center;
+}
+.mat-drawer.mat-drawer-push  {background-color: black;
+}

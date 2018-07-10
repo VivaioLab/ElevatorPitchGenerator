@@ -1,37 +1,40 @@
 <div class="container nav-width">
     <button routerLink="/question1"   routerLinkActive="active" class="index-button">
-      <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+      <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Name</label>
       <br/>
     </button>
     <br/>
     <button routerLink="/question2"   routerLinkActive="active" class="index-button">
-      <mat-icon svgIcon="problem-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+      <mat-icon svgIcon="problem-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Problem</label>
       <br/>
     </button>
     <br/>
     <button routerLink="/question3"   routerLinkActive="active" class="index-button">
-      <mat-icon svgIcon="solution-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+      <mat-icon svgIcon="solution-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Solution</label>
       <br/>
     </button>
     <br/>
     <button routerLink="/question4"   routerLinkActive="active" class="index-button">
-      <mat-icon svgIcon="value-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+      <mat-icon svgIcon="value-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Value</label>
       <br/>
     </button>
     <br/>
     <button routerLink="/question5"   routerLinkActive="active" class="index-button">
-      <mat-icon svgIcon="proof-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
+      <mat-icon svgIcon="proof-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Proof</label>
       <br/>
     </button>
     <br/>
-    <button routerLink="/reviewpage"   routerLinkActive="active" class="index-button">
+    <br/>
+
+    <!-- <button routerLink="/reviewpage"   routerLinkActive="active" class="index-button">
       <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Review</label>
       <br/>
-    </button>
+    </button> -->
+    <button  mat-raised-button routerLink="/reviewpage"   routerLinkActive="active" class="index-button">Review</button>
 </div>
