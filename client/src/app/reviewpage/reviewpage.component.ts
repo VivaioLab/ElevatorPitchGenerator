@@ -22,9 +22,6 @@ export class ReviewpageComponent implements OnInit {
   modalRef: BsModalRef;
   questionsModel: Questions;
   ques: string;
-  count =0;
-  isUnique = false;
-  users;
   constructor(private questionService: QuestionsService,
     private modalService: BsModalService,
     private matIconRegistry: MatIconRegistry,
@@ -77,45 +74,23 @@ export class ReviewpageComponent implements OnInit {
     this.question4 = (localStorage.getItem('question4'));
     this.question5 = (localStorage.getItem('question5'));
 
-    this.questionService.getUsers().then(
-      data=>{
-        this.users = data;
-        
-        
-      }
-    )
   }
   
   savToBackend() {
    
     
     this.questionsModel = this.prepareSaveQuestions();
-    for(var i in this.users){
-      if(this.users[i].question1 == this.questionsModel.question1){
-        this.count++;
-        
-      }
-
-      if(this.count > 0){
-        this.isUnique = false;
-      }
-      else{
-        this.isUnique = true;
-      }
-    }
+  
     
     if (this.questionsModel) {
-      if(this.isUnique == true)
-      {
+     
         this.questionService.saveQuestions(this.questionsModel).then(
           data => {
-            this.isUnique == false;
+           
           }
         )
-      }
-      else{
-        alert("Already exists");
-      }
+      
+      
     
   }
   
