@@ -144,3 +144,17 @@ textarea{
 
 
 
+.corousel{
+  border-radius:5.5rem;
+  background: white;
+  box-shadow: 2px 2px 2px 2px grey; 
+  margin: 20px;
+  padding: 20px;
+  height: 6rem;
+  min-width: 6rem;
+  
+}
+.corr{
+  text-align: center;
+  
+}

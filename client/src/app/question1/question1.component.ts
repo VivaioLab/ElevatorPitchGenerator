@@ -29,36 +29,26 @@ export class Question1Component implements OnInit {
  review = false;
  modalRef: BsModalRef;
   constructor(private router : Router,private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer,private ngZone: NgZone,private modalService: BsModalService)
-   {
-    this.matIconRegistry.addSvgIcon(
-      "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevatorlylogo.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "menu icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "questions",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")
-    );
+{
+   
+   this.content();
+   this.matIconRegistry.addSvgIcon("problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg"));
+    
+  
+   
+ 
    }
-
+   content(){
+    this.matIconRegistry
+    .addSvgIcon("elevetorly",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevatorlylogo.svg"))
+    .addSvgIcon("menu icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg"))
+    .addSvgIcon("questions",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
+    .addSvgIcon("name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg"))
+    
+    .addSvgIcon("solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg"))
+    .addSvgIcon("value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg"))
+    .addSvgIcon("proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")); 
+   }
 
    saveChanges(){
     if(!!this.name) {
