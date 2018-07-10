@@ -1,12 +1,12 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <mat-toolbar-row>
     <!-- <mat-icon svgIcon="elevetorly-logo" class="svg_icon"></mat-icon> -->
-    <img src="assets/images/elevetorlylogo.svg" class="svg_icon" >
+    <!-- <img src="assets/images/elevetorlylogo.svg" class="svg_icon" >
     <span class="spacer"></span>
     <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()"></mat-icon>
   </mat-toolbar-row>
-</mat-toolbar>
-<mat-sidenav-container autosize class="main">
+</mat-toolbar>  -->
+<!-- <mat-sidenav-container autosize class="main">
   <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
     <div style="padding-left:55px;">
       <button routerLink="/question1"  [disabled] = "!isValid1" routerLinkActive="active" class="index-button">
@@ -21,21 +21,21 @@
       </button>
       <button routerLink="/question3" routerLinkActive="active" class="index-button" [disabled] = "!isValid3">
       <!--<button class="index-button"  [disabled] = "!isValid3">-->
-        <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid3}"     style="background-color: grey;" (click)="isValid3 && sidenavright.close()" ></mat-icon>
+        <!-- <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid3}"     style="background-color: grey;" (click)="isValid3 && sidenavright.close()" ></mat-icon>
         <label class="col-md-sm " [ngClass]="{'label-class': !isValid3}" >Solution</label>
         <br/>
       </button>
       <br/>
       <button routerLink="/question4" routerLinkActive="active" class="index-button" [disabled] = "!isValid4">
       <!--<button class="index-button" [disabled] = "!isValid4">-->
-        <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid4}"     style="background-color: grey;" (click)="isValid4 && sidenavright.close()" ></mat-icon>
+        <!-- <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid4}"     style="background-color: grey;" (click)="isValid4 && sidenavright.close()" ></mat-icon>
         <label class="col-md-sm" [ngClass]="{'label-class': !isValid4}" >Value</label>
         <br/>
       </button>
       <br/>
       <button routerLink="/question5" routerLinkActive="active" class="index-button" [disabled] = "!isValid5">
       <!--<button class="index-button" [disabled] = "!isValid5">-->
-        <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"     style="background-color: grey;" (click)="isValid5 && sidenavright.close()"  ></mat-icon>
+        <!-- <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"     style="background-color: grey;" (click)="isValid5 && sidenavright.close()"  ></mat-icon>
         <label class="col-md-sm" [ngClass]="{'label-class': !isValid5}" >Proof</label>
         <br/>
       </button>
@@ -43,36 +43,46 @@
   <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
   </div>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content> -->
     <!--The content below is only a placeholder and can be replaced.-->
-    <div class="container" id="question1">
-      <form class="label2">
-        <label class="content-margin">I noticed</label>
-        <br/>
-        <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
-        <textarea rows="5" cols="30" [ngClass]="{'text-danger': maxwordsError}" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
-          [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
-        <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
-        <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-        <br/>
-        <br/>
-        <br/>
-        <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
-          <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
-          <label>{{totalWords}}/{{wordLimit}}</label>
-        </div>
-        <div class="next-q2-button">
-          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-          <br>
-          <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
-          <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
-          Next </button>
-        </div>
-        <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
-      </form>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenavright mode="push" position="end">
+      <app-sidenav  ></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+        <div class="container" id="question1">
+            <form class="label2">
+              <label class="content-margin">I noticed</label>
+              <br/>
+              <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
+              <textarea rows="5" cols="30" [ngClass]="{'text-danger': maxwordsError}" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+                [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea>
+              <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
+              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+              <br/>
+              <br/>
+              <br/>
+              <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+                <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+                <label>{{totalWords}}/{{wordLimit}}</label>
+              </div>
+              <div class="next-q2-button">
+                <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+                <br>
+                <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
+                <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+                Next </button>
+              </div>
+              <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
+            </form>
+          </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+    
+  <!-- </mat-sidenav-content> -->
+<!-- </mat-sidenav-container> -->
 <ng-template #template style="border: 3px white;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">

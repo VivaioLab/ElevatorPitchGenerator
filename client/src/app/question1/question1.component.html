@@ -1,12 +1,12 @@
-<mat-toolbar >
+<!-- <mat-toolbar >
     <mat-toolbar-row>
         <!-- <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon> -->
-        <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
+        <!-- <img src="assets/images/elevetorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
       <span class="spacer"></span>
       <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()" ></mat-icon>
     </mat-toolbar-row>
-  </mat-toolbar>
-  <mat-sidenav-container autosize class="main">
+  </mat-toolbar> -->
+  <!-- <mat-sidenav-container autosize class="main">
     <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
       <div style="padding-left:55px;">
         <button routerLink="/question1"   routerLinkActive="active" class="index-button">
@@ -40,28 +40,37 @@
       </div>
       <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
       </div>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="container" id="question1">
-            <form class="label1">
-              <label class="content-margin">My name is</label>
-              <br/>
-              <textarea matInput placeholder="Santa Claus" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1"></textarea> 
-              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-              <br/>
-              <br/>
-              <br/>
-              <div class="next-button">
-                  <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-                  <br>
-                  <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
-                     Next  </button>
-               </div>
-              <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
-            </form>
-          </div>
-      </mat-sidenav-content>
-      </mat-sidenav-container>
+    </mat-sidenav> -->
+    <!-- <mat-sidenav-content> -->
+        <mat-sidenav-container>
+            <mat-sidenav #sidenavright mode="push" position="end">
+              <app-sidenav  ></app-sidenav>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+                <div class="container" id="question1">
+                    <form class="label1">
+                      <label class="content-margin">My name is</label>
+                      <br/>
+                      <textarea matInput placeholder="Santa Claus" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
+                      <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+                      <br/>
+                      <br/>
+                      <br/>
+                      <div class="next-button">
+                          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+                          <br>
+                          <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
+                             Next  </button>
+                       </div>
+                      <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
+                    </form>
+                  </div>
+            </mat-sidenav-content>
+          </mat-sidenav-container>
+       
+      <!-- </mat-sidenav-content>
+      </mat-sidenav-container> -->
       <ng-template #template style="border: 3px white;">
           <div class="modal-header">
             <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
