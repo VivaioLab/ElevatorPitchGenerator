@@ -139,6 +139,10 @@ textarea{
   color: black;
   font-size: 20px;
 }
-
+.modal-title{
+  text-align: center;
+}
+.mat-drawer.mat-drawer-push  {background-color: black;
+}
 
 

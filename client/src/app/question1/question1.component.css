@@ -27,9 +27,9 @@ logoimage {
 .review-button{
 margin-top: 20px;
 }
-.name-icon{
-  color: white !important;
-}
+/* .name-icon{
+  color: black !important;
+} */
 .label-class{
   color: grey;
 }
@@ -138,6 +138,8 @@ textarea{
 .content-margin{
   color: black;
   font-size: 20px;
+}
+.mat-drawer.mat-drawer-push  {background-color: black;
 }
 
 
