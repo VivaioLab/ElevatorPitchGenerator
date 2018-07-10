@@ -41,7 +41,7 @@
     <!--The content below is only a placeholder and can be replaced.-->
     <div class="container" id="reviewpage">
       <form class="label">
-        <p style="font-size: 15px;">
+        <p style="font-size: 20px;">
           My name is {{question1}}
           <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
 
@@ -57,9 +57,9 @@
 
         </p>
         <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
-        <div class="next-review-button">
+        <div class="next-review-button" style="padding-top:300px; align-items: center;">
           <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>-->
-          <button type="button" (click)="savToBackend() && openModal(template)" style="float: right;" mat-raised-button style="width:40%;">
+          <button type="button" (click)="savToBackend() && openModal(template)" style="float: right;" mat-raised-button style="width:40%; align-content: center;">
             <i class="material-icons">Save</i>
           </button>
         </div>
