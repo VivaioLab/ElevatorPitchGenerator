@@ -115,16 +115,17 @@ textarea{
   border: 20px solid white !important;
   border-radius: none;
   background-color: black;
-}
-.popup{
-  height: 470px !important;
-  display: block;
-  text-align: center;
-  justify-content: initial;
+  width: 100%;
 }
 .next-button{
   text-align:center;
   /* padding-top: 210px; */
+}
+.popup{
+  height: 500px !important;
+  display: block;
+  text-align: center;
+  justify-content: initial;
 }
 .popup-body{
   color: white;
