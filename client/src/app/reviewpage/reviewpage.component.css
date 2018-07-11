@@ -132,6 +132,7 @@ textarea{
   font-family: 'Roboto Mono', monospace;
 }
 .mat-drawer-container{
+  color: black!important;
   background-color: white;
 
 }
@@ -141,4 +142,12 @@ textarea{
 }
 
 .mat-drawer.mat-drawer-push  {background-color: black;
+}
+.next-button{
+  text-align:center;
+  /* padding-top: 210px; */
+}
+.container{
+  margin-top: 2rem;
+  /* margin-left: 4rem; */
 }
