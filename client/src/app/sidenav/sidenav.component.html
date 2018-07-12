@@ -1,31 +1,31 @@
 <div class="container nav-width">
-    <button [disabled] = "!isValid1"   routerLink="/question1" routerLinkActive="active">
-      <mat-icon svgIcon="name-icon"  [ngClass] ="{'current-class' : isCurrent1,'disable-class': !isValid1}"   class="corousel" (click)="sidenavright.close()"></mat-icon>
-      <label [ngClass]="{'current-class' : isCurrent1,'disable-class': !isValid1}">Name</label>
+    <button routerLink="/question1"   routerLinkActive="active" class="index-button">
+      <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
+      <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Name</label>
       <br/>
     </button>
     <br/>
-    <button [disabled] = "!isValid1"   routerLink="/question2" routerLinkActive="active">
-      <mat-icon svgIcon="problem-icon"  [ngClass] ="{'current-class' : isCurrent1,'disable-class': !isValid1}"   class="corousel" (click)="sidenavright.close()"></mat-icon>
-      <label [ngClass] ="{'current-class' : isCurrent2,'disable-class': !isValid1}">Problem</label>
+    <button routerLink="/question2"   routerLinkActive="active" class="index-button">
+      <mat-icon svgIcon="problem-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
+      <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Problem</label>
       <br/>
     </button>
     <br/>
-    <button [disabled] = "!isValid1"   routerLink="/question3" routerLinkActive="active">
-      <mat-icon svgIcon="solution-icon"  [ngClass] ="{'current-class' : isCurrent1,'disable-class': !isValid1}"   class="corousel" (click)="sidenavright.close()"></mat-icon>
-      <label [ngClass] ="{'current-class' : isCurrent3,'disable-class': !isValid1}">Solution</label>
+    <button routerLink="/question3"   routerLinkActive="active" class="index-button">
+      <mat-icon svgIcon="solution-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
+      <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Solution</label>
       <br/>
     </button>
     <br/>
-    <button [disabled] = "!isValid1"   routerLink="/question4" routerLinkActive="active">
-      <mat-icon svgIcon="value-icon"  [ngClass] ="{'current-class' : isCurrent1,'disable-class': !isValid1}"   class="corousel" (click)="sidenavright.close()"></mat-icon>
-      <label [ngClass] ="{'current-class' : isCurrent4,'disable-class': !isValid1}">Value</label>
+    <button routerLink="/question4"   routerLinkActive="active" class="index-button">
+      <mat-icon svgIcon="value-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
+      <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Value</label>
       <br/>
     </button>
     <br/>
-    <button [disabled] = "!isValid1"   routerLink="/question5" routerLinkActive="active">
-      <mat-icon svgIcon="proof-icon"  [ngClass] ="{'current-class' : isCurrent1,'disable-class': !isValid1}"   class="corousel" (click)="sidenavright.close()"></mat-icon>
-      <label [ngClass] ="{'current-class' : isCurrent5,'disable-class': !isValid1}">Proof</label>
+    <button routerLink="/question5"   routerLinkActive="active" class="index-button">
+      <mat-icon svgIcon="proof-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: grey;" (click)="sidenavright.close()"></mat-icon>
+      <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Proof</label>
       <br/>
     </button>
     <br/>

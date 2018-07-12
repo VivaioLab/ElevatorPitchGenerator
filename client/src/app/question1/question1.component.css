@@ -129,6 +129,7 @@ textarea{
 .popup-body{
   color: white;
   background-color: black;
+  height: 100%;
   font-family: 'Roboto Mono', monospace;
 }
 .mat-drawer-container{
