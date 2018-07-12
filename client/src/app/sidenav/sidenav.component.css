@@ -6,15 +6,39 @@ padding-left: 50px;
 /* background-color: black; */
 /* align-items: center; */
 }
-
+/* 
 .mat-raised-button{
     align-items: center; 
     background-color: white;
     color: black !important;
     margin-left: 10px;
-}
+} */
 .name-icon{
     background-color: white;
     color: black !important;
     
 }
+.corousel{
+    border: radius 4.5rem;
+    background: white;
+    box-shadow: 2px 2px 2px 2px grey; 
+    margin: 20px;
+    padding: 15px;
+    height: 5rem;
+    min-width: 5rem;
+    outline: none;
+    
+  }
+  button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.current-class{
+    background: green !important;
+}
+.disable-class{
+  background: grey ;
+  color : white;
+}
+
