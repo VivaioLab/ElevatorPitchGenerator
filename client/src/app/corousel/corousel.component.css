@@ -13,6 +13,18 @@
     text-align: center;
     
   }
+  button{
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.current-class{
+    background: green !important;
+}
+.disable-class{
+  background: grey ;
+  color : white;
+}
 
   @media only screen and (max-width: 750px) {
 
@@ -27,18 +39,7 @@
         outline: none;
         
       }
-      button{
-          background: transparent;
-          border: none;
-          outline: none;
-      }
-      .current-class{
-          background: green !important;
-      }
-      .disable-class{
-        background: grey ;
-        color : white;
-      }
+      
 }
   
   
