@@ -57,13 +57,10 @@
                       <br/>
                       <br/>
                       <br/>
-                      <div class="corr" >
-                          <img src="assets/images/problem icon.svg" routerLink="/home" routerLinkActive="active" class="corousel" >
-                          <img src="assets/images/nameicon.svg" routerLink="/home" routerLinkActive="active" class="corousel" >
-                          <img src="assets/images/solution.svg" routerLink="/home" routerLinkActive="active" class="corousel" >
-                          <img src="assets/images/value icon.svg" routerLink="/home" routerLinkActive="active" class="corousel" >
-                          <img src="assets/images/proof and ask.svg" routerLink="/home" routerLinkActive="active" class="corousel" > 
-                      </div>
+                    <div>
+                        <app-corousel [isCurrent1] = isCurrent ></app-corousel>
+                    </div>
+                    
                       <div class="next-button">
                           <label *ngIf="emptyAnswerError" class="text-danger" >Please enter a value</label>
                           <br>
