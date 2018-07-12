@@ -1,4 +1,4 @@
-<mat-toolbar>
+<!-- <mat-toolbar>
   <mat-toolbar-row>
     <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
     <span class="spacer"></span>
@@ -37,36 +37,49 @@
       </button>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content> -->
     <!--The content below is only a placeholder and can be replaced.-->
-    <div class="container" id="reviewpage">
-      <form class="label">
-        <p style="font-size: 20px;">
-          My name is {{question1}}
-          <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
+    <mat-sidenav-container>
+        <mat-sidenav #sidenavright mode="push" position="end">
+          <app-sidenav  ></app-sidenav>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+            <div class="container" id="reviewpage">
+                <form class="label1">
+                  <p style="font-size: 20px; width: 100%;">
+                    My name is {{question1}}
+                    <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
+          
+                    <br/> I noticed that {{question2}}
+                    <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit" src="assets/images/edit icon.svg" height="15"
+                      width="15">
+                    <br/> The problem can be solved {{question3}}
+                    <img routerLink="/question3" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
+                    <br/> In this way {{question4}}
+                    <img routerLink="/question4" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
+                    <br/> We are looking for {{question5}}
+                    <img routerLink="/question5" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
+          
+                  </p>
+                  <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
+               
+                </form>
+              </div>
+              <div class="next-button">
+                  <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>-->
+                  <!-- <button type="button" (click)="savToBackend() && openModal(template)" style="float: right;" mat-raised-button style="width:40%; align-content: center;">
+                    <i class="material-icons">Save</i> -->
+                    <button  type="button" (click)="savToBackend() && openModal(template)" style="float: right;" mat-raised-button style="width:40%;"> 
+                        Save
+        
+                  </button>
+                </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
 
-          <br/> I noticed that {{question2}}
-          <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit" src="assets/images/edit icon.svg" height="15"
-            width="15">
-          <br/> The problem can be solved {{question3}}
-          <img routerLink="/question3" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-          <br/> In this way {{question4}}
-          <img routerLink="/question4" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-          <br/> We are looking for {{question5}}
-          <img routerLink="/question5" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-
-        </p>
-        <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">Save</button>-->
-        <div class="next-review-button" style="padding-top:300px; align-items: center;">
-          <!--<button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">  Save  </button>-->
-          <button type="button" (click)="savToBackend() && openModal(template)" style="float: right;" mat-raised-button style="width:40%; align-content: center;">
-            <i class="material-icons">Save</i>
-          </button>
-        </div>
-      </form>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  <!-- </mat-sidenav-content>
+</mat-sidenav-container> -->
 <ng-template #template style="border: 3px #ffffff;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
