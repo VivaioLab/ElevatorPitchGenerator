@@ -17,6 +17,7 @@ export class Question2Component implements OnInit {
   emptyAnswerError = false;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   index = false;
+  isCurrent = true;
   problem:string;
   wordnumber = false;
   words: number;

@@ -12,7 +12,6 @@ import {FinalversionComponent} from './finalversion/finalversion.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component:HomeComponent, data: { state: 'home'}  },
-    // {path : 'home2', component : Home2Component, data: { state: 'home2'}},
     {path : 'question1', component : Question1Component, data: { state: 'question1'}},
     {path : 'question2', component : Question2Component, data: { state: 'question2'}},
     {path : 'question3', component : Question3Component, data: { state: 'question3'}},

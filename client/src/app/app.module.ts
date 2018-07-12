@@ -21,6 +21,7 @@ import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule, MatSidenavModule} from '@angular/material';
 import { FinalversionComponent } from './finalversion/finalversion.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { CorouselComponent } from './corousel/corousel.component';
 
 
 @NgModule({
@@ -37,9 +38,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     ThankyouComponent,
     ConfirmpageComponent,
     FinalversionComponent,
-    // QuestionsComponent,
-    // Home2Component,
     SidenavComponent,
+    CorouselComponent,
   ],
   imports: [
     BrowserModule,

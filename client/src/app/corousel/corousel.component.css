@@ -1,0 +1,44 @@
+.corousel{
+    border: radius 4.5rem;
+    background: white;
+    box-shadow: 2px 2px 2px 2px grey; 
+    margin: 20px;
+    padding: 15px;
+    height: 5rem;
+    min-width: 5rem;
+    outline: none;
+    
+  }
+  .corr{
+    text-align: center;
+    
+  }
+
+  @media only screen and (max-width: 750px) {
+
+    .corousel{
+        border-radius :2.5rem;
+        background: white;
+        box-shadow: 1px 1px 1px 1px grey; 
+        margin:2px;
+        padding: 4px;
+        height: 1.6rem;
+        min-width: 1.6rem;
+        outline: none;
+        
+      }
+      button{
+          background: transparent;
+          border: none;
+          outline: none;
+      }
+      .current-class{
+          background: green !important;
+      }
+      .disable-class{
+        background: grey !important;
+        color : white;
+      }
+}
+  
+  

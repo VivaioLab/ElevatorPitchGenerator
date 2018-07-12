@@ -15,6 +15,7 @@ import {Router } from '@angular/router';
   styleUrls: ['./question5.component.css']
 })
 export class Question5Component implements OnInit {
+  isCurrent = true;
   emptyAnswerError = false;
   wordLimit = 120;
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
