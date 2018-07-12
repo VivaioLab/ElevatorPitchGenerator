@@ -36,7 +36,7 @@
           background: green !important;
       }
       .disable-class{
-        background: grey !important;
+        background: grey ;
         color : white;
       }
 }
