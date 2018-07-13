@@ -12,7 +12,8 @@
     text-align: center;
     
   }
-  button{
+  .button-class{
+      padding:3px;
     background: transparent;
     border: none;
     outline: none;
@@ -31,9 +32,9 @@
         border-radius :2.5rem;
         box-shadow: 1px 1px 1px 1px grey; 
         margin:2px;
-        padding: 4px;
-        height: 1.6rem;
-        min-width: 1.6rem;
+        padding: 5px;
+        height: 2.0rem;
+        min-width: 2.0rem;
         outline: none;
         
       }
