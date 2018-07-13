@@ -41,4 +41,10 @@ padding-left: 50px;
   background: grey ;
   color : white;
 }
-
+.current-text{
+    color: green !important;
+}
+.disable-text{
+  
+  color : grey;
+}
