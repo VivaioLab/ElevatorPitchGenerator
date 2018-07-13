@@ -112,12 +112,13 @@ textarea{
     box-shadow: none;    
 }
 .modal-content{
+  min-height: -webkit-fill-available;
   border: 20px solid white !important;
   border-radius: none;
   background-color: black;
 }
 .popup{
-  height: 470px !important;
+  margin: 20px;
   display: block;
   text-align: center;
   justify-content: initial;
@@ -140,6 +141,7 @@ textarea{
   font-size: 20px;
 }
 .modal-title{
+  margin:20px;
   text-align: center;
 }
 .mat-drawer.mat-drawer-push  {background-color: black;
