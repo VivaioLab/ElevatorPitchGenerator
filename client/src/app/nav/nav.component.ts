@@ -11,10 +11,6 @@ export class NavComponent implements OnInit {
   @Output() navToggle = new EventEmitter<boolean>();
   constructor(private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon(
-      "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
       "menu icon",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
     );

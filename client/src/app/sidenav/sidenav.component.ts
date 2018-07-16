@@ -1,5 +1,7 @@
 import { Input, Component, OnInit} from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-sidenav',
@@ -19,12 +21,24 @@ export class SidenavComponent implements OnInit {
   isValid3 = false;
   isValid4 = false;
   isValid5 = false;
-  constructor() { }
+  constructor(private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer) {
+      this.content();
+     }
 
   ngOnInit() {
     this.onLoading();
+    
   }
-
+  content(){
+    this.matIconRegistry
+    .addSvgIcon("problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg"))
+    .addSvgIcon("questions",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
+    .addSvgIcon("name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg"))
+    .addSvgIcon("solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg"))
+    .addSvgIcon("value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg"))
+    .addSvgIcon("proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")); 
+   }
 onLoading()
 {
   if(localStorage.getItem("question1"))
