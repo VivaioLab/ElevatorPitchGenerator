@@ -1,6 +1,20 @@
 button{
   outline: none;
 }
+.text-center{
+  text-align: center;
+  height: 30px;
+}
+.validation{
+  font-size: 1rem;
+  animation: fadeinout 2s linear forwards;
+}
+
+
+@keyframes fadeinout {
+0%,100% { opacity: 0; }
+50% { opacity: 1; }
+}
 .form-control{
   margin-top: 20px;
   font-family: 'Roboto Mono', monospace;
@@ -106,7 +120,14 @@ input {
 }
 textarea{
   width:100%;
-  border: none;  
+  border: none; 
+  background-attachment: local;
+  background-attachment: local;
+    background-image:
+        linear-gradient(to right, white 10px, transparent 10px),
+        linear-gradient(to left, white 10px, transparent 10px),
+        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    line-height: 31px; 
   /* border-bottom: 1px solid black; */
   overflow:hidden;
   font-size: 20px;  

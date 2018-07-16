@@ -7,18 +7,22 @@
         <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
         <div class="container" id="question1">
             <form class="form-control">
+                <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
               <label class="content-margin">The problem can be solved</label>
+              
               <br/>
               <textarea matInput placeholder="with a subscription services business that will automatically replenish the supplies every time is needed" [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
-              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+             
               <br/>
               <br/>
+              <div class="text-center">
+                  <label *ngIf="emptyAnswerError" class="validation" >Please enter a value</label>
+              </div>
               <br/>
               <div>
                   <app-corousel [isCurrent3] = isCurrent></app-corousel>
               </div>
               <div class="next-button">
-                  <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
                   <br>
                   <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
                      Next  </button>
