@@ -36,5 +36,5 @@
       <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Review</label>
       <br/>
     </button> -->
-    <button  mat-raised-button routerLink="/reviewpage"   routerLinkActive="active" class="index-button">Review</button>
+    <button  mat-raised-button routerLink="/reviewpage" [disabled] = "!isReview" [ngClass] ="{'current-review' : isCurrentReview,'disable-review': !isReview}" class="review-class"   routerLinkActive="active">Review</button>
 </div>

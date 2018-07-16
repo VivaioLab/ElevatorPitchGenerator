@@ -17,6 +17,7 @@ export class CorouselComponent implements OnInit {
   isValid3 = false;
   isValid4 = false;
   isValid5 = false;
+  review = false;
   constructor() { }
 
   ngOnInit() {
@@ -44,6 +45,13 @@ export class CorouselComponent implements OnInit {
     if(localStorage.getItem("question5"))
     {
       this.isValid5 = true;
+    }
+    if (JSON.parse(localStorage.getItem('question1')) &&
+      JSON.parse(localStorage.getItem('question2')) &&
+      JSON.parse(localStorage.getItem('question3')) &&
+      JSON.parse(localStorage.getItem('question4')) &&
+      JSON.parse(localStorage.getItem('question5'))) {
+      this.review = true;
     }
   }
 }

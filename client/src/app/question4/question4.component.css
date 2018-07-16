@@ -1,6 +1,11 @@
 button{
   outline: none;
 }
+.form-control{
+  margin-top: 20px;
+  font-family: 'Roboto Mono', monospace;
+  border:none;
+}
 logoimage {
 	width: 20%;
 	height: 10%;

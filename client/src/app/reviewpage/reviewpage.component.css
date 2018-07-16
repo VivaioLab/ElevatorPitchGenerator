@@ -109,6 +109,13 @@ textarea{
     -moz-box-shadow: none;
     box-shadow: none;    
 }
+
+.form-control{
+  margin-top: 20px;
+  font-family: 'Roboto Mono', monospace;
+  border:none;
+  text-align: center;
+}
 .modal-content{
   border: 20px solid white !important;
   border-radius: none;
@@ -119,7 +126,7 @@ textarea{
   text-align:center;
 }
 .popup{
-  height: 500px !important;
+ 
   display: block;
   text-align: center;
   justify-content: initial;

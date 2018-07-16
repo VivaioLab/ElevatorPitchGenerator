@@ -48,3 +48,17 @@ padding-left: 50px;
   
   color : grey;
 }
+.disable-review{
+  
+    background-color : grey !important;
+    color: black  !important;
+  }
+  .current-review{
+    background-color: green !important;
+    color: white;
+  }
+  .review-class{
+      background: white;
+      color: black;
+  }
+

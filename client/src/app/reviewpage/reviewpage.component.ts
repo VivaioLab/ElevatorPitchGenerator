@@ -14,6 +14,7 @@ import { QuestionsService } from '../../service/questions.service';
   styleUrls: ['./reviewpage.component.css']
 })
 export class ReviewpageComponent implements OnInit {
+  isCurrent = true;
   question1: string;
   question2: string;
   question3: string;
@@ -34,11 +35,11 @@ export class ReviewpageComponent implements OnInit {
 
   }
   loading() {
-    this.question1 = (localStorage.getItem('question1'));
-    this.question2 = (localStorage.getItem('question2'));
-    this.question3 = (localStorage.getItem('question3'));
-    this.question4 = (localStorage.getItem('question4'));
-    this.question5 = (localStorage.getItem('question5'));
+    this.question1 = JSON.parse(localStorage.getItem('question1'));
+    this.question2 = JSON.parse(localStorage.getItem('question2'));
+    this.question3 = JSON.parse(localStorage.getItem('question3'));
+    this.question4 = JSON.parse(localStorage.getItem('question4'));
+    this.question5 = JSON.parse(localStorage.getItem('question5'));
   }
 
   savToBackend() {
