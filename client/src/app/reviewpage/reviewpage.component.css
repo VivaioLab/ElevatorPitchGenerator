@@ -114,7 +114,7 @@ textarea{
   margin-top: 20px;
   font-family: 'Roboto Mono', monospace;
   border:none;
-  text-align: center;
+  /* text-align: center; */
 }
 .modal-content{
   border: 20px solid white !important;
