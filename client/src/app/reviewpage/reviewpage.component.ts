@@ -21,88 +21,53 @@ export class ReviewpageComponent implements OnInit {
   question5: string;
   modalRef: BsModalRef;
   questionsModel: Questions;
-  ques: string;
   constructor(private questionService: QuestionsService,
     private modalService: BsModalService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
-      this.matIconRegistry.addSvgIcon(
-        "elevetorly",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "menu icon",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "questions",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "name-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "problem-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "solution-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "value-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "proof-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")
-      );
-      this.matIconRegistry.addSvgIcon(
-        "edit-icon",
-        this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg")
-      );
+    this.matIconRegistry.addSvgIcon("menu icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg"))
+      .addSvgIcon("edit-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"));
   }
 
   ngOnInit() {
-    this.ques = "Hi Vivaio Team"
-      + "My name is" + localStorage.getItem('question1')
-      + "Here is my pitch"
-      + "I got really frustrated when " + localStorage.getItem('question2') + "With our product " + localStorage.getItem('question3') + "Ultimately the biggest value for the customer is that " + localStorage.getItem('question4') + "Right now " + localStorage.getItem('question5')
-      + "looking forward to hearing from you."
-      + "Thanks"
-      + "Name:";
+    this.loading();
 
+  }
+  loading() {
     this.question1 = (localStorage.getItem('question1'));
     this.question2 = (localStorage.getItem('question2'));
     this.question3 = (localStorage.getItem('question3'));
     this.question4 = (localStorage.getItem('question4'));
     this.question5 = (localStorage.getItem('question5'));
+  }
 
-  }
-  
   savToBackend() {
-   
-    
+
+
     this.questionsModel = this.prepareSaveQuestions();
-  
-    
+
+
     if (this.questionsModel) {
-     
-        this.questionService.saveQuestions(this.questionsModel).then(
-          data => {
-           
-          }
-        )
-      
-      
-    
-  }
-  
+
+      this.questionService.saveQuestions(this.questionsModel).then(
+        data => {
+
+        }
+      )
+
+
+
+    }
+
   }
   prepareSaveQuestions(): Questions {
 
     const saveQues: Questions = {
-      question1: localStorage.getItem('question1'),
-      question2: localStorage.getItem('question2'),
-      question3: localStorage.getItem('question3'),
-      question4: localStorage.getItem('question4'),
-      question5: localStorage.getItem('question5')
+      question1: JSON.parse(localStorage.getItem('question1')),
+      question2: JSON.parse(localStorage.getItem('question2')),
+      question3: JSON.parse(localStorage.getItem('question3')),
+      question4: JSON.parse(localStorage.getItem('question4')),
+      question5: JSON.parse(localStorage.getItem('question5'))
     };
     return saveQues;
   }

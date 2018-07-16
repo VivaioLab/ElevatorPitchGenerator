@@ -1,5 +1,3 @@
-
-
 button{
   outline: none;
 }
@@ -29,9 +27,6 @@ logoimage {
 .review-button{
 margin-top: 20px;
 }
-/* .name-icon{
-  color: black !important;
-} */
 .label-class{
   color: grey;
 }
@@ -90,13 +85,12 @@ mat-icon.disabled {
   width: 3rem !important;
 }
 .label1{
-  font-size: 20px;
-  margin: 40px;
+  font-size: 18px;
+  margin: 20px;
   font-family: 'Roboto Mono', monospace;
 }
 input { 
   border: none; 
-  /* border-bottom: 1px solid black; */
   overflow: auto;  
   font-size: 20px;  
   text-align: left;    
@@ -104,7 +98,6 @@ input {
 textarea{
   width:100%;
   border: none;  
-  /* border-bottom: 1px solid black; */
   overflow:hidden;
   font-size: 20px;  
   text-align: left;
@@ -127,7 +120,6 @@ textarea{
 }
 .next-button{
   text-align:center;
-  /* padding-top: 210px; */
 }
 .modal-title{
   margin: 20px;

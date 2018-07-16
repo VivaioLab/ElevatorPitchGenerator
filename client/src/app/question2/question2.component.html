@@ -1,137 +1,33 @@
-<!-- <!-- <mat-toolbar>
-  <mat-toolbar-row>
-    <!-- <mat-icon svgIcon="elevetorly-logo" class="svg_icon"></mat-icon> -->
-    <!-- <img src="assets/images/elevetorlylogo.svg" class="svg_icon" >
-    <span class="spacer"></span>
-    <mat-icon svgIcon="menu icon" class="menu_icon" (click)="sidenavright.toggle()"></mat-icon>
-  </mat-toolbar-row>
-</mat-toolbar>  -->
-<!-- <mat-sidenav-container autosize class="main">
-  <mat-sidenav #sidenavright mode="push" position="end" class="side-nav">
-    <div style="padding-left:55px;">
-      <button routerLink="/question1"  [disabled] = "!isValid1" routerLinkActive="active" class="index-button">
-        <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon" [ngClass]="{'activ-class': isValid1}"     style="background-color: grey;" (click)="isValid1 && sidenavright.close()"></mat-icon>
-        <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Name</label>
-        <br/>
-      </button>
-      <button routerLink="/question2" routerLinkActive="active" class="index-button">
-        <mat-icon svgIcon="problem-icon" class="nav-icons col-md-sm" style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
-        <label class="col-md-sm " [ngClass]="{'label-class': !isValid2}" >Problem</label>
-        <br/>
-      </button>
-      <button routerLink="/question3" routerLinkActive="active" class="index-button" [disabled] = "!isValid3">
-      <!--<button class="index-button"  [disabled] = "!isValid3">-->
-        <!-- <mat-icon svgIcon="solution-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid3}"     style="background-color: grey;" (click)="isValid3 && sidenavright.close()" ></mat-icon>
-        <label class="col-md-sm " [ngClass]="{'label-class': !isValid3}" >Solution</label>
-        <br/>
-      </button>
-      <br/>
-      <button routerLink="/question4" routerLinkActive="active" class="index-button" [disabled] = "!isValid4">
-      <!--<button class="index-button" [disabled] = "!isValid4">-->
-        <!-- <mat-icon svgIcon="value-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid4}"     style="background-color: grey;" (click)="isValid4 && sidenavright.close()" ></mat-icon>
-        <label class="col-md-sm" [ngClass]="{'label-class': !isValid4}" >Value</label>
-        <br/>
-      </button>
-      <br/>
-      <button routerLink="/question5" routerLinkActive="active" class="index-button" [disabled] = "!isValid5">
-      <!--<button class="index-button" [disabled] = "!isValid5">-->
-        <!-- <mat-icon svgIcon="proof-icon" class="nav-icons col-md-sm" [ngClass]="{'activ-class': isValid5}"     style="background-color: grey;" (click)="isValid5 && sidenavright.close()"  ></mat-icon>
-        <label class="col-md-sm" [ngClass]="{'label-class': !isValid5}" >Proof</label>
-        <br/>
-      </button>
-  </div>
-  <div class="review"> <button [disabled] = "!review" (click)="review && reviewChanges() && sidenavright.close()"class="btn  review-button">Review</button>
-  </div>
-  </mat-sidenav>
-  <mat-sidenav-content> -->
-    <!--The content below is only a placeholder and can be replaced.-->
-
-<!-- <mat-sidenav-container>
-    <mat-sidenav #sidenavright mode="push" position="end">
-      <app-sidenav  ></app-sidenav>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
-        <div class="container" id="question1">
-            <form class="label2">
-              <label class="content-margin">I noticed</label>
-              <br/>
-              <!-- <textarea [(ngModel)] = "problem" name = "problem" cols="40" rows="4" class="notes" placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone."></textarea> -->
-              <!-- <textarea rows="5" cols="30" [ngClass]="{'text-danger': maxwordsError}" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
-                [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea>
-              <!--<input [(ngModel)] = "problem" name = "problem" type="text" width=100% placeholder="a couple of months ago I wanted to collect some money from friends for a birthday gift. It was really frustrating because Ihad to advance the money and buy the gift alone." /><br />-->
-              <!-- <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-              <br/>
-              <br/>
-              <br/>
-              <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
-                <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
-                <label>{{totalWords}}/{{wordLimit}}</label>
-              </div>
-              <div class="next-q2-button">
-                <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-                <br>
-                <button *ngIf="maxwordsError" class="btn-danger disabled" mat-raised-button style="width:40%;">Refactor your answer</button>
-                <button *ngIf="!maxwordsError" type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
-                Next </button>
-              </div> -->
-              <!--<button routerLink="/question3" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
-            <!-- </form>
-          </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-     -->
-  <!-- </mat-sidenav-content> -->
-<!-- </mat-sidenav-container> -->
-<!-- <ng-template #template style="border: 3px white;">
-  <div class="modal-header">
-    <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body popup-body">
-    <h4 class="modal-title">Problem</h4>
-    <div style="text-align:center;margin-top:10px;">
-      <label style="background-color:white; border-radius: 5.5rem;width: 7rem !important;height: 7rem !important;text-align:center;padding-top:27px; ">
-        <img src="assets/images/problem icon.svg " height="62" width="62">
-      </label>
-    </div>
-    <p class="content popup">Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!</p>
-  </div>
-</ng-template> --> 
-
 <mat-sidenav-container>
-    <mat-sidenav #sidenavright mode="push" position="end">
-      <app-sidenav [isCurrent2] = isCurrent  ></app-sidenav>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
-        <div class="container" id="question1">
-            <form class="label1">
-              <label class="content-margin">I noticed</label>
-              <br/>
-              <textarea matInput placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap" [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
-              <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-              <br/>
-              <br/>
-              <br/>
-              <div>
-                  <app-corousel [isCurrent2] = isCurrent></app-corousel>
-              </div>
-              <div class="next-button">
-                  <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
-                  <br>
-                  <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
-                     Next  </button>
-               </div>
-              <!--<button routerLink="/question2" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block">next</button>-->
-            </form>
-          </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+  <mat-sidenav #sidenavright mode="push" position="end">
+    <app-sidenav [isCurrent2]=i sCurrent></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+    <div class="container" id="question1">
+      <form class="label1">
+        <label class="content-margin">I noticed</label>
+        <br/>
+        <textarea matInput placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+          [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="6"></textarea>
+        <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+        <br/>
+        <br/>
+        <br/>
+        <div>
+          <app-corousel [isCurrent2]=i sCurrent></app-corousel>
+        </div>
+        <div class="next-button">
+          <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+          <br>
+          <button type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+            Next </button>
+        </div>
+      </form>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
-<!-- </mat-sidenav-content>
-</mat-sidenav-container> -->
 <ng-template #template style="border: 3px white;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
@@ -148,8 +44,3 @@
     <p class="content popup"> Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet! </p>
   </div>
 </ng-template>
-
-
-   
-
-
