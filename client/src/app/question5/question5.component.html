@@ -7,18 +7,22 @@
           <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
           <div class="container" id="question1">
               <form class="form-control">
+                  <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
                 <label class="content-margin">We are looking for</label>
                 <br/>
                 <textarea matInput placeholder="$10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers" [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="7"></textarea> 
-                <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+                
                 <br/>
                 <br/>
+                <div class="text-center">
+                    <label *ngIf="emptyAnswerError" class="validation" >Please enter a value</label>
+                </div>
                 <br/>
                 <div>
                     <app-corousel [isCurrent5] = isCurrent></app-corousel>
                 </div>
                 <div class="next-button">
-                    <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>
+                    
                     <br>
                     <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
                        Next  </button>
