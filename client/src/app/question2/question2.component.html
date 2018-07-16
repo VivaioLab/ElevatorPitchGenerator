@@ -1,11 +1,11 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenavright mode="push" position="end">
-    <app-sidenav [isCurrent2]=i sCurrent></app-sidenav>
+    <app-sidenav [isCurrent2]= isCurrent></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
     <div class="container" id="question1">
-      <form class="label1">
+      <form class="form-control">
         <label class="content-margin">I noticed</label>
         <br/>
         <textarea matInput placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
@@ -15,7 +15,7 @@
         <br/>
         <br/>
         <div>
-          <app-corousel [isCurrent2]=i sCurrent></app-corousel>
+          <app-corousel [isCurrent2]= isCurrent></app-corousel>
         </div>
         <div class="next-button">
           <label *ngIf="emptyAnswerError" class="text-danger">Please enter a value</label>

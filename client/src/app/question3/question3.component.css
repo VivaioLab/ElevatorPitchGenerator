@@ -5,6 +5,11 @@ logoimage {
 	width: 20%;
 	height: 10%;
   }
+  .form-control{
+    margin-top: 20px;
+    font-family: 'Roboto Mono', monospace;
+    border:none;
+  }
   .menu_icon{
 	height: 2.5rem;
 	width: 4rem;

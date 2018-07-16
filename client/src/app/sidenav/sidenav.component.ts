@@ -16,11 +16,13 @@ export class SidenavComponent implements OnInit {
   @Input('isCurrent3') isCurrent3 : boolean;
   @Input('isCurrent4') isCurrent4 : boolean;
   @Input('isCurrent5') isCurrent5 : boolean;
+  @Input('isCurrentReview') isCurrentReview : boolean;
   isValid1 = false;
   isValid2 = false;
   isValid3 = false;
   isValid4 = false;
   isValid5 = false;
+  isReview = false;
   constructor(private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
       this.content();
@@ -61,5 +63,12 @@ onLoading()
   {
     this.isValid5 = true;
   }
+  if (JSON.parse(localStorage.getItem('question1')) &&
+      JSON.parse(localStorage.getItem('question2')) &&
+      JSON.parse(localStorage.getItem('question3')) &&
+      JSON.parse(localStorage.getItem('question4')) &&
+      JSON.parse(localStorage.getItem('question5'))) {
+      this.isReview = true;
+    }
 }
 }
