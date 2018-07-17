@@ -1,3 +1,19 @@
+.button-width{
+  width: 12em;
+}
+.popup-image{
+  background-color:white;
+  border-radius: 5.5rem;
+  text-align:center;
+  padding:15px;
+}
+.content{
+  text-align:center;margin-top:10px;
+}
+.image-size{
+  height: 3rem;
+  width: 3rem;
+}
 button{
   outline: none;
 }

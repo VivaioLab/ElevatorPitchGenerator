@@ -1,57 +1,50 @@
-        <mat-sidenav-container>
-            <mat-sidenav #sidenavright mode="push" position="end">
-              <app-sidenav [isCurrent1] = isCurrent  ></app-sidenav>
-            </mat-sidenav>
-            <mat-sidenav-content>
-                <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
-                <div class="container" id="question1">
-                    <form class="form-control" required >
-                       
-                        <br/>
-                      <label class="content-margin">My name is</label>
-                      <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
-                      <br/>
-                      
-                      <textarea matInput placeholder="Santa Claus" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5" required></textarea> 
-                      
-                      <br/>
-                      <div class="text-center">
-                          <label *ngIf="emptyAnswerError" class="validation" >Please enter a value</label>
-                      </div>
-                      <br/>
-                      <br/>
-                    <div>
-                        <app-corousel [isCurrent1] = isCurrent ></app-corousel>
-                    </div>
-                    
-                      <div class="next-button">
-                          
-                          <br>
-                          <button  type="button" (click)="saveChanges()" mat-raised-button style="width:40%;"> 
-                             Next  </button>
-                       </div>
-                    </form>
-                  </div>
-            </mat-sidenav-content>
-          </mat-sidenav-container>
-
-          
-      <ng-template #template style="border: 3px white;">
-          <div class="modal-header">
-            <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body popup-body" >
-            <h4 class="modal-title">Name</h4>
-            <div style="text-align:center;margin-top:10px;">
-              <label style="background-color:white; border-radius: 5.5rem;text-align:center;padding:15px;">
-                <img src="assets/images/nameicon.svg " style="height: 3rem;width: 3rem;">
-              </label>
-            </div>
-            <p class="content popup"> Did you really ask for more info about your Name?! :) </p>
-          </div>
-        </ng-template>
+<mat-sidenav-container>
+  <mat-sidenav #sidenavright mode="push" position="end">
+    <app-sidenav [isCurrent1]=i sCurrent></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+    <div class="container" id="question1">
+      <form class="form-control" required>
+        <br/>
+        <label class="content-margin">My name is</label>
+        <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
+        <br/>
+        <textarea matInput placeholder="Santa Claus" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="5" required></textarea>
+        <br/>
+        <div class="text-center">
+          <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
+        </div>
+        <br/>
+        <br/>
+        <div>
+          <app-corousel [isCurrent1]=i sCurrent></app-corousel>
+        </div>
+        <div class="next-button">
+          <br>
+          <button type="button" (click)="saveChanges()" mat-raised-button class="button-width">
+            Next </button>
+        </div>
+      </form>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 
 
-           
+<ng-template #template style="border: 3px white;">
+  <div class="modal-header">
+    <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body popup-body">
+    <h4 class="modal-title">Name</h4>
+    <div class="content">
+      <label class="popup-image">
+        <img src="assets/images/nameicon.svg " class="image-size" >
+      </label>
+    </div>
+    <p class="content popup"> Did you really ask for more info about your Name?! :) </p>
+  </div>
+</ng-template>

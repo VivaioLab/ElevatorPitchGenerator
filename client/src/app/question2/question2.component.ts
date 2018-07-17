@@ -28,7 +28,6 @@ export class Question2Component implements OnInit {
 
   wordLimit = 120;
   emptyAnswerError = false;
-  index = false;
   isCurrent = true;
   problem: string;
   wordnumber = false;

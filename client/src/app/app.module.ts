@@ -19,7 +19,6 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
 import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule, MatSidenavModule} from '@angular/material';
-import { FinalversionComponent } from './finalversion/finalversion.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CorouselComponent } from './corousel/corousel.component';
 
@@ -37,7 +36,6 @@ import { CorouselComponent } from './corousel/corousel.component';
     ReviewpageComponent,
     ThankyouComponent,
     ConfirmpageComponent,
-    FinalversionComponent,
     SidenavComponent,
     CorouselComponent,
   ],

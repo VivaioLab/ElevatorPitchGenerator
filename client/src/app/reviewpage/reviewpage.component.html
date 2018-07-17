@@ -25,7 +25,7 @@
                 </form>
               </div>
               <div class="next-button">
-                    <button  type="button" (click)="savToBackend();openModal(template)" style="float: right;" mat-raised-button style="width:40%;"> 
+                    <button  type="button" (click)="savToBackend();openModal(template)"  mat-raised-button class="button-width"> 
                         Save
                   </button>
                 </div>
@@ -47,7 +47,7 @@
           <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch.%0D%0DI noticed that {{question2}}.%0DThe problem can be solved {{question3}}.%0DIn this way {{question4}}.%0DWe are looking for {{question5}}.%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>
         </button>
       </div>
-      <p style="text-align: center;padding-top: 10px;">or</p>
+      <p class="content">or</p>
       <div style="text-align:center;">
         <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="modalRef.hide()" mat-raised-button style="width:70%;">
         No!Keep Editing </button>

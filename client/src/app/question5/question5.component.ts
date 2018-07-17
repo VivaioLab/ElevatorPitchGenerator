@@ -25,14 +25,12 @@ export class Question5Component implements OnInit {
     return this.totalWords > this.wordLimit;
   }
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
-  value: string;
   proof: string;
   words: number;
   modalRef: BsModalRef;
   wordLimit = 120;
   isCurrent = true;
   emptyAnswerError = false;
-  index = false;
   wordnumber = false;
   isValid1 = false;
   isValid2 = false;
