@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenavright mode="push" position="end">
-    <app-sidenav [isCurrent2]=i sCurrent></app-sidenav>
+    <app-sidenav [isCurrent2]= isCurrent></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
@@ -19,7 +19,7 @@
         </div>
         <br/>
         <div>
-          <app-corousel [isCurrent2]=i sCurrent></app-corousel>
+          <app-corousel [isCurrent2]= isCurrent></app-corousel>
         </div>
         <div class="next-button">
           <br>
