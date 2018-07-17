@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenavright mode="push" position="end">
-    <app-sidenav [isCurrent2]= isCurrent></app-sidenav>
+    <app-sidenav [isCurrent2]=i sCurrent></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
@@ -11,19 +11,19 @@
         <br/>
         <textarea matInput placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="6"></textarea>
-        
+
         <br/>
         <br/>
         <div class="text-center">
-            <label *ngIf="emptyAnswerError" class="validation" >Please enter a value</label>
+          <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
         </div>
         <br/>
         <div>
-          <app-corousel [isCurrent2]= isCurrent></app-corousel>
+          <app-corousel [isCurrent2]=i sCurrent></app-corousel>
         </div>
         <div class="next-button">
           <br>
-          <button type="button" (click)="saveChanges()" mat-raised-button style="width:40%;">
+          <button type="button" (click)="saveChanges()" mat-raised-button class="button-width">
             Next </button>
         </div>
       </form>
@@ -39,9 +39,9 @@
   </div>
   <div class="modal-body popup-body">
     <h4 class="modal-title">Problem</h4>
-    <div style="text-align:center;margin-top:10px;">
-      <label style="background-color:white; border-radius: 5.5rem;text-align:center;padding:15px; ">
-        <img src="assets/images/nameicon.svg " style="height: 3rem;width: 3rem;">
+    <div class="content">
+      <label class="popup-image">
+        <img src="assets/images/nameicon.svg " class="image-size">
       </label>
     </div>
     <p class="content popup"> Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet! </p>

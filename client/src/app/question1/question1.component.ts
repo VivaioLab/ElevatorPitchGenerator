@@ -17,9 +17,8 @@ export class Question1Component implements OnInit {
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   isCurrent = true;
   emptyAnswerError = false;
-  index = false;
   name: string;
-  show = true;
+
   wordnumber = false;
   words: number;
   isValid1 = true;
@@ -67,10 +66,6 @@ export class Question1Component implements OnInit {
     }
     return count + 1;
   }
-
-
-
-
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

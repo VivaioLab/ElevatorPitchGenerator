@@ -30,7 +30,6 @@ export class Question4Component implements OnInit {
   modalRef: BsModalRef;
   wordnumber = false;
   emptyAnswerError = false;
-  index = false;
   isCurrent = true;
   isValid1 = false;
   isValid2 = false;

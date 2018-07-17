@@ -1,34 +1,21 @@
   <mat-toolbar >
     <mat-toolbar-row>
       <mat-icon svgIcon="elevetorly" class="svg_icon"></mat-icon>
-      <span class="spacer"></span>
-     
+      <span class="spacer"></span> 
     </mat-toolbar-row>
   </mat-toolbar>
-
         <div class="container" id="question5">
             <mat-icon svgIcon="thanks" class="thanks"></mat-icon>
-           <form class="label">
-              
+           <form class="label">           
              <label>for using elevatorly<br/> We hope it would be helpful to you. <br/><br/>Do you want to create a new pitch?</label><br/>
-             <!--<input [(ngModel)] = "proof" name = "proof" type="text"  placeholder="after 3 months we have 100 beta users on our platform and gained real interestom some big retail companies" /><br />-->
-            <!-- <button routerLink="/thankyou" routerLinkActive="active" type="button" (click)="saveChanges()" class="btn btn-success btn-lg btn-block"></button><br/>-->
             <div style="text-align:center;padding:10px;">
-                <button type="button" routerLink="/question1" style="float: center;" mat-raised-button style="width:80%;" (click)="clearAll()"> Yes! Create Now   </button>
+                <button type="button" routerLink="/question1" style="float: center;" mat-raised-button class="button-size" (click)="clearAll()"> Yes! Create Now   </button>
              </div> 
              <a href="url" routerLink="/home" (click)="clearAll()" style="color: grey">No! Thank You</a>
-            <!-- <button type="button" (click)="openModal(template)" style="float: center;" class="btn btn-danger">
-                <i class="material-icons">Yes Email To Me</i>
-                </button><br/> -->
-             
            </form>
          </div>
- 
-      <!--The content below is only a placeholder and can be replaced.-->
-     
        <ng-template #template>
-          <div class="modal-header">
-            
+          <div class="modal-header"> 
             <button type="button" class="close" aria-label="Close" (click)="modalRef.hide()">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -36,13 +23,8 @@
           <div class="modal-body popup-body">
               <h4 class="modal-title">Email</h4><br/>
               <input type="text" name="email" size="19">
-            <!--<p class="content">This is the moment to explain <br/>your product of service. Think <br/>about the problem you are solving!<br/> Explain the benifites for the user(s). Try to <br/>answer this is one sentance</p>-->
-              
-              
-            </div>
-        
+            </div> 
           <div class="modal-footer">
-             <!-- <button type="button" class="btn btn-success" id="addImageButton" (click)="add(imgUrl.value, imgDesc.value)">Add Image</button>-->
               <button routerLink="/confirmpage" routerLinkActive="active"type="button" class="btn btn-danger" (click)="modalRef.hide()">Send</button>
           </div>
         </ng-template>

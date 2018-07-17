@@ -32,7 +32,6 @@ export class Question3Component implements OnInit {
   solution: string;
   isCurrent = true;
   emptyAnswerError = false;
-  index = false;
   wordnumber = false;
   isValid1 = false;
   isValid2 = false;

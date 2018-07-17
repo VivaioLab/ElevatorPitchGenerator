@@ -16,21 +16,8 @@ export class ThankyouComponent implements OnInit {
   modalRef: BsModalRef;
   ques:string;
   constructor(private modalService: BsModalService, private matIconRegistry: MatIconRegistry,private domSanitizer: DomSanitizer) { 
-    this.matIconRegistry.addSvgIcon(
-      "elevetorly",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevetorlylogo.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "menu icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "thanks",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/thanks.svg")
-    );
-    this.matIconRegistry.addSvgIcon(
-      "problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg")
-    );
+    this.matIconRegistry.addSvgIcon("elevetorly",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/elevatorlylogo.svg"))
+    .addSvgIcon("thanks",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/thanks.svg"));
   }
   @ViewChild('autosize') autosize : CdkTextareaAutosize;
 

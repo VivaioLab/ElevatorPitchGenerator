@@ -1,3 +1,11 @@
+.button-width{
+  width: 12em;
+}
+
+.content{
+  text-align:center;margin-top:10px;
+}
+
 button{
   outline: none;
 }
