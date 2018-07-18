@@ -6,8 +6,8 @@ import {Questions} from '../model/questionsModel';
   providedIn: 'root'
 })
 export class QuestionsService {
-  questionsURL ='http://localhost:3000/questions';
-  getUserURL = "http://localhost:3000/getUser"
+  questionsURL ='/questions';
+  getUserURL = "/getUser"
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) {
