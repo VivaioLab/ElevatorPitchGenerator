@@ -6,8 +6,8 @@ import {Questions} from '../model/questionsModel';
   providedIn: 'root'
 })
 export class QuestionsService {
-  questionsURL ='/questions';
-  getUserURL = "/getUser"
+  questionsURL ='https://salty-temple-18987.herokuapp.com/questions';
+  getUserURL = "https://salty-temple-18987.herokuapp.com/getUser";
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) {
