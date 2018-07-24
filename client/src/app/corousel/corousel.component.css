@@ -19,10 +19,10 @@
     outline: none;
 }
 .current-class{
-    background: green !important;
+    background: #ac48 !important;
 }
 .disable-class{
-  background: grey ;
+  background: #cccccc ;
   color : white;
 }
 
@@ -30,7 +30,7 @@
 
     .corousel{
         border-radius :2.5rem;
-        box-shadow: 1px 1px 1px 1px grey; 
+        box-shadow: 1px 1px 1px 1px  #cccccc; 
         margin:2px;
         padding: 5px;
         height: 2.0rem;
@@ -44,7 +44,7 @@
 
   .corousel{
       border-radius :2.5rem;
-      box-shadow: 1px 1px 1px 1px grey; 
+      box-shadow: 1px 1px 1px 1px  #cccccc; 
       margin:5px;
       padding: 6px;
       height: 2.5rem;

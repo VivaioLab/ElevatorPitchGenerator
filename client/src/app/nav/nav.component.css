@@ -1,7 +1,5 @@
-.svg_icon{
-	width: 8.5rem !important;
-	height: auto !important;
-  color: black;
-  border: none;
-  outline: none;
+.menu_icon{
+	height: 2.5rem;
+	width: 4rem;
+	padding-right: 5px;
   }

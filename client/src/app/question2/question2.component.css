@@ -1,5 +1,18 @@
 .button-width{
   width: 12em;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+  font-size: 16px;
+  background-color: black;
+  color: white;
+  border: 1.5px solid black;
+}
+.empty-text-button{
+  color: gray !important;
+  background-color: white !important;
+  border: 1.5px solid #ccc !important;
+  box-shadow: none !important;
+  outline: none;
 }
 .popup-image{
   background-color:white;
@@ -39,11 +52,6 @@ button{
 logoimage {
 	width: 20%;
 	height: 10%;
-  }
-  .menu_icon{
-	height: 2.5rem;
-	width: 4rem;
-	padding-right: 5px;
   }
   .icon-align{
 	margin-right: 40px;
@@ -166,6 +174,7 @@ textarea{
   justify-content: initial;
 }
 .next-button{
+  margin-bottom: 2rem;
   text-align:center;
   /* padding-top: 210px; */
 }

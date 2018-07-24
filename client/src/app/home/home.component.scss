@@ -104,7 +104,7 @@
 		position: relative;
 		text-align: center;
 		width: 100vw;
-    height: calc(100vh - 150px - 20px - 50px);
+    height: calc(91vh - 150px - 20px - 50px);
     margin-top: 20px;
 		
 			img {
@@ -118,5 +118,15 @@
 		}
 	.text-center{
 		text-align: center;
+	}
+
+	.logo-class{
+		margin-top: 1rem;
+	}
+	.button-margin{
+		margin-top: 2.2em;
+	}
+	.image-class{
+		width: 14rem;
 	}
 		

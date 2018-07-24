@@ -1,6 +1,4 @@
-.button-width{
-  width: 12em;
-}
+
 .popup-image{
   background-color:white;
   border-radius: 5.5rem;
@@ -39,11 +37,6 @@ button{
 logoimage {
 	width: 20%;
 	height: 10%;
-  }
-  .menu_icon{
-	height: 2.5rem;
-	width: 4rem;
-	padding-right: 5px;
   }
   .icon-align{
 	margin-right: 40px;
@@ -161,6 +154,7 @@ textarea{
   justify-content: initial;
 }
 .next-button{
+  margin-bottom: 2rem;
   text-align:center;
 }
 .modal-title{
@@ -199,4 +193,21 @@ textarea{
 .corr{
   text-align: center;
   
+}
+.button-width{
+  width: 12em;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+  font-size: 16px;
+  border: 1.5px solid black;
+  background-color: black;
+  color: white;
+ 
+}
+.empty-text-button{
+  color: gray !important;
+  background-color: white !important;
+  border: 1.5px solid #ccc !important;
+  box-shadow: none !important;
+  outline: none;
 }
