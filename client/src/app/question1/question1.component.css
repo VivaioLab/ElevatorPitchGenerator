@@ -154,8 +154,16 @@ textarea{
   justify-content: initial;
 }
 .next-button{
-  margin-bottom: 2rem;
+  background-color: white;
+  opacity: 80%;
+  padding-bottom: 2rem;
   text-align:center;
+}
+.modal-backdrop.show{
+  opacity: 0.1;
+}
+.modal-header{
+  border-bottom: none;
 }
 .modal-title{
   margin: 20px;

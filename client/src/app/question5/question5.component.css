@@ -175,9 +175,10 @@ textarea{
   justify-content: initial;
 }
 .next-button{
+  background-color: white;
+  opacity: 80%;
+  padding-bottom: 2rem;
   text-align:center;
-  margin-bottom: 2rem;
-  /* padding-top: 210px; */
 }
 .popup-body{
   color: white;
