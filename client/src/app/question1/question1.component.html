@@ -21,9 +21,7 @@
           <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
           
         </div>
-        <br/>
-        <br/>
-      
+
         <div>
           <app-corousel [isCurrent1]= isCurrent></app-corousel>
         </div>
@@ -41,7 +39,7 @@
 <ng-template #template style="border: 3px white;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true"><mat-icon svgIcon="close-popup"></mat-icon></span>
     </button>
   </div>
   <div class="modal-body popup-body">

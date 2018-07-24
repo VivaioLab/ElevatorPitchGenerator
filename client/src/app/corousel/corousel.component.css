@@ -26,26 +26,38 @@
   color : white;
 }
 
-  @media only screen and (max-width: 400px) {
-
+.corr-name{
+  color: #cccccc;
+  text-align: center;
+  font-size: 1rem;
+}
+  @media only screen and (max-width: 365px) {
+    .corr-name{
+      text-align: center;
+      font-size: 0.65rem;
+      color: #cccccc;
+    }
     .corousel{
         border-radius :2.5rem;
         box-shadow: 1px 1px 1px 1px  #cccccc; 
-        margin:2px;
+        margin:5.5px;
         padding: 5px;
-        height: 2.0rem;
-        min-width: 2.0rem;
+        height: 2.2rem;
+        min-width: 2.2rem;
         outline: none;
         
       }
       
 }
-@media only screen and  (min-width: 400px) and (max-width: 650px) {
-
+@media only screen and  (min-width: 365px) and (max-width: 650px) {
+  .corr-name{
+    text-align: center;
+    font-size: 0.7rem;
+  }
   .corousel{
       border-radius :2.5rem;
       box-shadow: 1px 1px 1px 1px  #cccccc; 
-      margin:5px;
+      margin:8px;
       padding: 6px;
       height: 2.5rem;
       min-width: 2.5rem;
