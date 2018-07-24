@@ -31,6 +31,7 @@ export class Question2Component implements OnInit {
   isCurrent = true;
   problem: string;
   wordnumber = false;
+  buttonIsDisabled:boolean=true;
   words: number;
   isValid1 = false;
   isValid2 = true;
@@ -40,10 +41,7 @@ export class Question2Component implements OnInit {
   review = false;
   modalRef: BsModalRef;
   constructor(private router: Router, private modalService: BsModalService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon(
-      "menu icon",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg")
-    );
+
     this.matIconRegistry.addSvgIcon(
       "questions",
       this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg")
@@ -57,16 +55,34 @@ export class Question2Component implements OnInit {
   wor(s) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
-      if (s[i] === " " || s[i] === "," || s[i] === "." || s[i] === "\n" || s[i] === "  ") {
-        count = count + 1;
+      if (s[i] !== " ") {
+        if (s[i] !== ",") {
+          if (s[i] !== "  ") {
+            if (s[i] !== "\n") {
+              if (s[i] !== ".") {
+                count = count + 1;
+              } 
+            }
+          }
+        }
       }
     }
     return count + 1;
   }
+  
+  onTextEnter(event : string) : void {
+    this.buttonIsDisabled =true;
+    let passedString = event;
+   if (/\S/.test(passedString)) {
+       this.buttonIsDisabled=false;
+   }
+  }
+
 
   loading() {
     if (JSON.parse(localStorage.getItem('question2'))) {
       this.problem = JSON.parse(localStorage.getItem('question2'));
+      this.buttonIsDisabled = false;
     }
     if (JSON.parse(localStorage.getItem('question1'))) {
       this.isValid1 = true;
@@ -96,7 +112,7 @@ export class Question2Component implements OnInit {
 
   saveChanges() {
 
-    if (!!this.problem && !this.maxwordsError) {
+    if (!!this.problem && !this.maxwordsError && !this.buttonIsDisabled) {
       localStorage.setItem('question2', JSON.stringify(this.problem));
       this.router.navigate(['/question3']);
     } else {

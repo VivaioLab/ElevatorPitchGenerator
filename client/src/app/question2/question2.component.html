@@ -9,21 +9,23 @@
         <label class="content-margin">I noticed</label>
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
         <br/>
-        <textarea matInput placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+        <textarea matInput (ngModelChange)="onTextEnter($event)" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="6"></textarea>
-
-        <br/>
-        <br/>
-        <div class="text-center">
+          <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+            <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+            <label>{{totalWords}}/{{wordLimit}}</label>
+          </div>
+          <div class="text-center">
           <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
+          
         </div>
         <br/>
         <div>
           <app-corousel [isCurrent2]= isCurrent></app-corousel>
         </div>
-        <div class="next-button">
+        <div class="next-button fixed-bottom">
           <br>
-          <button type="button" (click)="saveChanges()" mat-raised-button class="button-width">
+          <button type="button"  [ngClass]="{'empty-text-button': buttonIsDisabled}"  (click)="saveChanges()" mat-raised-button class="button-width">
             Next </button>
         </div>
       </form>

@@ -32,6 +32,7 @@ export class Question3Component implements OnInit {
   solution: string;
   isCurrent = true;
   emptyAnswerError = false;
+  buttonIsDisabled:boolean=true;
   wordnumber = false;
   isValid1 = false;
   isValid2 = false;
@@ -56,11 +57,27 @@ export class Question3Component implements OnInit {
     this.wordnumber = true;
   }
 
+  onTextEnter(event : string) : void {
+    this.buttonIsDisabled = true;
+    let passedString = event;
+   if (/\S/.test(passedString)) {
+       this.buttonIsDisabled=false;
+   }
+  }
+
   wor(s) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
-      if (s[i] === " " || s[i] === "," || s[i] === "." || s[i] === "\n" || s[i] === "  ") {
-        count = count + 1;
+      if (s[i] !== " ") {
+        if (s[i] !== ",") {
+          if (s[i] !== "  ") {
+            if (s[i] !== "\n") {
+              if (s[i] !== ".") {
+                count = count + 1;
+              } 
+            }
+          }
+        }
       }
     }
     return count + 1;
@@ -69,6 +86,7 @@ export class Question3Component implements OnInit {
   ngOnInit() {
     this.wordnumber = false;
     this.loading();
+
 
   }
   loading() {
@@ -80,6 +98,7 @@ export class Question3Component implements OnInit {
     }
     if (JSON.parse(localStorage.getItem('question3'))) {
       this.isValid3 = true;
+      this.buttonIsDisabled = false;
     }
     if (JSON.parse(localStorage.getItem('question4'))) {
       this.isValid4 = true;
@@ -100,7 +119,7 @@ export class Question3Component implements OnInit {
 
   saveChanges() {
 
-    if (!!this.solution && !this.maxwordsError) {
+    if (!!this.solution && !this.maxwordsError && !this.buttonIsDisabled) {
       localStorage.setItem('question3', JSON.stringify(this.solution));
       this.router.navigate(['/question4']);
     } else {

@@ -24,6 +24,7 @@ export class Question4Component implements OnInit {
     return this.totalWords > this.wordLimit;
   }
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
+  buttonIsDisabled:boolean=true;
   wordLimit = 120;
   value: string;
   words: number;
@@ -46,11 +47,26 @@ export class Question4Component implements OnInit {
     this.words = this.wor(this.value);
     this.wordnumber = true;
   }
+  onTextEnter(event : string) : void {
+    this.buttonIsDisabled =true;
+    let passedString = event;
+   if (/\S/.test(passedString)) {
+       this.buttonIsDisabled=false;
+   }
+  }
   wor(s) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
-      if (s[i] === " " || s[i] === "," || s[i] === "." || s[i] === "\n" || s[i] === "  ") {
-        count = count + 1;
+      if (s[i] !== " ") {
+        if (s[i] !== ",") {
+          if (s[i] !== "  ") {
+            if (s[i] !== "\n") {
+              if (s[i] !== ".") {
+                count = count + 1;
+              } 
+            }
+          }
+        }
       }
     }
     return count + 1;
@@ -73,6 +89,7 @@ export class Question4Component implements OnInit {
     }
     if (JSON.parse(localStorage.getItem('question4'))) {
       this.isValid4 = true;
+      this.buttonIsDisabled = false;
     }
     if (JSON.parse(localStorage.getItem('question4'))) {
       this.isValid5 = true;
@@ -90,7 +107,7 @@ export class Question4Component implements OnInit {
 
   saveChanges() {
 
-    if (!!this.value && !this.maxwordsError) {
+    if (!!this.value && !this.maxwordsError && !this.buttonIsDisabled) {
       localStorage.setItem('question4', JSON.stringify(this.value));
       this.router.navigate(['/question5']);
     } else {

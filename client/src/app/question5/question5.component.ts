@@ -37,6 +37,7 @@ export class Question5Component implements OnInit {
   isValid3 = false;
   isValid4 = false;
   isValid5 = false;
+  buttonIsDisabled:boolean=true;
   review = false;
   constructor(private router: Router, private modalService: BsModalService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
     this.matIconRegistry.addSvgIcon("menu icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg"))
@@ -49,8 +50,16 @@ export class Question5Component implements OnInit {
   wor(s) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
-      if (s[i] === " " || s[i] === "," || s[i] === "." || s[i] === "\n" || s[i] === "  ") {
-        count = count + 1;
+      if (s[i] !== " ") {
+        if (s[i] !== ",") {
+          if (s[i] !== "  ") {
+            if (s[i] !== "\n") {
+              if (s[i] !== ".") {
+                count = count + 1;
+              } 
+            }
+          }
+        }
       }
     }
     return count + 1;
@@ -60,10 +69,18 @@ export class Question5Component implements OnInit {
     this.wordnumber = false;
     this.loading();
   }
+  onTextEnter(event : string) : void {
+    this.buttonIsDisabled =true;
+    let passedString = event;
+   if (/\S/.test(passedString)) {
+       this.buttonIsDisabled=false;
+   }
+  }
 
   loading() {
     if (JSON.parse(localStorage.getItem('question5'))) {
       this.proof = JSON.parse(localStorage.getItem('question5'));
+      this.buttonIsDisabled=false;
     }
     if (JSON.parse(localStorage.getItem('question1'))) {
       this.isValid1 = true;
@@ -76,6 +93,7 @@ export class Question5Component implements OnInit {
     }
     if (JSON.parse(localStorage.getItem('question4'))) {
       this.isValid5 = true;
+      
     }
     if (JSON.parse(localStorage.getItem('question1')) &&
       JSON.parse(localStorage.getItem('question2')) &&
@@ -92,7 +110,7 @@ export class Question5Component implements OnInit {
     // white-space: pre-line;
     // pitch@vivaiolab.com
     // Pitch Submition
-    if (!!this.proof && !this.maxwordsError) {
+    if (!!this.proof && !this.maxwordsError && !this.buttonIsDisabled) {
       localStorage.setItem('question5', JSON.stringify(this.proof));
       this.router.navigate(['/reviewpage']);
     } else {

@@ -1,4 +1,4 @@
-import { Component, OnInit, NgZone, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core'
+import { Component, OnInit,Input, NgZone, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core'
 import { FormControl, FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
@@ -14,12 +14,22 @@ import { Router } from '@angular/router';
 
 })
 export class Question1Component implements OnInit {
+  @Input()
+  get totalWords() {
+    return this.wor(this.name || '') - 1;
+  }
+
+  @Input()
+  get maxwordsError() {
+    return this.totalWords > this.wordLimit;
+  }
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   isCurrent = true;
   emptyAnswerError = false;
   name: string;
-
+  buttonIsDisabled:boolean=true;
   wordnumber = false;
+  wordLimit = 120;
   words: number;
   isValid1 = true;
   isValid2 = false;
@@ -30,8 +40,7 @@ export class Question1Component implements OnInit {
   modalRef: BsModalRef;
 
   constructor(private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
-    this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
-      .addSvgIcon("menu icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg"));
+    this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"));
   }
 
   ngOnInit() {
@@ -41,7 +50,7 @@ export class Question1Component implements OnInit {
   }
 
   saveChanges() {
-    if (!!this.name) {
+    if (!!this.name && !this.buttonIsDisabled) {
       localStorage.setItem('question1', JSON.stringify(this.name));
       this.router.navigate(['/question2']);
     } else {
@@ -50,22 +59,40 @@ export class Question1Component implements OnInit {
     }
   }
 
-  reviewChanges() {
-    this.router.navigate(['/reviewpage']);
-  }
   showWordCount() {
     this.words = this.wor(this.name);
     this.wordnumber = true;
   }
+
+  onTextEnter(event : string) : void {
+    this.buttonIsDisabled = true;
+    let passedString = event;
+   if (/\S/.test(passedString)) {
+       this.buttonIsDisabled=false;
+   }
+  }
+
   wor(s) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
-      if (s[i] === " " || s[i] === "," || s[i] === "." || s[i] === "\n" || s[i] === "  ") {
-        count = count + 1;
+      if (s[i] !== " ") {
+        if (s[i] !== ",") {
+          if (s[i] !== "  ") {
+            if (s[i] !== "\n") {
+              if (s[i] !== ".") {
+                count = count + 1;
+              } 
+            }
+          }
+        }
       }
     }
     return count + 1;
   }
+  reviewChanges() {
+    this.router.navigate(['/reviewpage']);
+  }
+
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
@@ -73,6 +100,7 @@ export class Question1Component implements OnInit {
   loading() {
     if (JSON.parse(localStorage.getItem('question1'))) {
       this.name = JSON.parse(localStorage.getItem('question1'));
+      this.buttonIsDisabled = false;
     }
     if (JSON.parse(localStorage.getItem('question2'))) {
       this.isValid2 = true;

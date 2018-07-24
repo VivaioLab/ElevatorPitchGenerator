@@ -1,5 +1,71 @@
+.form-control{
+  margin-top: 20px;
+  font-family: 'Roboto Mono', monospace;
+  border:none;
+}
+.questions{
+  width: 3rem !important;
+}
+.content-margin{
+  color: black;
+  font-size: 20px;
+}
+textarea{
+  width:100%;
+  border: none;  
+  overflow:hidden;
+  font-size: 20px;  
+  text-align: left;
+  outline: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    background-attachment: local;
+    background-attachment: local;
+    background-image:
+        linear-gradient(to right, white 10px, transparent 10px),
+        linear-gradient(to left, white 10px, transparent 10px),
+        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
+    line-height: 31px;    
+}
+.validation{
+  font-size: 1rem;
+  animation: fadeinout 2s linear forwards;
+}
+.next-button{
+  text-align:center;
+  margin-bottom: 2rem;
+}
 .button-width{
   width: 12em;
+  padding-top: 0.1rem !important;
+  padding-bottom: 0.1rem !important;
+  font-size: 16px;
+  border: 1.5px solid black;
+  background-color: black;
+  color: white;
+ 
+}
+.empty-text-button{
+  color: gray !important;
+  background-color: white !important;
+  border: 1.5px solid #ccc !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.popup-body{
+  text-align: center;
+  color: white;
+  background-color: black;
+  font-family: 'Roboto Mono', monospace;
+}
+.modal-title{
+  margin: 20px;
+  text-align: center;
+}
+.content{
+  text-align:center;margin-top:10px;
 }
 .popup-image{
   background-color:white;
@@ -7,16 +73,17 @@
   text-align:center;
   padding:15px;
 }
-.content{
-  text-align:center;margin-top:10px;
-}
 .image-size{
   height: 3rem;
   width: 3rem;
 }
-button{
-  outline: none;
+.popup{
+margin: 20px;
+  display: block;
+  text-align: center;
+  justify-content: initial;
 }
+
 logoimage {
 	width: 20%;
 	height: 10%;
@@ -25,26 +92,17 @@ logoimage {
     text-align: center;
     height: 30px;
   }
-  .validation{
-    font-size: 1rem;
-    animation: fadeinout 2s linear forwards;
-  }
+button{
+  outline: none;
+}
   
   
   @keyframes fadeinout {
   0%,100% { opacity: 0; }
   50% { opacity: 1; }
   }
-  .form-control{
-    margin-top: 20px;
-    font-family: 'Roboto Mono', monospace;
-    border:none;
-  }
-  .menu_icon{
-	height: 2.5rem;
-	width: 4rem;
-	padding-right: 5px;
-  }
+ 
+
   .icon-align{
 	margin-right: 40px;
   }
@@ -119,9 +177,7 @@ mat-icon.disabled {
   pointer-events: none;
   cursor:default;
 }
-.questions{
-  width: 3rem !important;
-}
+
 .label1{
   font-size: 18px;
   margin: 20px;
@@ -133,57 +189,22 @@ input {
   font-size: 20px;  
   text-align: left;    
 }
-textarea{
-  width:100%;
-  border: none;  
-  overflow:hidden;
-  font-size: 20px;  
-  text-align: left;
-  outline: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    background-attachment: local;
-    background-attachment: local;
-    background-image:
-        linear-gradient(to right, white 10px, transparent 10px),
-        linear-gradient(to left, white 10px, transparent 10px),
-        repeating-linear-gradient(white, white 30px, #ccc 30px, #ccc 31px, white 31px);
-    line-height: 31px;    
-}
+
 .modal-content{
   min-height: -webkit-fill-available;
   border: 20px solid white !important;
   border-radius: none;
   background-color: black;
 }
-.popup{
-margin: 20px;
-  display: block;
-  text-align: center;
-  justify-content: initial;
-}
-.next-button{
-  text-align:center;
-}
-.popup-body{
-  text-align: center;
-  color: white;
-  background-color: black;
-  font-family: 'Roboto Mono', monospace;
-}
+
+
+
 .mat-drawer-container{
   background-color: white;
 
 }
-.content-margin{
-  color: black;
-  font-size: 20px;
-}
-.modal-title{
-  margin: 20px;
-  text-align: center;
-}
+
+
 .mat-drawer.mat-drawer-push  {background-color: black;
 }
 

@@ -11,21 +11,25 @@
                 <label class="content-margin">We are looking for</label>
                 <br/>
                 <br/>
-                <textarea matInput placeholder="$10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers" [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
+                <textarea (ngModelChange)="onTextEnter($event)" matInput placeholder="$10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers" [(ngModel)]="proof" name="proof" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
                 
                 <br/>
-                <br/>
+                <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+                  <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+                  <label>{{totalWords}}/{{wordLimit}}</label>
+                </div>
                 <div class="text-center">
                     <label *ngIf="emptyAnswerError" class="validation" >Please enter a value</label>
+                 
                 </div>
                 <br/>
                 <div>
                     <app-corousel [isCurrent5] = isCurrent></app-corousel>
                 </div>
-                <div class="next-button">
+                <div class="next-button fixed-bottom">
                     
                     <br>
-                    <button  type="button" (click)="saveChanges()" mat-raised-button class="button-width"> 
+                    <button  type="button" [ngClass]="{'empty-text-button': buttonIsDisabled}" (click)="saveChanges()" mat-raised-button class="button-width"> 
                        Next  </button>
                  </div>
               </form>
