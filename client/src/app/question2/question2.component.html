@@ -19,12 +19,10 @@
           <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
           
         </div>
-        <br/>
         <div>
           <app-corousel [isCurrent2]= isCurrent></app-corousel>
         </div>
         <div class="next-button fixed-bottom">
-          <br>
           <button type="button"  [ngClass]="{'empty-text-button': buttonIsDisabled}"  (click)="saveChanges()" mat-raised-button class="button-width">
             Next </button>
         </div>

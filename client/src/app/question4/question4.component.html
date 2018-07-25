@@ -8,12 +8,9 @@
       <form class="form-control">
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
         <label class="content-margin">In this way</label>
-        <br/>
-        <br/>
         <textarea (ngModelChange)="onTextEnter($event)" matInput placeholder="The owner will streamline the operation and at the same time reduce the cost associated with last-minute purchases."
           [(ngModel)]="value" name="value" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea>
 
-        <br/>
         <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
           <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
           <label>{{totalWords}}/{{wordLimit}}</label>
@@ -22,7 +19,6 @@
           <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
 
         </div>
-        <br/>
         <div>
           <app-corousel [isCurrent4]=i sCurrent></app-corousel>
         </div>
