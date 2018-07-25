@@ -43,13 +43,13 @@
       <br/>
       <br/>
       <div style="text-align:center;">
-        <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:70%;" (click)="modalRef.hide()">
-          <a href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch.%0D%0DI noticed that {{question2}}.%0DThe problem can be solved {{question3}}.%0DIn this way {{question4}}.%0DWe are looking for {{question5}}.%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>
+        <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:80%;background-color: #cccccc; color: grey;" (click)="modalRef.hide()">
+          <a style="color: grey;" href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch.%0D%0DI noticed that {{question2}}.%0DThe problem can be solved {{question3}}.%0DIn this way {{question4}}.%0DWe are looking for {{question5}}.%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>
         </button>
       </div>
       <p class="content">or</p>
       <div style="text-align:center;">
-        <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="modalRef.hide()" mat-raised-button style="width:70%;">
+        <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="modalRef.hide()" mat-raised-button style="width:80%;background-color: #cccccc; color: grey;">
         No!Keep Editing </button>
       </div>
     </div>

@@ -7,11 +7,12 @@
         <div class="container" id="question5">
             <mat-icon svgIcon="thanks" class="thanks"></mat-icon>
            <form class="label">           
-             <label>for using elevatorly<br/> We hope it would be helpful to you. <br/><br/>Do you want to create a new pitch?</label><br/>
+             <label>for using elevatorly We hope it would be helpful to you.</label><br/>
+             <label>Do you want to create a new pitch?</label><br/>
             <div style="text-align:center;padding:10px;">
                 <button type="button" routerLink="/question1" style="float: center;" mat-raised-button class="button-size" (click)="clearAll()"> Yes! Create Now   </button>
              </div> 
-             <a href="url" routerLink="/home" (click)="clearAll()" style="color: grey">No! Thank You</a>
+             <a href="url" routerLink="/home" (click)="clearAll()" style="color: grey;text-decoration: underline;">No! Thank You</a>
            </form>
          </div>
        <ng-template #template>
