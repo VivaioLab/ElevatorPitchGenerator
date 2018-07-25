@@ -13,7 +13,7 @@
   width: 3rem;
 }
 button{
-  outline: none;
+  outline: none !important;
 }
 .text-center{
   text-align: center;
