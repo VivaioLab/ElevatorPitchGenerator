@@ -35,26 +35,26 @@ padding-left: 50px;
     outline: none;
 }
 .current-class{
-    background: green !important;
+    background: #ac48 !important;
 }
 .disable-class{
-  background: grey ;
+  background: #cccccc ;
   color : white;
 }
 .current-text{
-    color: green !important;
+    color: #ac48 !important;
 }
 .disable-text{
   
-  color : grey;
+  color : #cccccc;
 }
 .disable-review{
   
-    background-color : grey !important;
+    background-color : #cccccc !important;
     color: black  !important;
   }
   .current-review{
-    background-color: green !important;
+    background-color: #ac48 !important;
     color: white;
   }
   .review-class{

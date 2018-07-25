@@ -134,12 +134,13 @@ and (min-width : 1224px) {
 width: 4%;
   }
   .label{
-    font-size: 40px;
+    font-size: 25px;
     font-family: 'Roboto Mono', monospace;
     
 }
 label{
   padding-right: 80px;
+  padding-bottom: 30px;
 }
 input { 
     border: none; 
