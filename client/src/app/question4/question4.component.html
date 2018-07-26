@@ -20,7 +20,7 @@
 
         </div>
         <div>
-          <app-corousel [isCurrent4]=i sCurrent></app-corousel>
+          <app-corousel [isCurrent4]= isCurrent></app-corousel>
         </div>
         <div class="next-button fixed-bottom">
           <br>
@@ -35,7 +35,7 @@
 <ng-template #template style="border: 3px white;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true"><mat-icon svgIcon="close-popup"></mat-icon></span>
     </button>
   </div>
   <div class="modal-body popup-body">

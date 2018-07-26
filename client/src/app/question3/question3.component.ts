@@ -112,7 +112,7 @@ export class Question3Component implements OnInit {
       JSON.parse(localStorage.getItem('question4')) &&
       JSON.parse(localStorage.getItem('question5'))) {
       this.review = true;
-      console.log("review" + this.review);
+      // console.log("review" + this.review);
     }
   }
 

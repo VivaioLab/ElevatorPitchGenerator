@@ -177,7 +177,7 @@ textarea{
 .next-button{
   background-color: white;
   opacity: 80%;
-  padding-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align:center;
 }
 .popup-body{
