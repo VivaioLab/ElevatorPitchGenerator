@@ -29,10 +29,7 @@ export class ThankyouComponent implements OnInit {
 }
 clearAll()
 {
-  localStorage.removeItem('question1');
-  localStorage.removeItem('question2');
-  localStorage.removeItem('question3');
-  localStorage.removeItem('question4');
-  localStorage.removeItem('question5');
+  localStorage.clear();
+  
 }
 }

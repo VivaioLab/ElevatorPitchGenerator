@@ -42,10 +42,8 @@ export class Question2Component implements OnInit {
   modalRef: BsModalRef;
   constructor(private router: Router, private modalService: BsModalService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
 
-    this.matIconRegistry.addSvgIcon(
-      "questions",
-      this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg")
-    );
+    this.matIconRegistry.addSvgIcon("questions",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
+      .addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"));;
   }
   showWordCount() {
     this.words = this.wor(this.problem);

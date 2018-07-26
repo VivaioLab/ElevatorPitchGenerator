@@ -1,40 +1,58 @@
-    <mat-sidenav-container>
-        <mat-sidenav #sidenavright mode="push" position="end">
-          <app-sidenav  [isCurrentReview]= isCurrent  ></app-sidenav>
-        </mat-sidenav>
-        <mat-sidenav-content>
-            <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
-            <div class="container" id="reviewpage">
-                <form class="form-control">
-                  <p>
-                    My name is {{question1}}
-                    <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-          
-                    <br/> I noticed that {{question2}}
-                    <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit" src="assets/images/edit icon.svg" height="15"
-                      width="15">
-                    <br/> The problem can be solved {{question3}}
-                    <img routerLink="/question3" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-                    <br/> In this way {{question4}}
-                    <img routerLink="/question4" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-                    <br/> We are looking for {{question5}}
-                    <img routerLink="/question5" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15" width="15">
-          
-                  </p>
-               
-                </form>
-              </div>
-              <div class="next-button fixed-bottom">
-                    <button  type="button" (click)="savToBackend();openModal(template)"  mat-raised-button class="button-width"> 
-                        Save
-                  </button>
-                </div>
-        </mat-sidenav-content>
-      </mat-sidenav-container>
+<mat-sidenav-container>
+  <mat-sidenav #sidenavright mode="push" position="end">
+    <app-sidenav [isCurrentReview]=i sCurrent></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+    <div class="container" id="reviewpage">
+      <form class="form-control">
+        <p>
+          My name is {{question1}}
+          <button type="button" style="background: transparent;border:none;outline:none;">
+            <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
+              width="15">
+          </button>
+
+
+          <br/> I noticed that {{question2}}
+          <button type="button" style="background: transparent;border:none;outline:none;">
+            <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit" src="assets/images/edit icon.svg"
+              height="15" width="15">
+          </button>
+          <br/> The problem can be solved {{question3}}
+          <button type="button" style="background: transparent;border:none;outline:none;">
+            <img routerLink="/question3" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
+              width="15">
+          </button>
+
+          <br/> In this way {{question4}}
+          <button type="button" style="background: transparent;border:none;outline:none;">
+            <img routerLink="/question4" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
+              width="15">
+          </button>
+
+          <br/> We are looking for {{question5}}
+          <button type="button" style="background: transparent;border:none;outline:none;">
+            <img routerLink="/question5" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
+              width="15">
+          </button>
+
+
+        </p>
+
+      </form>
+    </div>
+    <div class="re-button fixed-bottom">
+      <button type="button" (click)="savToBackend();openModal(template)" mat-raised-button class="button-width">
+        Save
+      </button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
 <ng-template #template style="border: 3px #ffffff;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
-      <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true"><mat-icon svgIcon="close-popup"></mat-icon></span>
     </button>
   </div>
   <div class="modal-body popup popup-body">
@@ -43,14 +61,15 @@
       <br/>
       <br/>
       <div style="text-align:center;">
-        <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:80%;background-color: #cccccc; color: grey;" (click)="modalRef.hide()">
+        <button routerLink="/thankyou" type="button" style="float: center;" mat-raised-button style="width:80%;background-color: #cccccc; color: grey;"
+          (click)="modalRef.hide()">
           <a style="color: grey;" href="mailto: fabio@vivaiolab.com?subject=Please find the details&body=Hi Vivaio Team%0D%0A%0DMy name is {{question1}}%0D%0DHere is my pitch.%0D%0DI noticed that {{question2}}.%0DThe problem can be solved {{question3}}.%0DIn this way {{question4}}.%0DWe are looking for {{question5}}.%0D%0DLooking forward to hearing from you.%0DThanks%0DName:">Yes! Email To Us </a>
         </button>
       </div>
       <p class="content">or</p>
       <div style="text-align:center;">
         <button routerLink="/reviewpage" routerLinkActive="active" type="button" (click)="modalRef.hide()" mat-raised-button style="width:80%;background-color: #cccccc; color: grey;">
-        No!Keep Editing </button>
+          No!Keep Editing </button>
       </div>
     </div>
   </div>

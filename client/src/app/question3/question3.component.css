@@ -32,10 +32,10 @@ textarea{
   font-size: 1rem;
   animation: fadeinout 2s linear forwards;
 }
-.next-button{
+.q3-next-button{
   background-color: white;
   opacity: 80%;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
   text-align:center;
 }
 .button-width{

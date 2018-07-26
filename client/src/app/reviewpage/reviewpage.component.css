@@ -133,9 +133,9 @@ textarea{
   background-color: black;
   width: 100%;
 }
-.next-button{
+.re-button{
   text-align:center;
-  padding-bottom: 2rem;
+  padding-bottom: 3rem;
   background-color: white;
   opacity: 80%;
 }

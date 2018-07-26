@@ -40,7 +40,7 @@ export class Question5Component implements OnInit {
   buttonIsDisabled:boolean=true;
   review = false;
   constructor(private router: Router, private modalService: BsModalService, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon("menu icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg"))
+    this.matIconRegistry.addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"))
       .addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"));
   }
   showWordCount() {
@@ -101,7 +101,7 @@ export class Question5Component implements OnInit {
       JSON.parse(localStorage.getItem('question4')) &&
       JSON.parse(localStorage.getItem('question5'))) {
       this.review = true;
-      console.log("review" + this.review);
+      // console.log("review" + this.review);
     }
   }
 

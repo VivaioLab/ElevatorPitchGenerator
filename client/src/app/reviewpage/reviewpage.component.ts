@@ -26,7 +26,7 @@ export class ReviewpageComponent implements OnInit {
     private modalService: BsModalService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
-    this.matIconRegistry.addSvgIcon("menu icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/menu icon.svg"))
+    this.matIconRegistry.addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"))
       .addSvgIcon("edit-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"));
   }
 
