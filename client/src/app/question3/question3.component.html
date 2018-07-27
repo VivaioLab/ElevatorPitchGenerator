@@ -9,9 +9,9 @@
             <form class="form-control">
                 <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
               <label class="content-margin">The problem can be solved</label>
-              <textarea (ngModelChange)="onTextEnter($event)" matInput placeholder="with a subscription services business that will automatically replenish the supplies every time is needed" [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
+              <textarea maxlength="120" (ngModelChange)="onTextEnter($event)" matInput placeholder="with a subscription services business that will automatically replenish the supplies every time is needed" [(ngModel)]="solution" name="solution" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="5"></textarea> 
               <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
-                <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+                <label *ngIf="totalWords==120">Word limit exeeded!&nbsp;&nbsp;</label>
                 <label>{{totalWords}}/{{wordLimit}}</label>
               </div>
               <div class="text-center">

@@ -53,17 +53,7 @@ export class Question2Component implements OnInit {
   wor(s) {
     let count = 0;
     for (let i = 0; i < s.length; i++) {
-      if (s[i] !== " ") {
-        if (s[i] !== ",") {
-          if (s[i] !== "  ") {
-            if (s[i] !== "\n") {
-              if (s[i] !== ".") {
-                count = count + 1;
-              } 
-            }
-          }
-        }
-      }
+      count = count +1;
     }
     return count + 1;
   }

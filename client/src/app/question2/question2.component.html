@@ -9,10 +9,10 @@
         <label class="content-margin">I noticed</label>
         <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
         <br/>
-        <textarea matInput (ngModelChange)="onTextEnter($event)" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+        <textarea maxlength="120" matInput (ngModelChange)="onTextEnter($event)" placeholder="vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
           [(ngModel)]="problem" name="problem" cdkTextareaAutosize #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="6"></textarea>
           <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
-            <label *ngIf="maxwordsError">Word limit exeeded!&nbsp;&nbsp;</label>
+            <label *ngIf="totalWords==120">Word limit exeeded!&nbsp;&nbsp;</label>
             <label>{{totalWords}}/{{wordLimit}}</label>
           </div>
           <div class="text-center">
