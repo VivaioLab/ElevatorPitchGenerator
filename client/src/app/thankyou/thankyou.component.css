@@ -1,6 +1,5 @@
 .button-size{
   width: 16em;
-  font-size: 10px;
 }
 logoimage {
 	width: 20%;
@@ -140,8 +139,9 @@ width: 4%;
     
 }
 label{
-  padding-right: 80px;
+  /* /* padding-right: 80px; */
   padding-bottom: 30px;
+  align-content: center;
 }
 input { 
     border: none; 
