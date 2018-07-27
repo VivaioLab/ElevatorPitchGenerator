@@ -8,9 +8,11 @@ import {Question5Component} from './question5/question5.component';
 import {ReviewpageComponent} from './reviewpage/reviewpage.component';
 import {ThankyouComponent} from './thankyou/thankyou.component';
 import {ConfirmpageComponent} from './confirmpage/confirmpage.component';
+import {QuestionsComponent} from './questions/questions.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component:HomeComponent, data: { state: 'home'}  },
+    {path : 'questions', component : QuestionsComponent, data: { state: 'questions'}},
     {path : 'question1', component : Question1Component, data: { state: 'question1'}},
     {path : 'question2', component : Question2Component, data: { state: 'question2'}},
     {path : 'question3', component : Question3Component, data: { state: 'question3'}},
