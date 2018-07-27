@@ -18,6 +18,7 @@ button{
 .text-center{
   text-align: center;
   height: 30px;
+  margin-bottom: 10px;
 }
 .validation{
   font-size: 1rem;

@@ -15,14 +15,15 @@
             <label *ngIf="totalWords==120">Word limit exeeded!&nbsp;&nbsp;</label>
             <label>{{totalWords}}/{{wordLimit}}</label>
           </div>
-          <div class="text-center">
-          <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
-          
-        </div>
+
         <div>
           <app-corousel [isCurrent2]= isCurrent></app-corousel>
         </div>
         <div class="next-button fixed-bottom">
+            <div class="text-center">
+                <label *ngIf="emptyAnswerError" class="validation">Please enter a value</label>
+                
+              </div>
           <button type="button"  [ngClass]="{'empty-text-button': buttonIsDisabled}"  (click)="saveChanges()" mat-raised-button class="button-width">
             Next </button>
         </div>
