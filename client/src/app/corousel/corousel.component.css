@@ -37,7 +37,6 @@
   text-align: center;
   font-size: 1rem;
 }
-<<<<<<< HEAD
 .text-answered{
   color: #acff48;
 }
@@ -49,10 +48,6 @@
 }
 .answered{
   background-color: #acff48;
-=======
-.active-black{
-  color: black;
->>>>>>> ca64b254f2bd6687c57f96ce72e043d21b1fd1bf
 }
   @media only screen and (max-width: 365px) {
     .corr-name{
