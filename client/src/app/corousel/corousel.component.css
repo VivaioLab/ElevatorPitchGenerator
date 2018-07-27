@@ -6,7 +6,7 @@
     height: 5rem;
     min-width: 5rem;
     outline: none;
-    
+    background-color: #acff48;
   }
   .corr{
     text-align: center;
@@ -19,7 +19,13 @@
     outline: none;
 }
 .current-stage{
-    background: white !important;
+    background:white !important;
+}
+.disable-grey{
+  color: #cccccc ;
+}
+.answered{
+  color: #acff48;
 }
 .disable-class{
   background: #cccccc ;
@@ -27,10 +33,11 @@
 }
 
 .corr-name{
-  color: #cccccc;
+
   text-align: center;
   font-size: 1rem;
 }
+<<<<<<< HEAD
 .text-answered{
   color: #acff48;
 }
@@ -42,6 +49,10 @@
 }
 .answered{
   background-color: #acff48;
+=======
+.active-black{
+  color: black;
+>>>>>>> ca64b254f2bd6687c57f96ce72e043d21b1fd1bf
 }
   @media only screen and (max-width: 365px) {
     .corr-name{
