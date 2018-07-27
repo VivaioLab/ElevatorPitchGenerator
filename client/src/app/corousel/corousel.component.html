@@ -1,8 +1,29 @@
 <div class="corr">
 
-   <button [disabled] = "!isValid1" type="button" class="button-class"routerLink="/question1" routerLinkActive="active"><span class="corr-name" >Name</span> <br/> <img src="assets/images/nameicon.svg" [ngClass] ="{'current-stage' : isCurrent1,'disable-class': !isValid1}"   class="corousel" ></button>
-   <button [disabled] = "!isValid2"  type="button" class="button-class"   routerLink="/question2" routerLinkActive="active"><span class="corr-name">Problem</span> <br/> <img src="assets/images/problem icon.svg"  [ngClass] ="{'current-stage' : isCurrent2,'disable-class': !isValid2}"   class="corousel" ></button>
-   <button [disabled] = "!isValid3"  type="button" class="button-class"   routerLink="/question3" routerLinkActive="active"> <span class="corr-name">Solution</span> <br/> <img src="assets/images/solution.svg"  [ngClass] ="{'current-stage' : isCurrent3,'disable-class': !isValid3}"  class="corousel" ></button>
-   <button [disabled] = "!isValid4"  type="button" class="button-class"   routerLink="/question4" routerLinkActive="active"> <span class="corr-name">Value</span> <br/> <img src="assets/images/value icon.svg"  [ngClass] ="{'current-stage' : isCurrent4,'disable-class': !isValid4}" class="corousel" ></button>
-   <button [disabled] = "!isValid5"  type="button" class="button-class"   routerLink="/question5" routerLinkActive="active"> <span class="corr-name">Proof</span> <br/> <img src="assets/images/proof and ask.svg"  [ngClass] ="{'current-stage' : isCurrent5,'disable-class': !isValid5}"  class="corousel" > </button>
+    <button [disabled]="!isValid1" type="button" class="button-class" routerLink="/question1" routerLinkActive="active">
+        <span class="corr-name" [ngClass]="{'active-black' : isCurrent1,'disable-grey': !isValid1,'answered' :isValid1}">Name</span>
+        <br/>
+        <img src="assets/images/nameicon.svg" [ngClass]="{'current-stage' : isCurrent1,'disable-class': !isValid1}" class="corousel">
+    </button>
+    <button [disabled]="!isValid2" type="button" class="button-class" routerLink="/question2" routerLinkActive="active">
+        <span class="corr-name" [ngClass]="{'active-black' : isCurrent2,'disable-grey': !isValid2,'answered' :isValid2}">Problem</span>
+        <br/>
+        <img src="assets/images/problem icon.svg" [ngClass]="{'current-stage' : isCurrent2,'disable-class': !isValid2}"
+            class="corousel">
+    </button>
+    <button [disabled]="!isValid3" type="button" class="button-class" routerLink="/question3" routerLinkActive="active">
+        <span class="corr-name" [ngClass]="{'active-black' : isCurrent3,'disable-grey': !isValid3,'answered' :isValid3}">Solution</span>
+        <br/>
+        <img src="assets/images/solution.svg" [ngClass]="{'current-stage' : isCurrent3,'disable-class': !isValid3}" class="corousel">
+    </button>
+    <button [disabled]="!isValid4" type="button" class="button-class" routerLink="/question4" routerLinkActive="active">
+        <span class="corr-name" [ngClass]="{'active-black' : isCurrent4,'disable-grey': !isValid4,'answered' :isValid4}">Value</span>
+        <br/>
+        <img src="assets/images/value icon.svg" [ngClass]="{'current-stage' : isCurrent4,'disable-class': !isValid4}" class="corousel">
+    </button>
+    <button [disabled]="!isValid5" type="button" class="button-class" routerLink="/question5" routerLinkActive="active">
+        <span class="corr-name" [ngClass]="{'active-black' : isCurrent5,'disable-grey': !isValid5,'answered' :isValid5}">Proof</span>
+        <br/>
+        <img src="assets/images/proof and ask.svg" [ngClass]="{'current-stage' : isCurrent5,'disable-class': !isValid5}"
+            class="corousel"> </button>
 </div>
