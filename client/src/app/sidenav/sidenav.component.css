@@ -14,7 +14,7 @@ padding-left: 50px;
     margin-left: 10px;
 } */
 .name-icon{
-    background-color: white;
+    background-color: #acff48;
     color: black !important;
     
 }
@@ -35,14 +35,14 @@ padding-left: 50px;
     outline: none;
 }
 .current-stage{
-    background: #ac48 !important;
+    background: white !important;
 }
 .disable-class{
   background: #cccccc ;
   color : white;
 }
 .current-text{
-    color: #ac48 !important;
+    color: white !important;
 }
 .disable-text{
   
@@ -54,18 +54,23 @@ padding-left: 50px;
     color: black  !important;
   }
   .current-review{
-    background-color: #ac48 !important;
+    background-color: white !important;
     color: white;
   }
   .review-class{
-      background: white;
+      background: #acff48;
       color: black;
   }
 
   .sidenav-button{
       position: relative;
+      bottom: 20px;
       justify-content: center;
       text-align: center;
       font-size:1.1rem; 
       font-family: 'Roboto Mono', monospace;
+  }
+  .nav-icons{
+      padding: 12px;
+
   }
