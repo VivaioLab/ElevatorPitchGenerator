@@ -221,3 +221,8 @@ textarea{
   box-shadow: none !important;
   outline: none;
 }
+.my-corousel{
+  height: auto;
+  width: auto;
+  overflow: hidden;
+}
