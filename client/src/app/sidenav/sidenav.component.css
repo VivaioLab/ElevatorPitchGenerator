@@ -70,8 +70,8 @@ padding-left: 50px;
       font-size:1.1rem; 
       font-family: 'Roboto Mono', monospace;
   }
-  .answered{
-      color: #acff48;
+  .isanswered{
+      color: #acff48 !important;
   }
   .nav-icons{
       padding: 12px;
