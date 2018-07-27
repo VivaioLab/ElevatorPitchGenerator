@@ -1,0 +1,23 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenavright mode="push" position="end">
+      <app-sidenav [isCurrent1]= isCurrent></app-sidenav>
+    </mat-sidenav>
+</mat-sidenav-container>
+  
+  
+  <ng-template #template style="border: 3px white;">
+    <div class="modal-header">
+      <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true"><mat-icon svgIcon="close-popup"></mat-icon></span>
+      </button>
+    </div>
+    <div class="modal-body popup-body">
+      <h4 class="modal-title">Name</h4>
+      <div class="content">
+        <label class="popup-image">
+          <img src="assets/images/nameicon.svg " class="image-size" >
+        </label>
+      </div>
+      <p class="content popup"> Did you really ask for more info about your Name?! :) </p>
+    </div>
+  </ng-template>

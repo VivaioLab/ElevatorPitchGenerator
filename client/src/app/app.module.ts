@@ -21,6 +21,7 @@ import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule, MatSidenavModule} from '@angular/material';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CorouselComponent } from './corousel/corousel.component';
+import { QuestionsComponent } from './questions/questions.component';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { CorouselComponent } from './corousel/corousel.component';
     ConfirmpageComponent,
     SidenavComponent,
     CorouselComponent,
+    QuestionsComponent,
   ],
   imports: [
     BrowserModule,

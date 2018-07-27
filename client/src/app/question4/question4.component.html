@@ -1,6 +1,6 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenavright mode="push" position="end">
-    <app-sidenav [isCurrent4]=i sCurrent></app-sidenav>
+    <app-sidenav [isCurrent4]= isCurrent></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content>
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>

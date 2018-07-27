@@ -139,8 +139,9 @@ width: 4%;
     
 }
 label{
-  padding-right: 80px;
+  /* /* padding-right: 80px; */
   padding-bottom: 30px;
+  align-content: center;
 }
 input { 
     border: none; 

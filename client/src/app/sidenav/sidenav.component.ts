@@ -43,7 +43,7 @@ export class SidenavComponent implements OnInit {
    }
 onLoading()
 {
-  if(localStorage.getItem("question1"))
+  if(localStorage.getItem("question"))
   {
     this.isValid1 = true;
   }
