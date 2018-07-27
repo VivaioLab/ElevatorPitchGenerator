@@ -19,7 +19,7 @@
     outline: none;
 }
 .current-stage{
-    background: #ac48 !important;
+    background: white !important;
 }
 .disable-class{
   background: #cccccc ;
@@ -30,6 +30,18 @@
   color: #cccccc;
   text-align: center;
   font-size: 1rem;
+}
+.text-answered{
+  color: #acff48;
+}
+.current-texts{
+  color: black !important;
+}
+.disable-texts{
+  color: #cccccc;
+}
+.answered{
+  background-color: #acff48;
 }
   @media only screen and (max-width: 365px) {
     .corr-name{
