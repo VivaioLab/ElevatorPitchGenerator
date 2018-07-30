@@ -1,30 +1,25 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Questions} from '../model/questionsModel';
+import { Observable } from 'rxjs/internal/Observable';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionsService {
-  questionsURL ='https://salty-temple-18987.herokuapp.com/questions';
+  questionsURL ='http://localhost:8080/api/questions/create';
+  
   getUserURL = "https://salty-temple-18987.herokuapp.com/getUser";
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) {
   }
-  saveQuestions(questions : Questions=null) : Promise<any>{
 
-    let promise = new Promise((resolve, reject) => {
-      this.http.post<Questions>(this.questionsURL,{questions: questions})
-      .subscribe(data => {
-        resolve(data);
-      },
-      error => {
-        
-        reject(error);
-      });
-    });
-    return promise;
+  saveQuestions(questions : Questions) : Observable<Questions>{
+    return this.http.post<Questions> (this.questionsURL,questions,httpOptions);
   }
   getUsers(){
     let promise = new Promise((resolve, reject) => {
@@ -40,4 +35,20 @@ export class QuestionsService {
     });
     return promise;
   }
+    // saveQuestions(questions : Questions=null) : Promise<any>{
+
+  //   let promise = new Promise((resolve, reject) => {
+  //     console.log(questions);
+  //     this.http.post<Questions>(this.questionsURL,questions,httpOptions)
+  //     .subscribe(data => {
+        
+  //       resolve(data);
+  //     },
+  //     error => {
+        
+  //       reject(error);
+  //     });
+  //   });
+  //   return promise;
+  // }
 }

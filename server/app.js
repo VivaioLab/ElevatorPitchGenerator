@@ -2,18 +2,19 @@ let express = require('express'),
     app = express(),
     port = process.env.PORT || 8080,
     mongoose = require('mongoose'), //created model loading here
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    db = require('./database/database');
  var   path = require('path');
 
 // mongoose instance connection url connection
-mongoose.connect('mongodb://jaynirmal:Hardik-2010@ds039427.mlab.com:39427/elevatorpitchgenerator',{
-    useNewUrlParser: true,
-});
-mongoose.Promise = global.Promise;
+// mongoose.connect('mongodb://jaynirmal:Hardik-2010@ds039427.mlab.com:39427/elevatorpitchgenerator',{
+//     useNewUrlParser: true,
+// });
+// mongoose.Promise = global.Promise;
 
-mongoose.connection.on('connected',()=>{
-    console.log('Connected to database mongodb @27017');
-})
+// mongoose.connection.on('connected',()=>{
+//     console.log('Connected to database mongodb @27017');
+// })
 
 //Adding body parser for handling request and response objects.
 app.use(bodyParser.urlencoded({
@@ -35,8 +36,18 @@ app.use(function (req, res, next) {
 // })
 
 //Initialize app
-let initApp = require('./api/app');
-initApp(app);
+// let initApp = require('./api/app');
+// initApp(app);
 
-app.listen(port);
-console.log('ElevatorPitchGenerator started listening on: ' + port);
+//Controllers
+var questionsController = require('./api/controller/questions-controller');
+//Routes
+app.post('/api/questions/create',questionsController.CreatePitch);
+
+db.sync().then(function(){
+    app.listen(port,function(){
+        console.log('ElevatorPitchGenerator started listening on: ' + port);;
+    })
+})
+// app.listen(port);
+// console.log('ElevatorPitchGenerator started listening on: ' + port);
