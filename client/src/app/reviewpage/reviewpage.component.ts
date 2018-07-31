@@ -50,13 +50,7 @@ export class ReviewpageComponent implements OnInit {
 
     if (this.questionsModel) {
 
-      this.questionService.saveQuestions(this.questionsModel).then(
-        data => {
-
-        }
-      )
-
-
+      this.questionService.saveQuestions(this.questionsModel).subscribe();
 
     }
 

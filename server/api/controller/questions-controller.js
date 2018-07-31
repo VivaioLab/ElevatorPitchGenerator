@@ -1,28 +1,20 @@
 'use strict';
-const questionsService = require('../service/questions-service');
+var db = require('../../database/database');
+const Questions = db.questions;
 
-/**
- * Returns a list of stickies in JSON based on the
- * search parameters.
- *
- * @param {request} {HTTP request object}
- * @param {response} {HTTP response object}
- */
-exports.saveQuestions = function (request, response) {
-    let params = request.body,
-        callback = function (data) {
-            response.status(200);
-            response.json(data);
-        };
-        questionsService.addQuestions(params, callback);
-};
-
-exports.getUser = function (request, response)
-{
-
-    let callback = function (data) {
-        response.status(200);
-        response.json(data);
-    };
-    questionsService.getUser({}, callback);
+exports.CreatePitch = (req, res) => {	
+	// Save to PostgreSQL database
+	Questions.create({
+        "username": req.body.question1, 
+        "problem": req.body.question2, 
+        "solution" : req.body.question3,
+        "supporting_value": req.body.question4,
+        "proof" : req.body.question5
+    }).then(questions => {		
+			// Send created customer to client
+			res.json(questions);
+		}).catch(err => {
+			console.log(err);
+			res.status(500).json({msg: "error", details: err});
+		});
 };
