@@ -18,5 +18,7 @@ db.sequelize = sequelize;
 
 //Models/tables
 db.questions = require('../api/model/questions-model')(sequelize, Sequelize);
-
+db.login = require('../api/model/login-model')(sequelize,Sequelize);
+db.pitch = require('../api/model/pitch-model')(sequelize,Sequelize);
+db.answers = require('../api/model/answers-model')(sequelize,Sequelize);
 module.exports =db;

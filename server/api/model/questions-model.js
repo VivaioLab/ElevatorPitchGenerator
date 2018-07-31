@@ -1,21 +1,13 @@
 module.exports = (sequelize, Sequelize) => {
-	const Questions = sequelize.define('questions', {
-	  username: {
-			type: Sequelize.STRING
-	  },
-	  problem: {
-			type: Sequelize.STRING
-	  },
-	  solution: {
-		  type: Sequelize.STRING
-      },
-      supporting_value: {
-        type: Sequelize.STRING
-    },
-    proof: {
-        type: Sequelize.STRING
-    }
-	});
-	
-	return Questions;
+    const Questions = sequelize.define('questions', {
+        
+        question: {
+            type: Sequelize.STRING
+        },
+        hint: {
+            type: Sequelize.STRING
+        }
+    });
+
+    return Questions;
 }
