@@ -10,3 +10,13 @@ var sequelize = new Sequelize('postgres://postgres:Hardik-2010@localhost/Elevato
 });
 
 module.exports = sequelize;
+
+const db = {};
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+//Models/tables
+db.questions = require('../api/model/questions-model')(sequelize, Sequelize);
+
+module.exports =db;
