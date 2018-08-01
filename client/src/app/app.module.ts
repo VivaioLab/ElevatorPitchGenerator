@@ -23,7 +23,6 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { CorouselComponent } from './corousel/corousel.component';
 import { QuestionsComponent } from './questions/questions.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
