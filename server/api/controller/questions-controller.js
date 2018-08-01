@@ -1,10 +1,13 @@
 'use strict';
 var generator = require('generate-password');
 var db = require('../../database/database');
+var nodemailer = require('nodemailer');
 const Questions = db.questions;
 const Login = db.login;
 const Pitch = db.pitch;
 const Answers = db.answers;
+
+
 
 exports.SaveAnswer = (req, res) => {	
 	// Save to PostgreSQL database

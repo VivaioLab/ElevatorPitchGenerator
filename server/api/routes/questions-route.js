@@ -7,4 +7,5 @@ module.exports = function (app) {
     app.route('/api/questions/linkPitch').post(questionsController.LinkPitch);
     app.route('/api/questions/createUser').post(questionsController.CreateUser);
     app.route('/api/questions/createUser').get(questionsController.Getusers);
+    app.route('/api/Email/sendMail').post(questionsController.SendEmail);
 };
