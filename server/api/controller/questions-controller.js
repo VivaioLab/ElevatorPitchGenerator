@@ -2,12 +2,12 @@
 var generator = require('generate-password');
 var db = require('../../database/database');
 var nodemailer = require('nodemailer');
-const Questions = db.questions;
-const Login = db.login;
-const Pitch = db.pitch;
-const Answers = db.answers;
+const questions = db.questions;
+const login = db.login;
+const pitch = db.pitch;
+const answers = db.answers;
 
-exports.SendEmail = (req,res) =>{
+exports.sendemail = (req,res) =>{
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -30,9 +30,9 @@ exports.SendEmail = (req,res) =>{
       });
 }
 
-exports.SaveAnswer = (req, res) => {	
+exports.saveanswer = (req, res) => {	
 	// Save to PostgreSQL database
-	Answers.create({
+	answers.create({
         "answer": req.body.answer, 
         "question_id": req.question_id, 
         "pitch_id": req.body.pitch_id, 
@@ -44,9 +44,9 @@ exports.SaveAnswer = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
-exports.CreateQuestion = (req, res) => {	
+exports.createquestion = (req, res) => {	
 	// Save to PostgreSQL database
-	Questions.create({
+	questions.create({
         "question": req.body.question, 
         "hint": req.body.hint, 
     }).then(questions => {		
@@ -57,9 +57,9 @@ exports.CreateQuestion = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
-exports.LinkPitch = (req, res) => {	
+exports.linkpitch = (req, res) => {	
 	// Save to PostgreSQL database
-	Pitch.create({
+	pitch.create({
         "user_id": req.body.user_id
     }).then(pitch => {		
 			// Send created customer to client
@@ -69,10 +69,10 @@ exports.LinkPitch = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
-exports.CreateUser = (req, res) => {	
+exports.createuser = (req, res) => {	
     // Save to PostgreSQL database
     
-	Login.create({
+	login.create({
         "user_name": req.body.email, 
         "password": generator.generate({length : 8,numbers : true}), 
         "email" : req.body.email,
@@ -84,8 +84,8 @@ exports.CreateUser = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
-exports.Getusers = (req, res) => {
-	Login.findAll().then(login => {
+exports.getusers = (req, res) => {
+	login.findAll().then(login => {
 			// Send All Customers to Client
 			res.json(login.sort(function(c1, c2){return c1.id - c2.id}));
 		}).catch(err => {
@@ -93,8 +93,8 @@ exports.Getusers = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
-exports.GetQuestions = (req, res) => {
-	Questions.findAll().then(question => {
+exports.getquestions = (req, res) => {
+	questions.findAll().then(question => {
 			// Send All Customers to Client
 			res.json(question.sort(function(c1, c2){return c1.id - c2.id}));
 		}).catch(err => {
@@ -102,3 +102,13 @@ exports.GetQuestions = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
+eports.getanswers = (req,res) =>{
+    customer.findById(req.params.id).then(customer => {
+        res.json(customer);
+    }).catch(err => {
+        console.log(err);
+        res.status(500).json({msg: "error", details: err});
+    });
+}
+
+
