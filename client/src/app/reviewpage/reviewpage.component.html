@@ -1,37 +1,37 @@
 <mat-sidenav-container>
-  <mat-sidenav #sidenavright mode="push" position="end">
+  <!-- <mat-sidenav #sidenavright mode="push" position="end">
     <app-sidenav [isCurrentReview]= isCurrent></app-sidenav>
-  </mat-sidenav>
+  </mat-sidenav> -->
   <mat-sidenav-content>
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
     <div class="container" id="reviewpage">
       <form class="form-control">
         <p>
-          My name is {{question1}}
+          {{saveQuestion1}}
           <button type="button" style="background: transparent;border:none;outline:none;">
             <img routerLink="/question1" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
               width="15">
           </button>
 
 
-          <br/> I noticed that {{question2}}
+          <br/> {{saveQuestion2}}
           <button type="button" style="background: transparent;border:none;outline:none;">
             <img routerLink="/question2" class="edit-icon" routerLinkActive="active" alt="edit" src="assets/images/edit icon.svg"
               height="15" width="15">
           </button>
-          <br/> The problem can be solved {{question3}}
+          <br/> {{saveQuestion3}}
           <button type="button" style="background: transparent;border:none;outline:none;">
             <img routerLink="/question3" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
               width="15">
           </button>
 
-          <br/> In this way {{question4}}
+          <br/> {{saveQuestion4}}
           <button type="button" style="background: transparent;border:none;outline:none;">
             <img routerLink="/question4" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
               width="15">
           </button>
 
-          <br/> We are looking for {{question5}}
+          <br/> {{saveQuestion5}}
           <button type="button" style="background: transparent;border:none;outline:none;">
             <img routerLink="/question5" class="edit-icon" routerLinkActive="active" src="assets/images/edit icon.svg" height="15"
               width="15">
@@ -43,12 +43,12 @@
       </form>
     </div>
     <div class="re-button fixed-bottom">
-      <button type="button" (click)="savToBackend();openModal(template)" mat-raised-button class="button-width">
+      <button type="button" (click)="openModal(template)" mat-raised-button class="button-width">
         Save
       </button>
     </div>
   </mat-sidenav-content>
-</mat-sidenav-container>
+ </mat-sidenav-container>
 <ng-template #template style="border: 3px #ffffff;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">

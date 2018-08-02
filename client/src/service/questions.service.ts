@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Questions} from '../model/questionsModel';
+import {Quest} from '../model/question-model';
 import { Observable } from 'rxjs/internal/Observable';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -10,7 +11,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class QuestionsService {
-  questionsURL ='http://localhost:8080/api/questions/create';
+  questionsURL ='http://localhost:8080/api/questions/createQuestion/getMethod';
+  fetchQuestionURL = 'http://localhost:8080/api/questions/createQuestion';
   
   getUserURL = "https://salty-temple-18987.herokuapp.com/getUser";
 
@@ -34,6 +36,15 @@ export class QuestionsService {
       });
     });
     return promise;
+  }
+
+  // findAllQuestions()
+  // {
+  //  return fetch('http://localhost:8080/api/questions/createQuestion').then(response => response.json())
+  // }
+
+  getCustomers (): Observable<Quest[]> {
+    return this.http.get<Quest[]>(this.fetchQuestionURL);
   }
     // saveQuestions(questions : Questions=null) : Promise<any>{
 
