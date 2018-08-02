@@ -13,14 +13,15 @@ export class AppComponent implements OnInit {
    constructor(private router : Router){
 
    }
+   
   ngOnInit(){
     localStorage.clear();
     // this.router.navigate(['/home'])
-    localStorage.setItem('question1',"Hi, my name is");
-    localStorage.setItem('question2',"I noticed");
-    localStorage.setItem('question3',"The problem can be solved");
-    localStorage.setItem('question4',"In this way");
-    localStorage.setItem('question5',"We are looking for");
+    // localStorage.setItem('question1',"Hi, my name is");
+    // localStorage.setItem('question2',"I noticed");
+    // localStorage.setItem('question3',"The problem can be solved");
+    // localStorage.setItem('question4',"In this way");
+    // localStorage.setItem('question5',"We are looking for");
     
   }
   getState(outlet) {
