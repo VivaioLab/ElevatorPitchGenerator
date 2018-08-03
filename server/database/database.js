@@ -1,8 +1,8 @@
 var pg  = require('pg');
 var Sequelize = require('sequelize');
-var sequelize = new Sequelize('postgres://postgres:3578@localhost/ElevatorPitchGenerator',
+var sequelize = new Sequelize('postgres://postgres:Hardik-2010@localhost/ElevatorPitchGenerator',
 {
-    uri: 'postgres://postgres:3578@localhost/ElevatorPitchGenerator',
+    uri: 'postgres://jaynirmal15:Hardik-2010@localhost/ElevatorPitchGenerator',
     options: {
         native: true,
         ssl: true
