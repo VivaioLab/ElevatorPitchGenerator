@@ -20,9 +20,10 @@ exports.createuser = (req, res) => {
 };
 
 exports.getusersbyemail = (req, res) => {
-	login.find({where :{email : req.body.email}}).then(login => {
+	console.log(req.body.email);
+	login.find({where :{email : req.body.email}}).then(log => {
 			// Send Login details to Client
-			res.json(login);
+			res.json(log);
 		}).catch(err => {
 			console.log(err);
 			res.status(500).json({msg: "error", details: err});

@@ -7,6 +7,8 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { Questions } from '../../model/questionsModel';
 import {Quest} from '../../model/question-model';
 import { QuestionsService } from '../../service/questions.service';
+import { Email } from '../../model/loginModel';
+import { Pitch } from '../../model/pitchModel';
 
 @Component({
   selector: 'app-reviewpage',
@@ -55,6 +57,10 @@ export class ReviewpageComponent implements OnInit {
 
   isCurrent = true;
   customers : Quest[];
+  emails: Email[];
+  user_id: number;
+  email_id: string;
+  pitch: Pitch[];
   question1: string;
   question2: string;
   question3: string;
@@ -63,6 +69,7 @@ export class ReviewpageComponent implements OnInit {
   answer1: string;
   modalRef: BsModalRef;
   questionsModel: Questions;
+  pitchModel: Pitch;
   constructor(private questionService: QuestionsService,
     private modalService: BsModalService,
     private matIconRegistry: MatIconRegistry,
@@ -72,6 +79,7 @@ export class ReviewpageComponent implements OnInit {
   }
 
   ngOnInit() {
+    
     // this.loading();
     this.questionService.getCustomers()
                .subscribe(
@@ -119,7 +127,73 @@ export class ReviewpageComponent implements OnInit {
     this.modalRef = this.modalService.show(template);
   }
 
+  // emailtoUs()
+  // {
+    
+  //   this.questionService.getEmails()
+  //   .subscribe(
+  //     emails => {
+       
+  //      console.log(emails);
+  //        for(var i = 0;i<(emails).length;i++)
+  //        {
+  //          if(this.email_id == emails[i].email)
+  //          {
+  //            console.log("match");
+  //            console.log(emails[i].id);
+  //            this.user_id = emails[i].id;
+  //           let newPitch = this.prepareSavePitch();
+  //            //add a pitch to backend
+  //            this.questionService.addPitch(newPitch).subscribe();
+  //          }
+  //          else
+  //          {
+  //            this.questionService.createNewUser(this.email_id).then(
+  //              login => {
+  //                console.log(login);
+  //              }
+  //            )
+  //          }
+  //          }
+           
+             
+          
+      
+  //   }
+  //    );     
+  // }
 
+  emailtoUs()
+  {
+    //if(this.questionService.getUserByEmail(this.email_id))
+    //{
+      this.questionService. createNewUser(this.email_id).then(
+        login =>{
+          // this.user_id = login.id;
+          // console.log(login.id);
+          // let newPitch = this.prepareSavePitch();
+          // this.questionService.addPitch(newPitch).subscribe(
+          //   pitch => {
+          //     console.log(pitch);
+          //   });
+          });
+    //}
+    // else{
+    //   this.questionService.createNewUser(this.email_id).then(
+    //     login => {
+    //       this.user_id = login.id;
+    //       let newPitch = this.prepareSavePitch();
+    //       this.questionService.addPitch(newPitch).subscribe();
+    //     });
+    //   }
+    }
+
+  prepareSavePitch():Pitch{
+    const pitch : Pitch = {
+      user_id : this.user_id
+    }
+    return pitch;
+  }
   
-
 }
+
