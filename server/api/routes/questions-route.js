@@ -8,6 +8,8 @@ module.exports = function (app) {
 
   // send-mail
     app.route('/api/Email/send-mail').post(sendemailController.sendemail);
+    app.route('/api/Email/get-email-of-pitch').post(sendemailController.getemailassociatedtopitch);
+    app.route('/api/Email/get-all-answers').post(sendemailController.getallanswers);
 
     //login routes
     app.route('/api/questions/create-user').post(loginController.createuser);
