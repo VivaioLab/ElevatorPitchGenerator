@@ -3,7 +3,7 @@
   <form class="form-control" required>
     <br/>
     <label class="content-margin">{{label}}</label>
-    <textarea maxlength="120"  (ngModelChange)="onTextEnter($event)" matInput placeholder="Santa Claus" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+    <textarea maxlength="120"  (ngModelChange)="onTextEnter($event)" matInput placeholder="{{placeholder}}" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
           cdkAutosizeMinRows="5" required></textarea>
     <br/>
     <div  class="next-button fixed-bottom">
