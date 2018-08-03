@@ -3,6 +3,8 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import {Questions} from '../model/questionsModel';
 import {Quest} from '../model/question-model';
+import {Pitch} from '../model/pitchModel';
+import {Email} from '../model/loginModel';
 import { Observable } from 'rxjs/internal/Observable';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -12,8 +14,13 @@ const httpOptions = {
 })
 export class QuestionsService {
   questionsURL ='http://localhost:8080/api/questions/createQuestion/getMethod';
-  fetchQuestionURL = 'http://localhost:8080/api/questions/createQuestion';
-  
+  fetchQuestionURL = 'http://localhost:8080/api/questions/create-question';
+  fetchUserURL = 'http://localhost:8080/api/questions/create-user'
+  fetchPitchURL = 'http://localhost:8080/api/model/pitch-model'
+  pitchURL ='http://localhost:8080/api/questions/link-pitch'
+  userURL ='http://localhost:8080/api/questions/create-user'
+
+  getUserByEmailURL='http://localhost:8080/api/questions/get-user-by-email'
   getUserURL = "https://salty-temple-18987.herokuapp.com/getUser";
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
@@ -46,20 +53,56 @@ export class QuestionsService {
   getCustomers (): Observable<Quest[]> {
     return this.http.get<Quest[]>(this.fetchQuestionURL);
   }
-    // saveQuestions(questions : Questions=null) : Promise<any>{
 
-  //   let promise = new Promise((resolve, reject) => {
-  //     console.log(questions);
-  //     this.http.post<Questions>(this.questionsURL,questions,httpOptions)
-  //     .subscribe(data => {
+  getEmails ():Observable<Email[]>{
+    return this.http.get<Email[]>(this.fetchUserURL);
+  }
+
+  getPitch ():Observable<Pitch[]>{
+    return this.http.get<Pitch[]>(this.fetchPitchURL);
+  }
+
+  addPitch(user_id:Pitch) : Observable<Pitch>{
+    return this.http.post<Pitch> (this.pitchURL,user_id,httpOptions);
+  }
+
+  createUser(email:Email) : Observable<Email>{
+    return this.http.post<Email> (this.userURL,email,httpOptions);
+  }
+
+  getUserByEmail(email) : Promise<any>{
+
+    let promise = new Promise((resolve, reject) => {
+      console.log(email);
+      this.http.post<Email>(this.getUserByEmailURL,email)
+      .subscribe(data => {
+        console.log(data);
+        resolve(data);
+      },
+      error => {
+        console.log('not found');
+        reject(error);
+      });
+    });
+    return promise;
+  }
+  
+
+    createNewUser(email) : Promise<any>{
+
+    let promise = new Promise((resolve, reject) => {
+      console.log(email);
+      this.http.post<Email>(this.userURL,email)
+      .subscribe(data => {
         
-  //       resolve(data);
-  //     },
-  //     error => {
+        resolve(data);
+        console.log
+      },
+      error => {
         
-  //       reject(error);
-  //     });
-  //   });
-  //   return promise;
-  // }
+        reject(error);
+      });
+    });
+    return promise;
+  }
 }
