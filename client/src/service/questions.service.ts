@@ -62,47 +62,4 @@ export class QuestionsService {
     return this.http.get<Pitch[]>(this.fetchPitchURL);
   }
 
-  addPitch(user_id:Pitch) : Observable<Pitch>{
-    return this.http.post<Pitch> (this.pitchURL,user_id,httpOptions);
-  }
-
-  createUser(email:Email) : Observable<Email>{
-    return this.http.post<Email> (this.userURL,email,httpOptions);
-  }
-
-  getUserByEmail(email) : Promise<any>{
-
-    let promise = new Promise((resolve, reject) => {
-      console.log(email);
-      this.http.post<Email>(this.getUserByEmailURL,email)
-      .subscribe(data => {
-        console.log(data);
-        resolve(data);
-      },
-      error => {
-        console.log('not found');
-        reject(error);
-      });
-    });
-    return promise;
-  }
-  
-
-    createNewUser(email) : Promise<any>{
-
-    let promise = new Promise((resolve, reject) => {
-      console.log(email);
-      this.http.post<Email>(this.userURL,email)
-      .subscribe(data => {
-        
-        resolve(data);
-        console.log
-      },
-      error => {
-        
-        reject(error);
-      });
-    });
-    return promise;
-  }
 }

@@ -20,7 +20,6 @@ exports.createuser = (req, res) => {
 };
 
 exports.getusersbyemail = (req, res) => {
-	console.log(req.body.email);
 	login.find({where :{email : req.body.email}}).then(log => {
 			// Send Login details to Client
 			res.json(log);
