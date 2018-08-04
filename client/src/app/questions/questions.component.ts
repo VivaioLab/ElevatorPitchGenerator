@@ -35,6 +35,7 @@ export class QuestionsComponent implements OnInit {
   review = false;
   modalRef: BsModalRef;
   label :string;
+  placeholder: string;
   customers : Quest[];
   id : number ;
   question : string;
@@ -61,6 +62,7 @@ export class QuestionsComponent implements OnInit {
                  customers => {
                   this.customers = customers
                   this.label = this.customers[this.q_id-1].question;
+                  this.placeholder = this.customers[this.q_id-1].hint;
                  }
                 );
 
@@ -79,6 +81,7 @@ this.some_id = this.q_id;
     if(this.some_id!==(this.customers).length){
     this.router.navigate(['/questions', this.customers[this.some_id].id]);
     this.label = this.customers[this.some_id].question;
+    this.placeholder = this.customers[this.some_id].hint;
     
       this.some_id++;
     }
