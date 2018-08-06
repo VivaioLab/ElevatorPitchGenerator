@@ -1,10 +1,20 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenavright mode="push" position="end">
+      <app-sidenav ></app-sidenav>
+    </mat-sidenav>
+<mat-sidenav-content>
 <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
 <div class="container" id="question1">
   <form class="form-control" required>
+      <mat-icon svgIcon="questions" class="questions" (click)="openModal(template)" style="float:right;"></mat-icon>
     <br/>
     <label class="content-margin">{{label}}</label>
     <textarea maxlength="120"  (ngModelChange)="onTextEnter($event)" matInput placeholder="{{placeholder}}" [(ngModel)]="name" name="name" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
           cdkAutosizeMinRows="5" required></textarea>
+          <div class="text-right" [ngClass]="{'text-danger': maxwordsError}">
+              <label *ngIf="totalWords==120">Word limit exeeded!&nbsp;&nbsp;</label>
+              <label>{{totalWords}}/{{wordLimit}}</label>
+            </div>
     <br/>
     <div  class="next-button fixed-bottom">
       <button (click)="saveChanges()"   type="button" mat-raised-button class="button-width">
@@ -12,6 +22,8 @@
     </div>
   </form>
 </div>
+</mat-sidenav-content>
+</mat-sidenav-container>
 
 <ng-template #template style="border: 3px white;">
   <div class="modal-header">
@@ -20,12 +32,12 @@
     </button>
   </div>
   <div class="modal-body popup-body">
-    <h4 class="modal-title">Name</h4>
+    <h4 class="modal-title">{{icon}}</h4>
     <div class="content">
       <label class="popup-image">
-        <img src="assets/images/nameicon.svg " class="image-size" >
+        <img src="{{image}} " class="image-size" >
       </label>
     </div>
-    <p class="content popup"> Did you really ask for more info about your Name?! :) </p>
+    <p class="content popup"> {{content}} </p>
   </div>
 </ng-template>
