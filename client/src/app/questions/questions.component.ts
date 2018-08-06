@@ -37,6 +37,7 @@ export class QuestionsComponent implements OnInit {
   label :string;
   placeholder: string;
   customers : Quest[];
+  answers : string;
   id : number ;
   question : string;
   questionsModel: Questions;
