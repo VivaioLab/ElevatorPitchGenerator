@@ -29,6 +29,16 @@ exports.getanswers = (req,res) =>{
         res.status(500).json({msg: "error", details: err});
     });
 }
+exports.getasnwersbypitchID = (req, res) => {
+	answers.findAll({where :{pitch_id : req.body.pitch_id}}).then(ans => {
+			// Send Login details to Client
+			res.json(ans);
+		}).catch(err => {
+			console.log(err);
+			res.status(500).json({msg: "error", details: err});
+		});
+};
+
 exports.getanswerbyID = (req, res) => {	
 	answers.findById(req.body.id).then(answer => {
 			res.json(answer);

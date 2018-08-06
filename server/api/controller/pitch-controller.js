@@ -18,3 +18,20 @@ exports.linkpitch = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
+exports.getpitchbyemail= (req, res) => {
+	
+		login.find({where :{email : req.body.email}}).then(log => {
+			if(log)
+			{
+				pitch.findAll({where :{user_id : log.id}}).then(pitches => {
+					res.json(pitches);
+				}).catch(error => {
+					console.log(error);
+					res.status(500).json({msg: "error", details: error});
+				});
+			}
+		}).catch(err => {
+			console.log(err);
+			res.status(500).json({msg: "error", details: err});
+		});
+};

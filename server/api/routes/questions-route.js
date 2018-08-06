@@ -18,6 +18,7 @@ module.exports = function (app) {
 
     //pitch routes
     app.route('/api/questions/link-pitch').post(pitchController.linkpitch);
+    app.route('/api/questions/get-pitch-by-email').post(pitchController.getpitchbyemail);
 
     //question routes
     app.route('/api/questions/create-question').post(questionsController.createquestion);
@@ -30,4 +31,5 @@ module.exports = function (app) {
     app.route('/api/answers/create-answer').get(answersController.getanswers);
     app.route('/api/answers/get-answer-by-id').post(answersController.getanswerbyID);
     app.route('/api/answers/update-answer').post(answersController.updateanswer);
+    app.route('/api/answers/get-answers-by-pitchID').post(answersController.getasnwersbypitchID);
 };
