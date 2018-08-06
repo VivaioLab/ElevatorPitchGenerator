@@ -43,6 +43,14 @@ export class QuestionsComponent implements OnInit {
   questionsModel: Questions;
   q_id: number;
   some_id : number;
+  current_id : number;
+  words: number;
+  wordLimit = 120;
+  wordnumber = false;
+  icon: string;
+  content: string;
+  image: string;
+
 
 
 
@@ -50,13 +58,33 @@ export class QuestionsComponent implements OnInit {
     this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
     .addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"));
   }
+  showWordCount() {
+    this.words = this.wor(this.name);
+    this.wordnumber = true;
+  }
+  wor(s) {
+    let count = 0;
+    for (let i = 0; i < s.length; i++) {
+      count = count +1;
+    }
+    return count + 1;
+  }
+
 
   ngOnInit() {
-     this.q_id = +this.route.snapshot.paramMap.get('id');
-    
-   
+    this.wordnumber = false;
 
-   
+    // this.current_id = +this.route.snapshot.paramMap.get('id');
+    // this.questionService.getPitch().subscribe(
+
+
+    // )
+    
+
+
+     
+    
+    this.q_id = +this.route.snapshot.paramMap.get('id');
       this.isValid1 = true;
       this.questionService.getCustomers()
                .subscribe(
@@ -76,6 +104,40 @@ this.some_id = this.q_id;
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
+    if(this.some_id === 1)
+    {
+      this.icon = "Name";
+      this.content = "Did you really ask for more info about your Name?! :)"
+      this.image="assets/images/nameicon.svg";
+
+    }else if(this.some_id === 2)
+    {
+      this.icon = "Problem";
+      this.content = "Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!"
+      this.image="assets/images/problem icon.svg";
+
+    }
+    else if(this.some_id === 3)
+    {
+      this.icon = "Solution";
+      this.content = "This is the moment to explain your product or service. Explain how you are solving the problem for the user(s)."
+      this.image="assets/images/solution.svg";
+
+    }
+    else if(this.some_id === 4)
+    {
+      this.icon = "Value";
+      this.content = "What is the biggest advantage/benefit you're offering with your product or service?"
+      this.image="assets/images/value icon.svg";
+
+    }
+    else if(this.some_id === 5)
+    {
+      this.icon = "Proof";
+      this.content = "Explain here what you are looking for and what would you do with that money."
+      this.image="assets/images/proof and ask.svg";
+
+    }
   }
   saveChanges()
   {
@@ -89,6 +151,8 @@ this.some_id = this.q_id;
      else{
       this.router.navigate(['/reviewpage']);
      }
+
+
     
   }
   // saveChanges(id) {
