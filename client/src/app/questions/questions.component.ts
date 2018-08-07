@@ -150,6 +150,7 @@ this.some_id = this.q_id;
     this.label = this.customers[this.some_id].question;
     this.placeholder = this.customers[this.some_id].hint;
     
+    
       this.some_id++;
     }
      else{
