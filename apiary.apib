@@ -25,6 +25,7 @@ Creating a new question
 + Request (application/json)
 
          {
+                "id" : 1
                 "question": "Hola,my name is",
                 "hint": "Come estas?"
         }
@@ -33,11 +34,59 @@ Creating a new question
 
     + Headers
 
-            Location: /questions/7
+            Location: /questions/1
 
     + Body
 
             {
                  "question": "Hola,my name is",
                 "hint": "Come estas?"
+            }
+            
+## Get question by ID [/api/answers/get-question-by-id]
+
+### Get question by ID [POST]
+
++ Request (application/json)
+
+         {
+                "id": "1",
+        }
+        
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/1
+
+    + Body
+
+            {
+                "id": "1",
+                "question": "Hola,my name is",
+                "hint": "Come estas?"
+            }         
+        
+## Update question [/api/questions/update-question]
+
+### Update Question [POST]
+
++ Request (application/json)
+
+         {
+                "id": "1",
+        }
+        
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/1
+
+    + Body
+
+            {
+                "id": "1",
+                "question": "Hi,my name is",
+                "hint": "How are you?"
             }
