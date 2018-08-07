@@ -1,0 +1,43 @@
+FORMAT: 1A
+HOST: https://salty-temple-18987.herokuapp.com/
+
+# Questions API
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Questions Collection [/api/questions/create-question]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "My name is",
+                "hint": "Seriously?"
+            }
+        ]
+
+### Create a New Question [POST]
+
+Creating a new question
+
++ Request (application/json)
+
+         {
+                "question": "Hola,my name is",
+                "hint": "Come estas?"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/7
+
+    + Body
+
+            {
+                 "question": "Hola,my name is",
+                "hint": "Come estas?"
+            }
