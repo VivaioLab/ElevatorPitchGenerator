@@ -16,6 +16,9 @@
               <label>{{totalWords}}/{{wordLimit}}</label>
             </div>
     <br/>
+    <div>
+        <app-corousel [isCurrent1] = isCurrent></app-corousel>
+    </div>
     <div  class="next-button fixed-bottom">
       <button (click)="saveChanges()"   type="button" mat-raised-button class="button-width">
         Next </button>

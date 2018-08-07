@@ -21,6 +21,10 @@ export class QuestionsComponent implements OnInit {
   // get questt() {
   //    return this.label
   // }
+  @Input()
+  get totalWords() {
+    return this.wor(this.name || '') - 1;
+  }
   
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   isCurrent = true;
