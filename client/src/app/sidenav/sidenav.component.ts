@@ -2,6 +2,7 @@ import { Input, Component, OnInit} from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-sidenav',
@@ -23,8 +24,9 @@ export class SidenavComponent implements OnInit {
   isValid4 = false;
   isValid5 = false;
   isReview = false;
+  current_id: number;
   constructor(private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer) {
+    private domSanitizer: DomSanitizer, private route: ActivatedRoute) {
       this.content();
      }
 
@@ -43,11 +45,16 @@ export class SidenavComponent implements OnInit {
    }
 onLoading()
 {
-  if(localStorage.getItem("question1"))
+
+
+  this.current_id = +this.route.snapshot.paramMap.get('id');
+  console.log(this.current_id);
+
+  if(this.current_id === 1)
   {
     this.isValid1 = true;
-  }
-  if(localStorage.getItem("question2"))
+  }else
+  if(this.current_id === 2)
   {
     this.isValid2 = true;
   }
@@ -63,12 +70,12 @@ onLoading()
   {
     this.isValid5 = true;
   }
-  if (JSON.parse(localStorage.getItem('question1')) &&
-      JSON.parse(localStorage.getItem('question2')) &&
-      JSON.parse(localStorage.getItem('question3')) &&
-      JSON.parse(localStorage.getItem('question4')) &&
-      JSON.parse(localStorage.getItem('question5'))) {
-      this.isReview = true;
-    }
-}
+//   if (JSON.parse(localStorage.getItem('question1')) &&
+//       JSON.parse(localStorage.getItem('question2')) &&
+//       JSON.parse(localStorage.getItem('question3')) &&
+//       JSON.parse(localStorage.getItem('question4')) &&
+//       JSON.parse(localStorage.getItem('question5'))) {
+//       this.isReview = true;
+//     }
+ }
 }
