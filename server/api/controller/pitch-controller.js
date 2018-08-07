@@ -35,3 +35,13 @@ exports.getpitchbyemail= (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
+exports.updatepitch = (req, res) => {
+	const id = req.body.id;
+	questions.update( req.body, 
+			{ where: {id: id} }).then(() => {
+				res.status(200).json(req.body);
+			}).catch(err => {
+				console.log(err);
+				res.status(500).json({msg: "error", details: err});
+			});
+};

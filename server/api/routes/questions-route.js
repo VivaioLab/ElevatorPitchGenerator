@@ -19,6 +19,7 @@ module.exports = function (app) {
     //pitch routes
     app.route('/api/questions/link-pitch').post(pitchController.linkpitch);
     app.route('/api/questions/get-pitch-by-email').post(pitchController.getpitchbyemail);
+    app.route('/api/pitch/update-pitch').post(pitchController.updatepitch);
 
     //question routes
     app.route('/api/questions/create-question').post(questionsController.createquestion);
