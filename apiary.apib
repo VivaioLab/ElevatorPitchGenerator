@@ -13,14 +13,24 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
         [
             {
+                "id": 1,
                 "question": "My name is",
-                "hint": "Seriously?"
+                "hint": "Santa Claus"
+            }
+            {
+                "id": 2,
+                "question": "I noticed",
+                "hint": "vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+            }
+            {
+                "id": 3,
+                "question": "The problem can be solved",
+                "hint": "with a subscription services business that will automatically replenish the supplies every time is needed"
             }
         ]
 
 ### Create a New Question [POST]
 
-Creating a new question
 
 + Request (application/json)
 
@@ -43,6 +53,30 @@ Creating a new question
                 "hint": "Come estas?"
             }
             
+## Update question [/api/questions/update-question]
+
+### Update Question [PUT]
+
++ Request (application/json)
+
+        {
+                "id": 1,
+        }
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/1
+
+    + Body
+
+            {
+                "id": 1,
+                "question": "Hi,my name is",
+                "hint": "How are you?"
+            }
+        
+
 ## Get question by ID [/api/answers/get-question-by-id]
 
 ### Get question by ID [POST]
@@ -50,7 +84,7 @@ Creating a new question
 + Request (application/json)
 
          {
-                "id": "1",
+                "id": 1
         }
         
 + Response 201 (application/json)
@@ -62,31 +96,7 @@ Creating a new question
     + Body
 
             {
-                "id": "1",
+                "id": 1,
                 "question": "Hola,my name is",
                 "hint": "Come estas?"
-            }         
-        
-## Update question [/api/questions/update-question]
-
-### Update Question [POST]
-
-+ Request (application/json)
-
-         {
-                "id": "1",
-        }
-        
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/1
-
-    + Body
-
-            {
-                "id": "1",
-                "question": "Hi,my name is",
-                "hint": "How are you?"
             }
