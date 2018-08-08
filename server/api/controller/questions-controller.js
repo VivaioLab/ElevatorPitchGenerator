@@ -32,8 +32,9 @@ exports.getquestions = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
+
 exports.getquestionbyID = (req, res) => {	
-	questions.findById(req.body.id).then(question => {
+	questions.findById(req.params.id).then(question => {
 			res.json(question);
 		}).catch(err => {
 			console.log(err);
