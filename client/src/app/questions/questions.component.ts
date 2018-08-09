@@ -139,7 +139,6 @@ this.some_id = this.q_id;
   saveChanges()
   {
     let ans = this.prepareSaveAnswer();
-    console.log(ans);
     this.answerService.saveAnswers(ans).then(
       data => {
        console.log(data);

@@ -7,6 +7,7 @@ module.exports = (sequelize, Sequelize) => {
         hint: {
             type: Sequelize.STRING
         }
+        
     });
 
     return Questions;
