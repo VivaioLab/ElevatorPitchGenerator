@@ -6,10 +6,15 @@ import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Questions } from '../../model/questionsModel';
 import { Quest } from '../../model/question-model';
+import { Answer } from '../../model/answerModel';
 import { QuestionsService } from '../../service/questions.service';
 import { LoginServiceService } from '../../service/login-service.service';
+import { PitchService } from '../../service/pitch-service.service';
+import { AnswerService } from '../../service/answer.service';
+
 import { Email } from '../../model/loginModel';
 import { Pitch } from '../../model/pitchModel';
+
 
 @Component({
   selector: 'app-reviewpage',
@@ -18,15 +23,32 @@ import { Pitch } from '../../model/pitchModel';
   styleUrls: ['./reviewpage.component.css']
 })
 export class ReviewpageComponent implements OnInit {
+  isCurrent = true;
+  customers: Quest[];
+  emails: Email[];
+  user_id: number;
+  email_id: string;
+  pitch: Pitch[];
+  answer: Answer[];
+  question1: string;
+  question2: string;
+  question3: string;
+  question4: string;
+  question5: string;
+  answer1: string;
+  modalRef: BsModalRef;
+  questionsModel: Questions;
+  pitchModel: Pitch;
+  quest_id: number;
+  
   get saveQuestion1() {
-    this.question1 = localStorage.getItem('question1');
 
-    return this.question1;
+    this.question2 = localStorage.getItem('question2');
+    return this.question2;
+
+    
   }
-  get ans1() {
-    this.answer1 = localStorage.getItem('name');
-    return this.answer1;
-  }
+  
   get saveQuestion2() {
     this.question2 = localStorage.getItem('question2');
     return this.question2;
@@ -45,27 +67,8 @@ export class ReviewpageComponent implements OnInit {
     this.question5 = localStorage.getItem('question5');
     return this.question5;
   }
-
-  //  this.answer1 = localStorage.getItem('answer1');
-  //  return this.answer1;
-
-
-  isCurrent = true;
-  customers: Quest[];
-  emails: Email[];
-  user_id: number;
-  email_id: string;
-  pitch: Pitch[];
-  question1: string;
-  question2: string;
-  question3: string;
-  question4: string;
-  question5: string;
-  answer1: string;
-  modalRef: BsModalRef;
-  questionsModel: Questions;
-  pitchModel: Pitch;
-  constructor(private questionService: QuestionsService, private loginService: LoginServiceService,
+  
+  constructor(private answerService:AnswerService,private pitchService:PitchService,private questionService: QuestionsService, private loginService: LoginServiceService,
     private modalService: BsModalService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
@@ -74,8 +77,6 @@ export class ReviewpageComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    // this.loading();
     this.questionService.getCustomers()
       .subscribe(
       customers => {
@@ -85,14 +86,7 @@ export class ReviewpageComponent implements OnInit {
       );
 
   }
-  // loading() {
-  //   this.question1 = JSON.parse(localStorage.getItem('question1'));
-  //   this.question2 = JSON.parse(localStorage.getItem('question2'));
-  //   this.question3 = JSON.parse(localStorage.getItem('question3'));
-  //   this.question4 = JSON.parse(localStorage.getItem('question4'));
-  //   this.question5 = JSON.parse(localStorage.getItem('question5'));
-  // }
-
+  
   savToBackend() {
 
     if (this.questionsModel) {
@@ -111,26 +105,36 @@ export class ReviewpageComponent implements OnInit {
   emailtoUs() {
     this.loginService.getUserByEmail(this.email_id).then(
       login => {
+      
         if (login) {
           let newPitch = this.prepareSavePitch(login.id);
-          this.loginService.addPitch(login.id).then(
+          this.pitchService.updatePitch(newPitch).then(
             pitch => {
               console.log(pitch);
             });
+          
         }
         else {
           this.loginService.createNewUser(this.email_id).then(
             data => {
               let newPitch = this.prepareSavePitch(data.id);
-              this.loginService.addPitch(data.id).then();
+          this.pitchService.updatePitch(newPitch).then(
+            pitch => {
+              console.log(pitch);
             });
-        }
+        
 
       });
+        
   }
+})
+}
+
+  
 
   prepareSavePitch(data): Pitch {
     const pitch: Pitch = {
+      id: JSON.parse(localStorage.getItem('pitch_id')),
       user_id: data
     }
     return pitch;

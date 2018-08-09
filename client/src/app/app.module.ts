@@ -21,7 +21,9 @@ import { ConfirmpageComponent } from './confirmpage/confirmpage.component';
 import {MatToolbarModule,MatButtonModule,MatInputModule,MatIconModule, MatSidenavModule} from '@angular/material';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { CorouselComponent } from './corousel/corousel.component';
-import { QuestionsComponent } from './questions/questions.component';
+import {QuestionsComponent} from './questions/questions.component';
+import { QuestionsService } from '../service/questions.service';
+
 
 @NgModule({
   declarations: [

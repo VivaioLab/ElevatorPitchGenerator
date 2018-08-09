@@ -10,7 +10,7 @@ exports.saveanswer = (req, res) => {
 	// Save to PostgreSQL database
 	answers.create({
         "answer": req.body.answer, 
-        "question_id": req.question_id, 
+        "question_id": req.body.question_id, 
         "pitch_id": req.body.pitch_id, 
     }).then(questions => {		
 			// Send created customer to client

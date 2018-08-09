@@ -28,4 +28,18 @@ export class PitchService {
     });
     return promise;
   }
+
+  updatePitch(pitch:Pitch) : Promise<any>{
+    let promise = new Promise((resolve, reject) => {
+  
+        this.http.post<any>(this.pitchURL,{pitch})
+        .subscribe(data => { 
+          resolve(data);
+        },
+        error => {
+          reject(error);
+        });  
+    });
+    return promise;
+  }
 }

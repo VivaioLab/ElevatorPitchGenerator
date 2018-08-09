@@ -31,11 +31,5 @@
     <br/>
     <br/>
     <br/>
-
-    <!-- <button routerLink="/reviewpage"   routerLinkActive="active" class="index-button">
-      <mat-icon svgIcon="name-icon"  class="nav-icons col-md-sm name-icon"      style="background-color: green;" (click)="sidenavright.close()"></mat-icon>
-      <label class="col-md-sm" [ngClass]="{'label-class': !isValid1}"   >Review</label>
-      <br/>
-    </button> -->
     <button  mat-raised-button routerLink="/reviewpage" [disabled] = "!isReview" [ngClass] ="{'current-review' : isCurrentReview,'disable-review': !isReview}" class="review-class sidenav-button"   routerLinkActive="active">Review</button>
 </div>

@@ -12,7 +12,6 @@ import {QuestionsComponent} from './questions/questions.component';
 const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home', component:HomeComponent, data: { state: 'home'}  },
-    // { path: 'home/:questions', component:QuestionsComponent, data: { state: 'questions'}  },
     {path : 'questions/:id', component : QuestionsComponent, data: { state: 'questions'}},
 
     {path : 'question1', component : Question1Component, data: { state: 'question1'}},
