@@ -19,7 +19,6 @@ export class QuestionsService {
   fetchPitchURL = 'http://localhost:8080/api/model/pitch-model'
   pitchURL ='http://localhost:8080/api/questions/link-pitch'
   userURL ='http://localhost:8080/api/questions/create-user'
-
   getUserByEmailURL='http://localhost:8080/api/questions/get-user-by-email'
   getUserURL = "https://salty-temple-18987.herokuapp.com/getUser";
 
@@ -44,11 +43,6 @@ export class QuestionsService {
     });
     return promise;
   }
-
-  // findAllQuestions()
-  // {
-  //  return fetch('http://localhost:8080/api/questions/createQuestion').then(response => response.json())
-  // }
 
   getCustomers (): Observable<Quest[]> {
     return this.http.get<Quest[]>(this.fetchQuestionURL);

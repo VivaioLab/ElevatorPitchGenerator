@@ -37,11 +37,4 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['/questions', this.customers[0].id]);
     
   }
-
-  prepareSavePitch(data): Pitch {
-    const pitch: Pitch = {
-      user_id: data
-    }
-    return pitch;
-  }
 }

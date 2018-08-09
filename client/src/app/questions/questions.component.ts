@@ -6,7 +6,10 @@ import { DomSanitizer } from "@angular/platform-browser";
 import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Router } from '@angular/router';
 import { QuestionsService } from '../../service/questions.service';
+import { AnswerService } from '../../service/answer.service';
 import { Questions } from '../../model/questionsModel';
+import { Answer } from '../../model/answerModel';
+
 import {Quest} from '../../model/question-model';
  import { ActivatedRoute } from '@angular/router';
 
@@ -45,6 +48,7 @@ export class QuestionsComponent implements OnInit {
   id : number ;
   question : string;
   questionsModel: Questions;
+  answermodel: Answer;
   q_id: number;
   some_id : number;
   current_id : number;
@@ -54,11 +58,11 @@ export class QuestionsComponent implements OnInit {
   icon: string;
   content: string;
   image: string;
+ 
 
 
 
-
-  constructor(private route: ActivatedRoute,private questionService: QuestionsService,private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
+  constructor(private answerService:AnswerService, private route: ActivatedRoute,private questionService: QuestionsService,private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
     this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
     .addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"));
   }
@@ -77,17 +81,6 @@ export class QuestionsComponent implements OnInit {
 
   ngOnInit() {
     this.wordnumber = false;
-
-    // this.current_id = +this.route.snapshot.paramMap.get('id');
-    // this.questionService.getPitch().subscribe(
-
-
-    // )
-    
-
-
-     
-    
     this.q_id = +this.route.snapshot.paramMap.get('id');
       this.isValid1 = true;
       this.questionService.getCustomers()
@@ -145,8 +138,17 @@ this.some_id = this.q_id;
   }
   saveChanges()
   {
+    let ans = this.prepareSaveAnswer();
+    console.log(ans);
+    this.answerService.saveAnswers(ans).then(
+      data => {
+       console.log(data);
+      });
+  
+     
     if(this.some_id!==(this.customers).length){
     this.router.navigate(['/questions', this.customers[this.some_id].id]);
+    this.name= "";
     this.label = this.customers[this.some_id].question;
     this.placeholder = this.customers[this.some_id].hint;
     
@@ -157,88 +159,20 @@ this.some_id = this.q_id;
       this.router.navigate(['/reviewpage']);
      }
 
+     
+
 
     
   }
-  // saveChanges(id) {
-
-    
+  prepareSaveAnswer(): Answer {
+    const answer: Answer = {
+      answer: this.name,
+      question_id: this.some_id,
+      pitch_id: JSON.parse(localStorage.getItem('pitch_id'))
+    }
+    return answer;
+  }
   
-  //   // // localStorage.setItem('question1', JSON.stringify(this.name));
-  //   if(this.isValid1)
-  //     {
-  //       this.isValid1 = false;
-  //       this.isValid2 = true;
-  //       this.label = "";
-  //       localStorage.setItem('answer1',this.name);
-       
-  //       this.router.navigate(['/questions', this.customers[1].id]);
-  //       this.label = this.customers[1].question;
-  //       if(localStorage.getItem('answer2'))
-  //       {
-  //         this.name = localStorage.getItem('answer2');
-  //       }
-  //       else{
-  //         this.name = "";
-  //       }
-        
-  //     }
-  //     else if(this.isValid2)
-  //     {
-        
-  //       this.isValid2 = false;
-  //       this.isValid3 = true;
-  //       this.label = "";
-  //       localStorage.setItem('answer2',this.name);
-  //       this.label =  this.customers[2].question;
-  //       if(localStorage.getItem('answer3'))
-  //       {
-  //         this.name = localStorage.getItem('answer3');
-  //       }
-  //       else{
-  //         this.name = "";
-  //       }
-  //     }
-  //     else if(this.isValid3)
-  //     {
-        
-  //       this.isValid3 = false;
-  //       this.isValid4 = true;
-  //       this.label = "";
-  //       localStorage.setItem('answer3',this.name);
-  //       this.label =  this.customers[3].question;
-  //       if(localStorage.getItem('answer4'))
-  //       {
-  //         this.name = localStorage.getItem('answer4');
-  //       }
-  //       else{
-  //         this.name = "";
-  //       }
-  //     }
-  //     else if(this.isValid4)
-  //     {
-        
-  //       this.isValid4 = false;
-  //       this.isValid5 = true;
-  //       this.label = "";
-  //       localStorage.setItem('answer4',this.name);
-  //       this.label =  this.customers[4].question;
-  //       if(localStorage.getItem('answer5'))
-  //       {
-  //         this.name = localStorage.getItem('answer5');
-  //       }
-  //       else{
-  //         this.name = "";
-  //       }
-  //     }
-  //     else if(this.isValid5)
-  //     {
-  //       localStorage.setItem('answer5',this.name);
-  //       this.isValid5=false;
-  //       this.router.navigate(['/reviewpage']);
-  //     }
-  // }
-
   onTextEnter(event : string) : void {
     this.buttonIsDisabled =true;
     let passedString = event;
