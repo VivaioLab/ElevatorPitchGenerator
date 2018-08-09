@@ -5,9 +5,11 @@ HOST: https://salty-temple-18987.herokuapp.com/
 
 Polls is a simple API allowing consumers to view polls and vote in them.
 
-## Questions Collection [/api/questions/create-question]
+## API Collection 
 
-### List All Questions [GET]
+## Questions [/api/questions/create-question]
+
+### LIST ALL QUESTIONS [GET]
 
 + Response 200 (application/json)
 
@@ -29,13 +31,12 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             }
         ]
 
-### Create a New Question [POST]
+### CREATE A NEW QUESTION [POST]
 
 
 + Request (application/json)
 
          {
-                "id" : 1
                 "question": "Hola,my name is",
                 "hint": "Come estas?"
         }
@@ -44,29 +45,33 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
     + Headers
 
-            Location: /questions/1
+            Location: /api/questions/create-question/1
 
     + Body
 
             {
-                 "question": "Hola,my name is",
+                "id" : 1,
+                "question": "Hola,my name is",
                 "hint": "Come estas?"
             }
             
-## Update question [/api/questions/update-question]
-
-### Update Question [PUT]
+### UPDATE QUESTION [PUT]
 
 + Request (application/json)
 
         {
+            {
                 "id": 1,
+                "question": "Hi,my name is",
+                "hint": "How are you?"
+            }
+                
         }
 + Response 201 (application/json)
 
     + Headers
 
-            Location: /questions/1
+            Location: /api/questions/create-question/1
 
     + Body
 
@@ -75,28 +80,332 @@ Polls is a simple API allowing consumers to view polls and vote in them.
                 "question": "Hi,my name is",
                 "hint": "How are you?"
             }
-        
 
-## Get question by ID [/api/answers/get-question-by-id]
+## Get Question by ID [/api/questions/get-question-by-id]
 
-### Get question by ID [POST]
+### GET QUESTION BY ID [POST]
+
 
 + Request (application/json)
 
          {
-                "id": 1
+                "id" : 1
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/questions/get-question-by-id/1
+
+    + Body
+
+            {
+                "id" : 1,
+                "question": "Hola,my name is",
+                "hint": "Come estas?"
+            }
+         
+## Answers [/api/answers/create-answer]
+
+### LIST ALL ANSWERS [GET]
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "answer": "Jay Nirmal",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+            {
+                "id": 2,
+                "answer": "Jay Nirmal",
+                "question_id": 2,
+                "pitch_id" : 1
+            }
+            {
+                "id": 3,
+                "answer": "Jay Nirmal",
+                "question_id": 3,
+                "pitch_id" : 1
+            }
+            {
+                "id": 3,
+                "answer": "Jay Nirmal",
+                "question_id": 3,
+                "pitch_id" : 1
+            }
+        ]
+
+### CREATE A NEW ANSWER [POST]
+
+
++ Request (application/json)
+
+            {
+                "answer": "Jay Nirmal",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/answers/create-answer/1
+
+    + Body
+
+            {
+                "id" : 1,
+                "answer": "Jay Nirmal",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+    
+### UPDATE ANSWER [PUT]
+
++ Request (application/json)
+
+        {
+            {
+                "id" : 1,
+                "answer": "Akash Bangera",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+        }
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/answers/create-answer/1
+
+    + Body
+
+            {
+                "id" : 1,
+                "answer": "Akash Bangera",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+            
+## Get Answer by ID [/api/answers/get-answer-by-id]
+
+### GET ANSWER BY ID [POST]
+
+
++ Request (application/json)
+
+         {
+                "id" : 1
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/answers/get-answer-by-id/1
+
+    + Body
+
+            {
+                "id" : 1,
+                "answer": "jay Nirmal",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+     
+## Get Answers by PITCH_ID [/api/answers/get-answers-by-pitchID]
+
+### GET ANSWERS BY PITCH_ID [POST]
+
+
++ Request (application/json)
+
+         {
+                "pitch_id" : 1
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: api/answers/get-answers-by-pitchID/1
+
+    + Body
+
+            {
+                "id" : 1,
+                "answer": "jay Nirmal",
+                "question_id": 1,
+                "pitch_id" : 1
+            }
+            {
+                "id" : 2,
+                "answer": "I noticed that  people dont get fresh food",
+                "question_id": 2,
+                "pitch_id" : 1
+            }
+            {
+                "id" : 3,
+                "answer": "The problem can be solved by giving fresh food made my food housewifes",
+                "question_id": 3,
+                "pitch_id" : 1
+            }
+            {
+                "id" : 4,
+                "answer": "In this way, people will get fresh food and housewives will earn an extra income",
+                "question_id": 4,
+                "pitch_id" : 1
+            }
+            {
+                "id" : 5,
+                "answer": "We are looking for $10K for our startup for the production",
+                "question_id": 5,
+                "pitch_id" : 1
+            }
+     
+## Pitch [/api/questions/link-pitch] 
+
+### CREATE A PITCH [POST]
++ Request (application/json)
+
+            {
+                user_id :1
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/questions/link-pitch/1
+
+    + Body
+
+            {
+                "id" : 1,
+                "user_id" : 1
+            }
+
+### UPDATE PITCH [PUT]
+
++ Request (application/json)
+
+        {
+            {
+                "id" : 2,
+                "user_id" :1
+            }
+        }
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/questions/link-pitch/2
+
+    + Body
+
+            {
+                "id" : 1,
+                "user_id" : 2
+            }
+            
+## Get pitch by email [/api/questions/get-pitch-by-email]
+
+### Get pitch by email [POST]
+
++ Request (application/json)
+
+        {
+            {
+                "email" : "fabio@gmail.com"
+            }
+        }
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/questions/get-pitch-by-email/7
+
+    + Body
+
+            {
+                "id" : 7,
+                "user_id" : 4
+            }
+        
+## Login [/api/questions/create-user]
+
+### LIST ALL USERS [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "id": 1,
+                "user_name": "jaynirmmal15@gmail.com",
+                "password": "sfdoiods",
+                "email" : "jaynirmal15@gmail.com"
+            }
+            {
+                "id": 2,
+                "user_name": "akashbangera@gmail.com",
+                "password": "qweion,m",
+                "email" : "akashbangera@gmail.com"
+            }
+            {
+                "id": 3,
+                "user_name": "luca@gmail.com",
+                "password": "liwjlm.z",
+                "email" : "luca@gmail.com"
+            }
+        ]
+
+### CREATE A NEW USER [POST]
+
+
++ Request (application/json)
+
+         {
+                "email": "fabio@gmail.com"
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /api/questions/create-user/4
+
+    + Body
+
+            {
+                "id": 4,
+                "user_name": "fabio@gmail.com",
+                "password": "AIWOIDNS",
+                "email" : "fabio@gmail.com"
+            }
+  
+## Get user by email [/api/questions/get-user-by-email]
+### GET USER BY EMAIL [POST]
+
++ Request (application/json)
+
+        {
+                "email": "fabio@gmail.com"
         }
         
 + Response 201 (application/json)
 
     + Headers
-
-            Location: /questions/1
-
+            
+            Location: /api/questions/get-user-by-email/4
     + Body
-
+    
             {
-                "id": 1,
-                "question": "Hola,my name is",
-                "hint": "Come estas?"
+                "id" : 4,
+                "user_name" : "fabio@gmail.com",
+                "password" : "AIWOIDNS",
+                "email" : "fabio@gmail.com"
             }
