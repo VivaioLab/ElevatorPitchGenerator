@@ -5,8 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Questions } from '../../model/questionsModel';
-import { Quest } from '../../model/question-model';
-import { Answer } from '../../model/answerModel';
+
 import { QuestionsService } from '../../service/questions.service';
 import { LoginServiceService } from '../../service/login-service.service';
 import { PitchService } from '../../service/pitch-service.service';
@@ -14,7 +13,8 @@ import { AnswerService } from '../../service/answer.service';
 
 import { Email } from '../../model/loginModel';
 import { Pitch } from '../../model/pitchModel';
-
+import { Quest } from '../../model/question-model';
+import { Answer } from '../../model/answerModel';
 
 @Component({
   selector: 'app-reviewpage',
@@ -25,6 +25,7 @@ import { Pitch } from '../../model/pitchModel';
 export class ReviewpageComponent implements OnInit {
   isCurrent = true;
   customers: Quest[];
+  answers : Answer[];
   emails: Email[];
   user_id: number;
   email_id: string;
@@ -77,6 +78,18 @@ export class ReviewpageComponent implements OnInit {
   }
 
   ngOnInit() {
+    
+    this.answerService.getAnswers(JSON.parse(localStorage.getItem('pitch_id'))).then(
+      answers =>{
+        if(answers)
+        {
+          this.answer = answers;
+          console.log(this.answer);
+        }
+        
+        
+      }
+    );
     this.questionService.getCustomers()
       .subscribe(
       customers => {
@@ -108,7 +121,8 @@ export class ReviewpageComponent implements OnInit {
       
         if (login) {
           let newPitch = this.prepareSavePitch(login.id);
-          this.pitchService.updatePitch(newPitch).then(
+          console.log(newPitch);
+          this.pitchService.updatePitch(newPitch).subscribe(
             pitch => {
               console.log(pitch);
             });
@@ -118,7 +132,7 @@ export class ReviewpageComponent implements OnInit {
           this.loginService.createNewUser(this.email_id).then(
             data => {
               let newPitch = this.prepareSavePitch(data.id);
-          this.pitchService.updatePitch(newPitch).then(
+          this.pitchService.updatePitch(newPitch).subscribe(
             pitch => {
               console.log(pitch);
             });
