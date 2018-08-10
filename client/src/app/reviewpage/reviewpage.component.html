@@ -6,19 +6,11 @@
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
     <div class="container" id="reviewpage">
       <form class="form-control">
-        <div *ngFor="let ques of customers ">
           <div *ngFor="let ans of answer ">
-
-
             <span>
-              {{ques.question}}
-            </span>
-            <span>
-
               {{ans.answer}}
             </span>
           </div>
-        </div>
         <!-- <p>
           {{saveQuestion1}}
           <button type="button" style="background: transparent;border:none;outline:none;">

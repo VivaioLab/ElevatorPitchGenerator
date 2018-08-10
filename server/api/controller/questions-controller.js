@@ -13,7 +13,10 @@ exports.createquestion = (req, res) => {
 	// Save to PostgreSQL database
 	questions.create({
         "question": req.body.question, 
-        "hint": req.body.hint, 
+		"hint": req.body.hint,
+		"modal_text" : req.body.modal_text,
+		"image_url" : req.body.image_url,
+		"icon_name" : req.body.icon_name
     }).then(questions => {		
 			// Send created customer to client
 			res.json(questions);

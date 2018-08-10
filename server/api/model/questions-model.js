@@ -6,6 +6,15 @@ module.exports = (sequelize, Sequelize) => {
         },
         hint: {
             type: Sequelize.STRING
+        },
+        modal_text: {
+            type: Sequelize.STRING
+        },
+        image_url: {
+            type: Sequelize.STRING
+        },
+        icon_name: {
+            type: Sequelize.STRING
         }
         
     });
