@@ -89,67 +89,76 @@ export class QuestionsComponent implements OnInit {
                   this.customers = customers
                   this.label = this.customers[this.q_id-1].question;
                   this.placeholder = this.customers[this.q_id-1].hint;
+                  this.icon = this.customers[this.q_id-1].icon_name;
+                  this.content  = this.customers[this.q_id-1].modal_text;
+                  this.image = this.customers[this.q_id-1].image_url;
                  }
                 );
 
                 
 this.some_id = this.q_id;
            
-                
+         
                 
   }
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
-    if(this.some_id === 1)
-    {
-      this.icon = "Name";
-      this.content = "Did you really ask for more info about your Name?! :)"
-      this.image="assets/images/nameicon.svg";
+    // if(this.some_id === 1)
+    // {
+    //   this.icon = "Name";
+    //   this.content = "Did you really ask for more info about your Name?! :)"
+    //   this.image="assets/images/nameicon.svg";
 
-    }else if(this.some_id === 2)
-    {
-      this.icon = "Problem";
-      this.content = "Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!"
-      this.image="assets/images/problem icon.svg";
+    // }else if(this.some_id === 2)
+    // {
+    //   this.icon = "Problem";
+    //   this.content = "Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!"
+    //   this.image="assets/images/problem icon.svg";
 
-    }
-    else if(this.some_id === 3)
-    {
-      this.icon = "Solution";
-      this.content = "This is the moment to explain your product or service. Explain how you are solving the problem for the user(s)."
-      this.image="assets/images/solution.svg";
+    // }
+    // else if(this.some_id === 3)
+    // {
+    //   this.icon = "Solution";
+    //   this.content = "This is the moment to explain your product or service. Explain how you are solving the problem for the user(s)."
+    //   this.image="assets/images/solution.svg";
 
-    }
-    else if(this.some_id === 4)
-    {
-      this.icon = "Value";
-      this.content = "What is the biggest advantage/benefit you're offering with your product or service?"
-      this.image="assets/images/value icon.svg";
+    // }
+    // else if(this.some_id === 4)
+    // {
+    //   this.icon = "Value";
+    //   this.content = "What is the biggest advantage/benefit you're offering with your product or service?"
+    //   this.image="assets/images/value icon.svg";
 
-    }
-    else if(this.some_id === 5)
-    {
-      this.icon = "Proof";
-      this.content = "Explain here what you are looking for and what would you do with that money."
-      this.image="assets/images/proof and ask.svg";
+    // }
+    // else if(this.some_id === 5)
+    // {
+    //   this.icon = "Proof";
+    //   this.content = "Explain here what you are looking for and what would you do with that money."
+    //   this.image="assets/images/proof and ask.svg";
 
-    }
+    // }
   }
   saveChanges()
   {
     let ans = this.prepareSaveAnswer();
     this.answerService.saveAnswers(ans).then(
       data => {
-       console.log(data);
+
       });
-  
+  console.log("Modified answer :-" + this.label +" " + this.name);
+
+  let testing = this.replaceString((" " + this.label), "", this.name);
+console.log("Original answer :-" + testing);  
      
     if(this.some_id!==(this.customers).length){
     this.router.navigate(['/questions', this.customers[this.some_id].id]);
     this.name= "";
     this.label = this.customers[this.some_id].question;
     this.placeholder = this.customers[this.some_id].hint;
+    this.icon = this.customers[this.some_id].icon_name;
+    this.content  = this.customers[this.some_id].modal_text;
+    this.image = this.customers[this.some_id].image_url;
     
     
       this.some_id++;
@@ -165,7 +174,7 @@ this.some_id = this.q_id;
   }
   prepareSaveAnswer(): Answer {
     const answer: Answer = {
-      answer: this.name,
+      answer:this.label + " " + this.name,
       question_id: this.some_id,
       pitch_id: JSON.parse(localStorage.getItem('pitch_id'))
     }
@@ -178,6 +187,14 @@ this.some_id = this.q_id;
    if (/\S/.test(passedString)) {
        this.buttonIsDisabled=false;
    }
+  }
+  replaceString(oldS, newS, fullS) {
+    for (var i = 0; i < fullS.length; ++i) {
+      if (fullS.substring(i, i + oldS.length) == oldS) {
+        fullS = fullS.substring(0, i) + newS + fullS.substring(i + oldS.length, fullS.length);
+      }
+    }
+    return fullS;
   }
 
 }

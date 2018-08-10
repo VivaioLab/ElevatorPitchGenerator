@@ -39,7 +39,6 @@ export class AnswerService {
       let promise = new Promise((resolve, reject) => {
   let answer = answers.answer;
   let question_id = answers.question_id;
-  console.log(question_id);
   let pitch_id =answers.pitch_id;
           this.http.post<any>(this.answerURL,{answer,question_id,pitch_id})
           .subscribe(data => { 

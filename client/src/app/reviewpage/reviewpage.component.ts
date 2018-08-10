@@ -41,7 +41,8 @@ export class ReviewpageComponent implements OnInit {
   questionsModel: Questions;
   pitchModel: Pitch;
   quest_id: number;
-  
+  value : string;
+  mask : string;
   get saveQuestion1() {
 
     this.question2 = localStorage.getItem('question2');
@@ -78,7 +79,6 @@ export class ReviewpageComponent implements OnInit {
   }
 
   ngOnInit() {
-    
     this.answerService.getAnswers(JSON.parse(localStorage.getItem('pitch_id'))).then(
       answers =>{
         if(answers)
@@ -153,6 +153,7 @@ export class ReviewpageComponent implements OnInit {
     }
     return pitch;
   }
-
+  
+  
 }
 
