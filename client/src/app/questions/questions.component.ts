@@ -59,9 +59,6 @@ export class QuestionsComponent implements OnInit {
   content: string;
   image: string;
  
-
-
-
   constructor(private answerService:AnswerService, private route: ActivatedRoute,private questionService: QuestionsService,private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
     this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
     .addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"));
@@ -77,8 +74,6 @@ export class QuestionsComponent implements OnInit {
     }
     return count + 1;
   }
-
-
   ngOnInit() {
     this.wordnumber = false;
     this.q_id = +this.route.snapshot.paramMap.get('id');
@@ -93,58 +88,17 @@ export class QuestionsComponent implements OnInit {
                   this.content  = this.customers[this.q_id-1].modal_text;
                   this.image = this.customers[this.q_id-1].image_url;
                  }
-                );
-
-                
-this.some_id = this.q_id;
-           
-         
-                
+                );              
+this.some_id = this.q_id;              
   }
-
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
-    // if(this.some_id === 1)
-    // {
-    //   this.icon = "Name";
-    //   this.content = "Did you really ask for more info about your Name?! :)"
-    //   this.image="assets/images/nameicon.svg";
-
-    // }else if(this.some_id === 2)
-    // {
-    //   this.icon = "Problem";
-    //   this.content = "Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!"
-    //   this.image="assets/images/problem icon.svg";
-
-    // }
-    // else if(this.some_id === 3)
-    // {
-    //   this.icon = "Solution";
-    //   this.content = "This is the moment to explain your product or service. Explain how you are solving the problem for the user(s)."
-    //   this.image="assets/images/solution.svg";
-
-    // }
-    // else if(this.some_id === 4)
-    // {
-    //   this.icon = "Value";
-    //   this.content = "What is the biggest advantage/benefit you're offering with your product or service?"
-    //   this.image="assets/images/value icon.svg";
-
-    // }
-    // else if(this.some_id === 5)
-    // {
-    //   this.icon = "Proof";
-    //   this.content = "Explain here what you are looking for and what would you do with that money."
-    //   this.image="assets/images/proof and ask.svg";
-
-    // }
   }
   saveChanges()
   {
     let ans = this.prepareSaveAnswer();
     this.answerService.saveAnswers(ans).then(
       data => {
-
       });
   console.log("Modified answer :-" + this.label +" " + this.name);
 
@@ -159,18 +113,11 @@ console.log("Original answer :-" + testing);
     this.icon = this.customers[this.some_id].icon_name;
     this.content  = this.customers[this.some_id].modal_text;
     this.image = this.customers[this.some_id].image_url;
-    
-    
       this.some_id++;
     }
      else{
       this.router.navigate(['/reviewpage']);
-     }
-
-     
-
-
-    
+     } 
   }
   prepareSaveAnswer(): Answer {
     const answer: Answer = {
