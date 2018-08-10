@@ -32,7 +32,7 @@ exports.getanswers = (req,res) =>{
 exports.getasnwersbypitchID = (req, res) => {
 	answers.findAll({where :{pitch_id : req.body.pitch_id}}).then(ans => {
 			// Send Login details to Client
-			res.json(ans);
+			res.json(ans.sort(function(c1, c2){return c1.id - c2.id}));
 		}).catch(err => {
 			console.log(err);
 			res.status(500).json({msg: "error", details: err});
