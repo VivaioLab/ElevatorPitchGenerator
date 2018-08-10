@@ -17,18 +17,39 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             {
                 "id": 1,
                 "question": "My name is",
-                "hint": "Santa Claus"
+                "hint": "Santa Claus",
+                "modal_text" : "Did you really ask for more info about your Name?! :)",
+                "image_url" : "assets/images/nameicon.svg"
             }
             {
                 "id": 2,
                 "question": "I noticed",
-                "hint": "vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap"
+                "hint": "vacation rental owners have trouble buying and managing rentals supplies like linens, towels, body wash and soap",
+                "modal_text" : "Keep the problem short. Explain the situation with a small story. Don't talk about your solution yet!",
+                "image_url" : "assets/images/problem icon.svg"
             }
             {
                 "id": 3,
                 "question": "The problem can be solved",
-                "hint": "with a subscription services business that will automatically replenish the supplies every time is needed"
+                "hint": "with a subscription services business that will automatically replenish the supplies every time is needed",
+                "modal_text" : "This is the moment to explain your product or service. Explain how you are solving the problem for the user(s).",
+                "image_url": "assets/images/solution.svg"
             }
+            {
+                "id": 4,
+                "question": "In this way",
+                "hint": "The owner will streamline the operation and at the same time reduce the cost associated with last-minute purchases.",
+                "modal_text" : "What is the biggest advantage/benefit you're offering with your product or service?",
+                "image_url": "assets/images/value icon.svg"
+            }
+            {
+                "id": 5,
+                "question": "We are looking for",
+                "hint": "$10K to work for a 4 to 6 week on A/B testing the value proposition and build an email list of possible early customers",
+                "modal_text" : "Explain here what you are looking for and what would you do with that money.",
+                "image_url": "assets/images/proof and ask.svg"
+            }
+            
         ]
 
 ### CREATE A NEW QUESTION [POST]
@@ -38,7 +59,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
          {
                 "question": "Hola,my name is",
-                "hint": "Come estas?"
+                "hint": "Come estas?",
+                "modal_text" : "Really?",
+                "image_url" : "assets/images/nameicon.svg"
         }
 
 + Response 201 (application/json)
@@ -52,7 +75,10 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             {
                 "id" : 1,
                 "question": "Hola,my name is",
-                "hint": "Come estas?"
+                "hint": "Come estas?",
+                "modal_text" : "Really?",
+                "image_url" : "assets/images/nameicon.svg"
+                
             }
             
 ### UPDATE QUESTION [PUT]
@@ -63,7 +89,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             {
                 "id": 1,
                 "question": "Hi,my name is",
-                "hint": "How are you?"
+                "hint": "How are you?",
+                "modal_text" : "Really?",
+                "image_url" : "assets/images/nameicon.svg"
             }
                 
         }
@@ -78,7 +106,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             {
                 "id": 1,
                 "question": "Hi,my name is",
-                "hint": "How are you?"
+                "hint": "How are you?",
+                "modal_text" : "Really?",
+                "image_url" : "assets/images/nameicon.svg"
             }
 
 ## Get Question by ID [/api/questions/get-question-by-id]
@@ -103,7 +133,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             {
                 "id" : 1,
                 "question": "Hola,my name is",
-                "hint": "Come estas?"
+                "hint": "Come estas?",
+                "modal_text" : "Really?",
+                "image_url" : "assets/images/nameicon.svg"
             }
          
 ## Answers [/api/answers/create-answer]
