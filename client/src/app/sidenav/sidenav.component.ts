@@ -4,7 +4,9 @@ import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { ActivatedRoute ,Router } from '@angular/router';
 import { QuestionsService } from '../../service/questions.service';
+import {AnswerService} from '../../service/answer.service';
 import {Quest} from '../../model/question-model';
+import { Answer } from '../../model/answerModel';
 @Component({
   selector: 'app-sidenav',
   templateUrl: './sidenav.component.html',
@@ -12,19 +14,16 @@ import {Quest} from '../../model/question-model';
 })
 
 export class SidenavComponent implements OnInit {
-  modalRef: BsModalRef;
-  icon: string;
-  image: string;
   q_id : number;
-  id : number ;
 questions : Quest[];
+answers : Answer[];
 isActive : false;
-  @Input('isCurrent1') isCurrent1 : boolean;
-  @Input('isCurrent2') isCurrent2 : boolean;
-  @Input('isCurrent3') isCurrent3 : boolean;
-  @Input('isCurrent4') isCurrent4 : boolean;
-  @Input('isCurrent5') isCurrent5 : boolean;
-  @Input('isCurrentReview') isCurrentReview : boolean;
+current_id : number;
+isCurrent : false;
+id : number;
+isValid : boolean;
+  @Input('pitch_id') pitch_id : number;
+
   // isValid1 = false;
   // isValid2 = false;
   // isValid3 = false;
@@ -32,21 +31,40 @@ isActive : false;
   // isValid5 = false;
   // isReview = false;
   // current_id: number;
-  constructor(private questionService : QuestionsService, private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer, private route: ActivatedRoute,private router : Router) {
+  constructor(private answerService : AnswerService,private questionService : QuestionsService, private route: ActivatedRoute,private router : Router) {
       // this.content();
+    
      }
 
   ngOnInit() {
     // this.onLoading();
-    this.q_id = +this.route.snapshot.paramMap.get('id');
-    this.questionService.getCustomers()
+  
+    this.route.params.subscribe(params => {
+      this.q_id = params['id'];
+      
+      this.questionService.getCustomers()
     .subscribe(
       question => {
        this.questions = question
+       console.log("Questions "+this.questions.length);
       }
      ); 
+     this.answerService.getAnswers(JSON.parse(localStorage.getItem('pitch_id'))).then(
+      data =>{
+        if(data)
+        {
+          this.answers = data;
+          console.log("Answers "+this.answers.length);
+        }
+         
+      }
+    );
     
+    });
+  
+  }
+  switchpage(id){
+    this.router.navigate(['/questions',id]);
   }
   // content(){
   //   this.matIconRegistry

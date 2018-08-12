@@ -31,8 +31,9 @@ export class HomeComponent implements OnInit {
       data => {
         let newPitch = data.id;
         localStorage.setItem('pitch_id',newPitch);
+        this.router.navigate(['/questions', this.customers[0].id]);
       });
-    this.router.navigate(['/questions', this.customers[0].id]);
+   
     
   }
 }

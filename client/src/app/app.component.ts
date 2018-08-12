@@ -15,7 +15,6 @@ export class AppComponent implements OnInit {
    }
    
   ngOnInit(){
-    localStorage.clear();
   }
   getState(outlet) {
     return outlet.activatedRouteData.state;
