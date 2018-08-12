@@ -50,6 +50,7 @@ export class QuestionsComponent implements OnInit {
   questionsModel: Questions;
   answermodel: Answer;
   q_id: number;
+  pitch_id :number;
   some_id : number;
   current_id : number;
   words: number;
@@ -76,20 +77,25 @@ export class QuestionsComponent implements OnInit {
   }
   ngOnInit() {
     this.wordnumber = false;
-    this.q_id = +this.route.snapshot.paramMap.get('id');
-      this.isValid1 = true;
+    // this.q_id = +this.route.snapshot.paramMap.get('id');
+    this.route.params.subscribe(params => {
+      this.q_id = params['id'];
       this.questionService.getCustomers()
-               .subscribe(
-                 customers => {
-                  this.customers = customers
-                  this.label = this.customers[this.q_id-1].question;
-                  this.placeholder = this.customers[this.q_id-1].hint;
-                  this.icon = this.customers[this.q_id-1].icon_name;
-                  this.content  = this.customers[this.q_id-1].modal_text;
-                  this.image = this.customers[this.q_id-1].image_url;
-                 }
-                );              
-this.some_id = this.q_id;              
+      .subscribe(
+        customers => {
+         this.customers = customers
+         this.label = this.customers[this.q_id-1].question;
+         this.placeholder = this.customers[this.q_id-1].hint;
+         this.icon = this.customers[this.q_id-1].icon_name;
+         this.content  = this.customers[this.q_id-1].modal_text;
+         this.image = this.customers[this.q_id-1].image_url;
+        }
+       ); 
+    });
+      this.isValid1 = true;
+                  
+this.some_id = this.q_id;    
+this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));        
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

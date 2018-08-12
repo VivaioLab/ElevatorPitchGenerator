@@ -34,6 +34,10 @@
     <button  mat-raised-button routerLink="/reviewpage" [disabled] = "!isReview" [ngClass] ="{'current-review' : isCurrentReview,'disable-review': !isReview}" class="review-class sidenav-button"   routerLinkActive="active">Review</button>
 </div> -->
 
-<div class="container nav-width">
-
+<div class="container nav-width" *ngFor="let que of questions " >
+    <button class="index-button" (click) = "switchpage(que.id)"    routerLinkActive="active" >
+      <img src="{{que.image_url}} " [ngClass]="{'current-review' : que.id == q_id}" class="nav-icons col-md-sm name-icon">
+      <label class="col-md-sm sidenav-button">{{que.icon_name}}</label>
+      <br/>
+    </button>
 </div>
