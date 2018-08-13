@@ -38,6 +38,15 @@ exports.getasnwersbypitchID = (req, res) => {
 			res.status(500).json({msg: "error", details: err});
 		});
 };
+exports.getasnwersbypitchIDandQuestionID = (req, res) => {
+	answers.find({where :{pitch_id : req.body.pitch_id,question_id : req.body.question_id}}).then(ans => {
+			// Send Login details to Client
+			res.json(ans);
+		}).catch(err => {
+			console.log(err);
+			res.status(500).json({msg: "error", details: err});
+		});
+};
 
 exports.getanswerbyID = (req, res) => {	
 	answers.findById(req.body.id).then(answer => {
