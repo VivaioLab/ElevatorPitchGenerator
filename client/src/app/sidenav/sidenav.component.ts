@@ -66,48 +66,7 @@ isValid : boolean;
   switchpage(id){
     this.router.navigate(['/questions',id]);
   }
-  // content(){
-  //   this.matIconRegistry
-  //   .addSvgIcon("problem-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/problem icon.svg"))
-  //   .addSvgIcon("questions",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
-  //   .addSvgIcon("name-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/nameicon.svg"))
-  //   .addSvgIcon("solution-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/solution.svg"))
-  //   .addSvgIcon("value-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/value icon.svg"))
-  //   .addSvgIcon("proof-icon",this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/proof and ask.svg")); 
-  //  }
-// onLoading()
-// {
 
 
-//   this.current_id = +this.route.snapshot.paramMap.get('id');
-//   console.log(this.current_id);
 
-//   if(this.current_id === 1)
-//   {
-//     this.isValid1 = true;
-//   }else
-//   if(this.current_id === 2)
-//   {
-//     this.isValid2 = true;
-//   }
-//   if(localStorage.getItem("question3"))
-//   {
-//     this.isValid3 = true;
-//   }
-//   if(localStorage.getItem("question4"))
-//   {
-//     this.isValid4 = true;
-//   }
-//   if(localStorage.getItem("question5"))
-//   {
-//     this.isValid5 = true;
-//   }
-// //   if (JSON.parse(localStorage.getItem('question1')) &&
-// //       JSON.parse(localStorage.getItem('question2')) &&
-// //       JSON.parse(localStorage.getItem('question3')) &&
-// //       JSON.parse(localStorage.getItem('question4')) &&
-// //       JSON.parse(localStorage.getItem('question5'))) {
-// //       this.isReview = true;
-// //     }
-//  }
 }
