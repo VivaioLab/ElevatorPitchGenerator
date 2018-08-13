@@ -33,4 +33,5 @@ module.exports = function (app) {
     app.route('/api/answers/get-answer-by-id').post(answersController.getanswerbyID);
     app.route('/api/answers/create-answer').put(answersController.updateanswer);
     app.route('/api/answers/get-answers-by-pitchID').post(answersController.getasnwersbypitchID);
+    app.route('/api/answers/get-answers-by-pitchID-and-QuestionID').post(answersController.getasnwersbypitchIDandQuestionID);
 };
