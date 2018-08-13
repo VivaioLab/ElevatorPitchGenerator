@@ -1,4 +1,10 @@
 import { Component, OnInit ,Input} from '@angular/core';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { QuestionsService } from '../../service/questions.service';
+import {Quest} from '../../model/question-model';
+import {AnswerService} from '../../service/answer.service';
+import { Answer } from '../../model/answerModel';
 
 @Component({
   selector: 'app-corousel',
@@ -18,40 +24,35 @@ export class CorouselComponent implements OnInit {
   isValid4 = false;
   isValid5 = false;
   review = false;
-  constructor() { }
+  q_id: number;
+  icon: string;
+  image: string;
+  questions : Quest[];
+  current_quest: string;
+  answers: Answer[];
+
+  constructor(private answerService: AnswerService,private router: Router,private route: ActivatedRoute,private questionService: QuestionsService) { }
 
   ngOnInit() {
-    this.onLoading();
-   
-  }
-  onLoading()
-  {
-    if(localStorage.getItem("question1"))
-    {
-      this.isValid1 = true;
-    }
-    if(localStorage.getItem("question2"))
-    {
-      this.isValid2 = true;
-    }
-    if(localStorage.getItem("question3"))
-    {
-      this.isValid3 = true;
-    }
-    if(localStorage.getItem("question4"))
-    {
-      this.isValid4 = true;
-    }
-    if(localStorage.getItem("question5"))
-    {
-      this.isValid5 = true;
-    }
-    if (JSON.parse(localStorage.getItem('question1')) &&
-      JSON.parse(localStorage.getItem('question2')) &&
-      JSON.parse(localStorage.getItem('question3')) &&
-      JSON.parse(localStorage.getItem('question4')) &&
-      JSON.parse(localStorage.getItem('question5'))) {
-      this.review = true;
-    }
+    this.route.params.subscribe(params => {
+      this.q_id = params['id'];
+      
+      this.questionService.getCustomers()
+    .subscribe(
+      question => {
+       this.questions = question
+      }
+     ); 
+     this.answerService.getAnswers(JSON.parse(localStorage.getItem('pitch_id'))).then(
+      data =>{
+        if(data)
+        {
+          this.answers = data;
+        }
+         
+      }
+    );
+    
+    });
   }
 }
