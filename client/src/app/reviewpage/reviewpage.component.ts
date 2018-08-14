@@ -90,7 +90,7 @@ export class ReviewpageComponent implements OnInit {
         
       }
     );
-    this.questionService.getCustomers()
+    this.questionService.getQuestions()
       .subscribe(
       customers => {
         console.log(customers);
