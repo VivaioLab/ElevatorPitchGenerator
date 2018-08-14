@@ -59,6 +59,11 @@ export class QuestionsComponent implements OnInit {
   icon: string;
   content: string;
   image: string;
+  saveButton: boolean;
+  question_count : number;
+  answers_count : number;
+  // answer: string;
+  
  
   constructor(private answerService:AnswerService, private route: ActivatedRoute,private questionService: QuestionsService,private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
     this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
@@ -76,11 +81,12 @@ export class QuestionsComponent implements OnInit {
     return count + 1;
   }
   ngOnInit() {
+    this.saveButton = false;
     this.wordnumber = false;
     // this.q_id = +this.route.snapshot.paramMap.get('id');
     this.route.params.subscribe(params => {
       this.q_id = params['id'];
-      this.questionService.getCustomers()
+      this.questionService.getQuestions()
       .subscribe(
         customers => {
          this.customers = customers
@@ -89,19 +95,54 @@ export class QuestionsComponent implements OnInit {
          this.icon = this.customers[this.q_id-1].icon_name;
          this.content  = this.customers[this.q_id-1].modal_text;
          this.image = this.customers[this.q_id-1].image_url;
+         this.question_count = (this.customers).length;
+         console.log(this.question_count);
+         this.answerService.getAnswerByQuestion(this.pitch_id,this.q_id).then(
+           answers => {
+             if(answers){
+               let finalAnswer = this.replaceString(customers[this.q_id-1].question + " ","",answers.answer);
+              this.name = finalAnswer;
+             }
+            
+           }
+         )
+        
+
         }
        ); 
     });
       this.isValid1 = true;
                   
 this.some_id = this.q_id;    
-this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));        
+this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));  
+
+
+  this.answerService.getAnswers(this.pitch_id).then(
+    answers =>{
+      if(answers)
+      {
+        this.answers_count = answers.length;
+        console.log(this.answers_count);
+        if(this.answers_count === this.question_count)
+    {
+      this.saveButton = true;
+      console.log(this.saveButton);
+    }
+    else{
+      this.saveButton = false;
+    }
+      }
+     
+    })
+
+    
   }
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
   }
   saveChanges()
   {
+    if(this.name){
     let ans = this.prepareSaveAnswer();
     this.answerService.saveAnswers(ans).then(
       data => {
@@ -122,8 +163,13 @@ console.log("Original answer :-" + testing);
       this.some_id++;
     }
      else{
+      let testing = this.replaceString((" " + this.label), "", this.name);
       this.router.navigate(['/reviewpage']);
-     } 
+
+     } }
+     else{
+       this.emptyAnswerError = true;
+     }
   }
   prepareSaveAnswer(): Answer {
     const answer: Answer = {

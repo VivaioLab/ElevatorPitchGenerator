@@ -37,7 +37,7 @@ export class CorouselComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.q_id = params['id'];
       
-      this.questionService.getCustomers()
+      this.questionService.getQuestions()
     .subscribe(
       question => {
        this.questions = question

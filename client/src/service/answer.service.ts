@@ -15,6 +15,7 @@ const httpOptions = {
 export class AnswerService {
   answerURL ='http://localhost:8080/api/answers/create-answer';
   pitchAnswersURL = 'http://localhost:8080/api/answers/get-answers-by-pitchID';
+  questionAnswersURL = 'http://localhost:8080/api/answers/get-answers-by-pitchID-and-QuestionID';
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) { }
 
@@ -26,6 +27,19 @@ export class AnswerService {
       let promise = new Promise((resolve, reject) => {
   
           this.http.post<any>(this.pitchAnswersURL,{pitch_id})
+          .subscribe(data => { 
+            resolve(data);
+          },
+          error => {
+            reject(error);
+          });  
+      });
+      return promise;
+    }
+    getAnswerByQuestion(pitch_id,question_id) : Promise<any>{
+      let promise = new Promise((resolve, reject) => {
+  
+          this.http.post<any>(this.questionAnswersURL,{pitch_id,question_id})
           .subscribe(data => { 
             resolve(data);
           },

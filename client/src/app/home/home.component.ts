@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.questionService.getCustomers()
+    this.questionService.getQuestions()
                .subscribe(
                  customers => {
                   this.customers = customers

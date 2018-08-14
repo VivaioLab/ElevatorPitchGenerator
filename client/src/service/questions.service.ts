@@ -44,7 +44,7 @@ export class QuestionsService {
     return promise;
   }
 
-  getCustomers (): Observable<Quest[]> {
+  getQuestions (): Observable<Quest[]> {
     return this.http.get<Quest[]>(this.fetchQuestionURL);
   }
 
