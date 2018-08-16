@@ -4,5 +4,10 @@
 	padding-right: 5px;
 	}
 	.svg_icon{
-		outline: none;
-	}
+		width: 8rem !important;
+		height: auto !important;
+	  padding: 10px !important;
+	  color: black;
+	  border: none;
+	  outline: none;
+	  }

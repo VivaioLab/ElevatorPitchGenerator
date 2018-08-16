@@ -11,7 +11,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PitchService {
-  pitchURL ='http://localhost:8080/api/questions/link-pitch'
+  pitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/link-pitch'
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) { }

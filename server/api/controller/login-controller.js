@@ -7,8 +7,8 @@ const pitch = db.pitch;
 exports.createuser = (req, res) => {	
     // Save to PostgreSQL database
 	login.create({
-        "user_name": req.body.email, 
-        "password": generator.generate({length : 8,numbers : true}), 
+        "user_name": req.body.user_name, 
+        "password": req.body.password, 
         "email" : req.body.email,
     }).then(login => {		
 			// Send created customer to client

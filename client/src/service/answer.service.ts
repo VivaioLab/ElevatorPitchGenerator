@@ -13,9 +13,9 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AnswerService {
-  answerURL ='http://localhost:8080/api/answers/create-answer';
-  pitchAnswersURL = 'http://localhost:8080/api/answers/get-answers-by-pitchID';
-  questionAnswersURL = 'http://localhost:8080/api/answers/get-answers-by-pitchID-and-QuestionID';
+  answerURL ='https://salty-temple-18987.herokuapp.com/api/answers/create-answer';
+  pitchAnswersURL = 'https://salty-temple-18987.herokuapp.com/api/answers/get-answers-by-pitchID';
+  questionAnswersURL = 'https://salty-temple-18987.herokuapp.com/api/answers/get-answers-by-pitchID-and-QuestionID';
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) { }
 

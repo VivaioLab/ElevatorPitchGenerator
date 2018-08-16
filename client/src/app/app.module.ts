@@ -18,6 +18,8 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { CorouselComponent } from './corousel/corousel.component';
 import {QuestionsComponent} from './questions/questions.component';
 import { QuestionsService } from '../service/questions.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { QuestionsService } from '../service/questions.service';
     SidenavComponent,
     CorouselComponent,
     QuestionsComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
