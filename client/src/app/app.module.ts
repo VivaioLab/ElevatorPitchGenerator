@@ -18,6 +18,12 @@ import { SidenavComponent } from './sidenav/sidenav.component';
 import { CorouselComponent } from './corousel/corousel.component';
 import {QuestionsComponent} from './questions/questions.component';
 import { QuestionsService } from '../service/questions.service';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { PitchListComponent } from './pitch-list/pitch-list.component';
+import {AuthGuard} from './auth.guard';
+import {LoginServiceService} from '../service/login-service.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -31,6 +37,10 @@ import { QuestionsService } from '../service/questions.service';
     SidenavComponent,
     CorouselComponent,
     QuestionsComponent,
+    LoginComponent,
+    RegisterComponent,
+    PitchListComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,7 +64,9 @@ import { QuestionsService } from '../service/questions.service';
     MatInputModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    LoginServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

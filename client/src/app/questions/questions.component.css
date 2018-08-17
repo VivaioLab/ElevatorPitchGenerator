@@ -29,7 +29,7 @@ button{
 0%,100% { opacity: 0; }
 50% { opacity: 1; }
 }
-.form-control{
+.form-class{
   margin-top: 20px;
   font-family: 'Roboto Mono', monospace;
   border:none;
@@ -118,12 +118,7 @@ mat-icon.disabled {
   margin: 20px;
   font-family: 'Roboto Mono', monospace;
 }
-input { 
-  border: none; 
-  overflow: auto;  
-  font-size: 20px;  
-  text-align: left;    
-}
+
 
 textarea{
   width:100%;

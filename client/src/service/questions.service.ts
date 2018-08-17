@@ -13,13 +13,13 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class QuestionsService {
-  questionsURL ='http://localhost:8080/api/questions/createQuestion/getMethod';
-  fetchQuestionURL = 'http://localhost:8080/api/questions/create-question';
-  fetchUserURL = 'http://localhost:8080/api/questions/create-user'
-  fetchPitchURL = 'http://localhost:8080/api/model/pitch-model'
-  pitchURL ='http://localhost:8080/api/questions/link-pitch'
-  userURL ='http://localhost:8080/api/questions/create-user'
-  getUserByEmailURL='http://localhost:8080/api/questions/get-user-by-email'
+  questionsURL ='https://salty-temple-18987.herokuapp.com/api/questions/createQuestion/getMethod';
+  fetchQuestionURL = 'https://salty-temple-18987.herokuapp.com/api/questions/create-question';
+  fetchUserURL = 'https://salty-temple-18987.herokuapp.com/api/questions/create-user'
+  fetchPitchURL = 'https://salty-temple-18987.herokuapp.com/api/model/pitch-model'
+  pitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/link-pitch'
+  userURL ='https://salty-temple-18987.herokuapp.com/api/questions/create-user'
+  getUserByEmailURL='https://salty-temple-18987.herokuapp.com/api/questions/get-user-by-email'
   getUserURL = "https://salty-temple-18987.herokuapp.com/getUser";
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,

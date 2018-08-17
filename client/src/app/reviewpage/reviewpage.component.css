@@ -121,7 +121,7 @@ textarea{
     box-shadow: none;    
 }
 
-.form-control{
+.form-class{
   margin-top: 20px;
   font-family: 'Roboto Mono', monospace;
   border:none;
@@ -170,7 +170,7 @@ textarea{
   /* margin-left: 4rem; */
 }
 @media only screen and (min-width: 1000px) {
-  .form-control{
+  .form-class{
     font-size: 1.2rem !important;
     margin-top: 20px;
     font-family: 'Roboto Mono', monospace;

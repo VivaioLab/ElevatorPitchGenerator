@@ -1,0 +1,62 @@
+.svg_icon{
+    width: 8rem !important;
+    height: auto !important;
+  padding: 10px !important;
+  color: black;
+  border: none;
+  outline: none;
+  }
+  .logout_icon{
+	height: 2.5rem;
+	width: 4rem;
+    padding-right: 10px;
+    font-family: 'Roboto Mono', monospace;
+	}
+
+  .fl-left{
+      width: 35%;
+      float: left;
+  }
+  .fl-right{
+      margin: 10px;
+      font-family: 'Roboto Mono', monospace;
+      font-size: 18px;
+      text-align: center;
+    width: 50%;
+    float: right;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
+
+/* Style the list items */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background:white;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+
+/* Darker background-color on hover */
+ul li:hover {
+    background: #ddd;
+}
+
+/* When clicked on, add a background color and strike out text */
+ul li:checked {
+    background: #888 !important;
+    color: #fff;
+}
