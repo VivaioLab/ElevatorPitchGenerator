@@ -88,7 +88,7 @@ register(rege : Email) : Promise<any>{
 login(username :string,password : string)  : Promise<any>{
   let promise = new Promise((resolve, reject) => {
 
-    this.http.post<any>(this.userURL,{email:username,password : password})
+    this.http.post<any>(this.getUserByEmailURL,{email:username,password : password})
     .subscribe(data => { 
       if(data)
       {

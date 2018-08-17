@@ -11,7 +11,8 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PitchService {
-  pitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/link-pitch'
+  pitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/link-pitch';
+  getPitchesbyEmailURL = 'https://salty-temple-18987.herokuapp.com/api/questions/get-pitch-by-email';
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) { }
@@ -30,20 +31,23 @@ export class PitchService {
     return promise;
   }
   updatePitch (pitch:Pitch): Observable<any> {
-    console.log(pitch);
     return this.http.put(this.pitchURL,pitch, httpOptions);
   }
-  // updatePitch(pitch:Pitch) : Promise<any>{
-  //   let promise = new Promise((resolve, reject) => {
-  
-  //       this.http.post<any>(this.pitchURL,{pitch})
-  //       .subscribe(data => { 
-  //         resolve(data);
-  //       },
-  //       error => {
-  //         reject(error);
-  //       });  
-  //   });
-  //   return promise;
+  // getAllPitchofCurrentUser (email:string): Observable<any> {
+  //   return this.http.post(this.getPitchesbyEmailURL,email, httpOptions);
   // }
+
+  getAllPitchofCurrentUser(email:string) : Promise<any>{
+    let promise = new Promise((resolve, reject) => {
+  
+        this.http.post<any>(this.getPitchesbyEmailURL,{email : email})
+        .subscribe(data => { 
+          resolve(data);
+        },
+        error => {
+          reject(error);
+        });  
+    });
+    return promise;
+  }
 }

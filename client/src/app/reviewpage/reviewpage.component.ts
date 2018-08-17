@@ -23,6 +23,7 @@ import { Answer } from '../../model/answerModel';
   styleUrls: ['./reviewpage.component.css']
 })
 export class ReviewpageComponent implements OnInit {
+  pitch_name : string;
   isCurrent = true;
   customers: Quest[];
   answers : Answer[];
@@ -116,44 +117,47 @@ export class ReviewpageComponent implements OnInit {
   }
 
   emailtoUs() {
-    this.loginService.getUserByEmail(this.email_id).then(
-      login => {
+//     this.loginService.getUserByEmail(this.email_id).then(
+//       login => {
       
-        if (login) {
-          let newPitch = this.prepareSavePitch(login.id);
-          console.log(newPitch);
-          this.pitchService.updatePitch(newPitch).subscribe(
-            pitch => {
-              console.log(pitch);
-            });
+//         if (login) {
+//           let newPitch = this.prepareSavePitch(login.id);
+//           console.log(newPitch);
+//           this.pitchService.updatePitch(newPitch).subscribe(
+//             pitch => {
+//               console.log(pitch);
+//             });
           
-        }
-        else {
-          this.loginService.createNewUser(this.email_id).then(
-            data => {
-              let newPitch = this.prepareSavePitch(data.id);
-          this.pitchService.updatePitch(newPitch).subscribe(
-            pitch => {
-              console.log(pitch);
-            });
+//         }
+//         else {
+//           this.loginService.createNewUser(this.email_id).then(
+//             data => {
+//               let newPitch = this.prepareSavePitch(data.id);
+//           this.pitchService.updatePitch(newPitch).subscribe(
+//             pitch => {
+//               console.log(pitch);
+//             });
         
 
-      });
+//       });
         
-  }
-})
+//   }
+// })
 }
 
   
 
-  prepareSavePitch(data): Pitch {
-    const pitch: Pitch = {
-      id: JSON.parse(localStorage.getItem('pitch_id')),
-      user_id: data
-    }
-    return pitch;
+  // prepareSavePitch(data): Pitch {
+  //   const pitch: Pitch = {
+  //     id: JSON.parse(localStorage.getItem('pitch_id')),
+  //     user_id: data
+  //   }
+  //   return pitch;
+  // }
+  savePitchName(){
+   localStorage.setItem('pitch_name',this.pitch_name);
+   console.log(this.pitch_name);
   }
-  
   
 }
 

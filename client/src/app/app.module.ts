@@ -20,6 +20,10 @@ import {QuestionsComponent} from './questions/questions.component';
 import { QuestionsService } from '../service/questions.service';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { PitchListComponent } from './pitch-list/pitch-list.component';
+import {AuthGuard} from './auth.guard';
+import {LoginServiceService} from '../service/login-service.service';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 
 @NgModule({
@@ -35,6 +39,8 @@ import { RegisterComponent } from './register/register.component';
     QuestionsComponent,
     LoginComponent,
     RegisterComponent,
+    PitchListComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,7 +64,9 @@ import { RegisterComponent } from './register/register.component';
     MatInputModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [
+    AuthGuard,
+    LoginServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

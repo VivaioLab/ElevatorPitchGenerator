@@ -46,6 +46,7 @@ export class LoginComponent implements OnInit {
         .then(
             data => {
                 alert("successfully logged in")
+                this.router.navigate(['/pitch-list']);
             },
             error => {
               alert("could not login")

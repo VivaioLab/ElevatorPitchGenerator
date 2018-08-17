@@ -5,7 +5,7 @@
   <mat-sidenav-content>
     <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
     <div class="container" id="reviewpage">
-      <form class="form-control">
+      <form class="form-control form-class">
           <div *ngFor="let ans of answer ">
             <span>
               {{ans.answer}}
@@ -14,14 +14,36 @@
       </form>
     </div>
     <div class="re-button fixed-bottom">
-      <button type="button" [routerLink]="['/login']"  mat-raised-button class="button-width">
+      <button type="button" (click)="openModal(template)"  mat-raised-button class="button-width">
         Save
       </button>
       <!-- (click)="openModal(template)" -->
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
+
 <ng-template #template style="border: 3px #ffffff;">
+    <div class="modal-header">
+      <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">
+          <mat-icon svgIcon="close-popup"></mat-icon>
+        </span>
+      </button>
+    </div>
+    <div class="modal-body popup popup-body">
+      <div class="container">
+        <p class="para">Give a name this pitch</p>
+        <br/>
+        <br/>
+        <input type="text" name="pitch_name" [(ngModel)]="pitch_name" />
+        <div style="text-align:center;">
+          <button [routerLink]="['/login']" routerLinkActive="active" type="button" (click)="savePitchName(); modalRef.hide() " mat-raised-button style="width:80%;background-color: #cccccc; color: grey;">
+            Submit </button>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+<!-- <ng-template #template style="border: 3px #ffffff;">
   <div class="modal-header">
     <button type="button" class="close" style="color:white;" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">
@@ -51,4 +73,4 @@
       </div>
     </div>
   </div>
-</ng-template>
+</ng-template> -->

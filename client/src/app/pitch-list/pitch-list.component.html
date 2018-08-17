@@ -1,0 +1,39 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenavright mode="push" position="end">
+    <app-sidenav ></app-sidenav>
+  </mat-sidenav>
+  <mat-sidenav-content style="background-color: white;color:black;">
+     <mat-toolbar >
+          <mat-toolbar-row>
+              <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
+            <span class="spacer"></span>
+            <a  class="logout_icon" (click)="logout()">Logout</a>
+          </mat-toolbar-row>
+        </mat-toolbar>
+   
+   
+    <div class="jumbotron" style="background-color: white;">
+      <div class="container">
+        <div class="row">
+          <div class=" fl-left">
+            <label *ngIf="pitchSaved" class="validation">
+              Pitch Saved Successfully
+            </label>
+            <ul id="myUL" *ngFor = "let pitch of pitches">
+              <li (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </li>
+            </ul>
+            <!-- <div *ngFor = "let pitch of pitches">
+              <a  (click)= "showPitchdetail(pitch.id)">{{pitch.pitch_name}} </a>
+            </div> -->
+          </div>
+          <div *ngIf="answerBol" class=" fl-right">
+            <div class="fl-center" *ngFor="let ans of answers">
+              <span>{{ans.answer}}</span>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
