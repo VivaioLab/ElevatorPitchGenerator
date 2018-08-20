@@ -66,9 +66,8 @@ export class QuestionsComponent implements OnInit {
   saveButton: boolean;
   question_count : number;
   answers_count : number;
-  // answer: string;
+  nextButton: boolean;
   
- 
   constructor(private answerService:AnswerService, private route: ActivatedRoute,private questionService: QuestionsService,private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
     this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
     .addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"));
@@ -87,7 +86,7 @@ export class QuestionsComponent implements OnInit {
   ngOnInit() {
     this.saveButton = false;
     this.wordnumber = false;
-    // this.q_id = +this.route.snapshot.paramMap.get('id');
+    this.nextButton = true;
     this.route.params.subscribe(params => {
       this.q_id = params['id'];
       this.questionService.getQuestions()
@@ -100,10 +99,10 @@ export class QuestionsComponent implements OnInit {
          this.content  = this.customers[this.q_id-1].modal_text;
          this.image = this.customers[this.q_id-1].image_url;
          this.question_count = (this.customers).length;
-         console.log(this.question_count);
          this.answerService.getAnswerByQuestion(this.pitch_id,this.q_id).then(
            answers => {
              if(answers){
+               this.answermodel = answers;
                let finalAnswer = this.replaceString(customers[this.q_id-1].question + " ","",answers.answer);
               this.name = finalAnswer;
              }
@@ -126,16 +125,16 @@ this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));
       if(answers)
       {
         this.answers_count = answers.length;
-        console.log(this.answers_count);
         if(this.answers_count === this.question_count)
     {
       this.saveButton = true;
-      console.log(this.saveButton);
-      // this.router.navigate(['/reviewpage']);
+      this.nextButton = false;
+
       
     }
     else{
       this.saveButton = false;
+      this.nextButton = true;
     }
       }
      
@@ -149,14 +148,11 @@ this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));
   saveChanges()
   {
     if(this.name){
-    let ans = this.prepareSaveAnswer();
-    this.answerService.saveAnswers(ans).then(
+    this.answerService.saveAnswers(this.label + " " + this.name,this.some_id,JSON.parse(localStorage.getItem('pitch_id'))).then(
       data => {
       });
-  console.log("Modified answer :-" + this.label +" " + this.name);
 
   let testing = this.replaceString((" " + this.label), "", this.name);
-console.log("Original answer :-" + testing);  
      
     if(this.some_id!==(this.customers).length){
     this.router.navigate(['/questions', this.customers[this.some_id].id]);
@@ -177,14 +173,6 @@ console.log("Original answer :-" + testing);
        this.emptyAnswerError = true;
      }
   }
-  prepareSaveAnswer(): Answer {
-    const answer: Answer = {
-      answer:this.label + " " + this.name,
-      question_id: this.some_id,
-      pitch_id: JSON.parse(localStorage.getItem('pitch_id'))
-    }
-    return answer;
-  }
   
   onTextEnter(event : string) : void {
     this.buttonIsDisabled =true;
@@ -201,5 +189,37 @@ console.log("Original answer :-" + testing);
     }
     return fullS;
   }
+
+  updateChanges()
+  {
+    this.answerService.getAnswerByQuestion(this.pitch_id,this.q_id).then(
+      answers => {
+        if(answers){
+          let updatedAnswer = this.prepareUpdateAnswer(answers);
+          this.answerService.updateAnswer(updatedAnswer).then(
+            data =>{
+              console.log(data);
+              this.router.navigate(['/reviewpage']);
+            }
+          )
+          
+        }
+       
+      }
+    )
+
+  }
+
+    prepareUpdateAnswer(data): Answer {
+        const pitch: Answer = {
+          id: data.id,
+          answer: this.label + " " + this.name,
+          question_id: this.some_id,
+          pitch_id :JSON.parse(localStorage.getItem('pitch_id'))
+
+        }
+        return pitch;
+      }
+  
 
 }

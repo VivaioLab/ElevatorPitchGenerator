@@ -85,7 +85,6 @@ export class ReviewpageComponent implements OnInit {
         if(answers)
         {
           this.answer = answers;
-          console.log(this.answer);
         }
         
         
@@ -94,7 +93,6 @@ export class ReviewpageComponent implements OnInit {
     this.questionService.getQuestions()
       .subscribe(
       customers => {
-        console.log(customers);
         this.customers = customers
       }
       );
@@ -156,7 +154,6 @@ export class ReviewpageComponent implements OnInit {
   // }
   savePitchName(){
    localStorage.setItem('pitch_name',this.pitch_name);
-   console.log(this.pitch_name);
   }
   
 }
