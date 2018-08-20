@@ -28,6 +28,10 @@ export class QuestionsComponent implements OnInit {
   get totalWords() {
     return this.wor(this.name || '') - 1;
   }
+  @Input()
+  get maxwordsError() {
+    return this.totalWords > this.wordLimit;
+  }
   
   @ViewChild('autosize') autosize: CdkTextareaAutosize;
   isCurrent = true;
@@ -127,6 +131,8 @@ this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));
     {
       this.saveButton = true;
       console.log(this.saveButton);
+      // this.router.navigate(['/reviewpage']);
+      
     }
     else{
       this.saveButton = false;

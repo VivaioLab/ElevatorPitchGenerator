@@ -11,6 +11,7 @@ import { Answer } from '../../model/answerModel';
   templateUrl: './corousel.component.html',
   styleUrls: ['./corousel.component.css']
 })
+
 export class CorouselComponent implements OnInit {
   @Input('isCurrent1') isCurrent1 : boolean;
   @Input('isCurrent2') isCurrent2 : boolean;
@@ -31,6 +32,7 @@ export class CorouselComponent implements OnInit {
   current_quest: string;
   answers: Answer[];
 
+  
   constructor(private answerService: AnswerService,private router: Router,private route: ActivatedRoute,private questionService: QuestionsService) { }
 
   ngOnInit() {

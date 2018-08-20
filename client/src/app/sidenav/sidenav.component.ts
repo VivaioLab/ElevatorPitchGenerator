@@ -14,7 +14,7 @@ import { Answer } from '../../model/answerModel';
 })
 
 export class SidenavComponent implements OnInit {
-  q_id : number;
+q_id : number;
 questions : Quest[];
 answers : Answer[];
 isActive : false;
@@ -66,6 +66,23 @@ isValid : boolean;
   switchpage(id){
     this.router.navigate(['/questions',id]);
   }
+
+  // isAnswered(question_ids)
+  // {
+  //   this.answerService.getAnswerByQuestion(JSON.parse(localStorage.getItem('pitch_id')),question_ids).then(
+  //     data =>{
+  //       if(data)
+  //       {
+  //         return true;
+  //       }
+  //       else
+  //       {
+  //         return false;
+  //       }
+  //     }
+  //   )
+
+  // }
 
 
 
