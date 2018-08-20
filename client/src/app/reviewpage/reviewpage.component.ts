@@ -5,7 +5,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
 import { Questions } from '../../model/questionsModel';
-
+import {Router} from '@angular/router';
 import { QuestionsService } from '../../service/questions.service';
 import { LoginServiceService } from '../../service/login-service.service';
 import { PitchService } from '../../service/pitch-service.service';
@@ -71,7 +71,7 @@ export class ReviewpageComponent implements OnInit {
     return this.question5;
   }
   
-  constructor(private answerService:AnswerService,private pitchService:PitchService,private questionService: QuestionsService, private loginService: LoginServiceService,
+  constructor(private router : Router, private answerService:AnswerService,private pitchService:PitchService,private questionService: QuestionsService, private loginService: LoginServiceService,
     private modalService: BsModalService,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer) {
@@ -154,6 +154,13 @@ export class ReviewpageComponent implements OnInit {
   // }
   savePitchName(){
    localStorage.setItem('pitch_name',this.pitch_name);
+   if(localStorage.getItem('currentUser'))
+   {
+     this.router.navigate(['/pitch-list']);
+   }
+   else{
+    this.router.navigate(['/login']);
+   }
   }
   
 }
