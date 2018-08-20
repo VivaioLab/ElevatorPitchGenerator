@@ -37,7 +37,7 @@
         <br/>
         <input type="text" name="pitch_name" [(ngModel)]="pitch_name" />
         <div style="text-align:center;">
-          <button [routerLink]="['/login']" routerLinkActive="active" type="button" (click)="savePitchName(); modalRef.hide() " mat-raised-button style="width:80%;background-color: #cccccc; color: grey;">
+          <button  type="button" (click)="savePitchName(); modalRef.hide() " mat-raised-button style="width:80%;background-color: #cccccc; color: grey;">
             Submit </button>
         </div>
       </div>

@@ -23,7 +23,7 @@ currentUser : string;
 
   ngOnInit() {
     this.pitchid = JSON.parse(localStorage.getItem('pitch_id'));
-    if(this.pitchid)
+    if(this.pitchid && localStorage.getItem('pitch_name'))
     {
       let UpdatedPitch = this.prepareSavePitch(JSON.parse(localStorage.getItem('currentUser')).id);
       this.pitchService.updatePitch(UpdatedPitch).subscribe(
