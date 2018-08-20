@@ -3,6 +3,7 @@ import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/internal/Observable';
 import {Answer} from '../model/answerModel';
+import { Pitch } from '../model/pitchModel';
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json',
   'Access-Control-Allow-Methods': 'GET,POST,PUT,DELETE,OPTIONS',
@@ -49,12 +50,21 @@ export class AnswerService {
       });
       return promise;
     }
-    saveAnswers(answers:Answer) : Promise<any>{
+    saveAnswers(answer:string,question_id:number,pitch_id:number) : Promise<any>{
       let promise = new Promise((resolve, reject) => {
-  let answer = answers.answer;
-  let question_id = answers.question_id;
-  let pitch_id =answers.pitch_id;
           this.http.post<any>(this.answerURL,{answer,question_id,pitch_id})
+          .subscribe(data => { 
+            resolve(data);
+          },
+          error => {
+            reject(error);
+          });  
+      });
+      return promise;
+    }
+    updateAnswer(answer: Answer) : Promise<any>{
+      let promise = new Promise((resolve, reject) => {
+          this.http.put<any>(this.answerURL,answer)
           .subscribe(data => { 
             resolve(data);
           },

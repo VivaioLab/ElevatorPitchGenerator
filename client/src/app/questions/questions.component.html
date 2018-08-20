@@ -24,12 +24,12 @@
             <label *ngIf="emptyAnswerError" class="validation" >Please enter a value</label>
          
         </div>
-      <span>
+      <span *ngIf="nextButton">
           <button (click)="saveChanges()"   type="button" mat-raised-button class="button-width">
               Next </button>
       </span>
         <span *ngIf="saveButton">
-            <button (click)="saveChanges()" [routerLink]="reviewpage"  type="button" mat-raised-button class="button-width">
+            <button (click)="updateChanges()" type="button" mat-raised-button class="button-width">
                 Save and Review </button>
         </span>
     </div>

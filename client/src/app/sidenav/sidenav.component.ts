@@ -38,7 +38,6 @@ isValid : boolean;
     .subscribe(
       question => {
        this.questions = question
-       console.log("Questions "+this.questions.length);
       }
      ); 
      this.answerService.getAnswers(JSON.parse(localStorage.getItem('pitch_id'))).then(
@@ -46,7 +45,6 @@ isValid : boolean;
         if(data)
         {
           this.answers = data;
-          console.log("Answers "+this.answers.length);
         }
          
       }
