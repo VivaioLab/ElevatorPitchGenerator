@@ -1,6 +1,6 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenavright mode="push" position="end">
-      <app-sidenav [pitch_id] = pitch_id></app-sidenav>
+      <app-sidenav  (navToggle)="sidenavright.toggle()" [pitch_id] = pitch_id></app-sidenav>
     </mat-sidenav>
 <mat-sidenav-content>
 <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
@@ -29,7 +29,7 @@
               Next </button>
       </span>
         <span *ngIf="saveButton">
-            <button (click)="saveChanges()"   type="button" mat-raised-button class="button-width">
+            <button (click)="saveChanges()" [routerLink]="reviewpage"  type="button" mat-raised-button class="button-width">
                 Save and Review </button>
         </span>
     </div>

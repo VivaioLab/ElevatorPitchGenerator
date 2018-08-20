@@ -1,5 +1,5 @@
 <div class="corr" >
 <span *ngFor = "let quest of questions">
-  <button type="button" class="button-class" ><span class="corr-name"  >{{quest.icon_name}}</span> <br/> <img src="{{quest.image_url}}"  [ngClass] ="{'current-stage' : quest.id == q_id,'answered' : quest.id != q_id}" class="corousel" ></button>
+  <button type="button" class="button-class" ><span class="corr-name"  >{{quest.icon_name}}</span> <br/> <img src="{{quest.image_url}}"  [ngClass] ="{'current-stage' : quest.id == q_id}" class="corousel" ></button>
 </span>
 </div>

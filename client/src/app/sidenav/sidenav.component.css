@@ -63,7 +63,7 @@ padding-left: 50px;
   }
 
   .sidenav-button{
-      position: relative;
+      position: absolute;
       bottom: 20px;
       justify-content: center;
       text-align: center;

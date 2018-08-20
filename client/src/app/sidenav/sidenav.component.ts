@@ -1,4 +1,4 @@
-import { Input, Component, OnInit} from '@angular/core';
+import { Input,Output,EventEmitter, Component, OnInit} from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
@@ -14,7 +14,7 @@ import { Answer } from '../../model/answerModel';
 })
 
 export class SidenavComponent implements OnInit {
-  q_id : number;
+q_id : number;
 questions : Quest[];
 answers : Answer[];
 isActive : false;
@@ -22,23 +22,15 @@ current_id : number;
 isCurrent : false;
 id : number;
 isValid : boolean;
-  @Input('pitch_id') pitch_id : number;
 
-  // isValid1 = false;
-  // isValid2 = false;
-  // isValid3 = false;
-  // isValid4 = false;
-  // isValid5 = false;
-  // isReview = false;
-  // current_id: number;
+  @Input('pitch_id') pitch_id : number;
+  @Output() navToggle = new EventEmitter<boolean>();
+
   constructor(private answerService : AnswerService,private questionService : QuestionsService, private route: ActivatedRoute,private router : Router) {
-      // this.content();
-    
      }
 
   ngOnInit() {
-    // this.onLoading();
-  
+    
     this.route.params.subscribe(params => {
       this.q_id = params['id'];
       
@@ -66,6 +58,29 @@ isValid : boolean;
   switchpage(id){
     this.router.navigate(['/questions',id]);
   }
+  navClose() {
+    this.navToggle.emit(false);
+  }
+
+  // isAnswered(question_ids)
+  // {
+  //   this.answerService.getAnswerByQuestion(JSON.parse(localStorage.getItem('pitch_id')),question_ids).then(
+  //     data =>{
+  //       console.log("inside");
+  //       if(data)
+  //       {
+  //         console.log(data);
+  //         return true;
+         
+  //       }
+  //       else
+  //       {
+  //         return false;
+  //       }
+  //     }
+  //   )
+
+  // }
 
 
 
