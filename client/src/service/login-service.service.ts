@@ -12,6 +12,8 @@ const httpOptions = {
 })
 export class LoginServiceService {
   getUserByEmailURL='https://salty-temple-18987.herokuapp.com/api/questions/get-user-by-email';
+  loginURL='https://salty-temple-18987.herokuapp.com/api/questions/login';
+  updatePasswordURL='https://salty-temple-18987.herokuapp.com/api/questions/updatepassword';
   userURL ='https://salty-temple-18987.herokuapp.com/api/questions/create-user';
   pitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/link-pitch'
   constructor(private http: HttpClient,    private route: ActivatedRoute,
@@ -57,6 +59,9 @@ addPitch(user_id) : Promise<any>{
   });
   return promise;
 }
+updatePassword (login:Email): Observable<any> {
+    return this.http.put(this.updatePasswordURL,login, httpOptions);
+  }
 checkifemailexists(rege : Email) : Promise<any>{
   let promise = new Promise((resolve, reject) => {
 console.log(rege);
@@ -88,7 +93,7 @@ register(rege : Email) : Promise<any>{
 login(username :string,password : string)  : Promise<any>{
   let promise = new Promise((resolve, reject) => {
 
-    this.http.post<any>(this.getUserByEmailURL,{email:username,password : password})
+    this.http.post<any>(this.loginURL,{email:username,password : password})
     .subscribe(data => { 
       if(data)
       {
