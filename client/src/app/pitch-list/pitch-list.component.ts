@@ -5,6 +5,8 @@ import {PitchService} from '../../service/pitch-service.service';
 import {AnswerService} from '../../service/answer.service';
 import { LoginServiceService } from '../../service/login-service.service';
 import {Answer} from '../../model/answerModel';
+import { MatIconRegistry } from "@angular/material/icon";
+import { DomSanitizer } from "@angular/platform-browser";
 @Component({
   selector: 'app-pitch-list',
   templateUrl: './pitch-list.component.html',
@@ -19,7 +21,11 @@ answers : Answer[];
 megaAnswers : string[];
 pitchid : number;
 currentUser : string;
-  constructor(private router : Router,private pitchService : PitchService,private answerService : AnswerService,private loginService : LoginServiceService) {}
+  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer:DomSanitizer, private router : Router,private pitchService : PitchService,private answerService : AnswerService,private loginService : LoginServiceService) {
+    this.matIconRegistry.addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"))
+      .addSvgIcon("edit-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"))
+      .addSvgIcon("trash", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"));
+  }
 
   ngOnInit() {
     this.pitchid = JSON.parse(localStorage.getItem('pitch_id'));

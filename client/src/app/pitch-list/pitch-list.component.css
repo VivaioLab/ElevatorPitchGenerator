@@ -11,6 +11,34 @@
   border: none;
   outline: none;
   }
+
+  .svg_icon1{
+    width: 4rem !important;
+    height: 7rem !important;
+  padding: 10px !important;
+  color: black;
+  border: none;
+  outline: none;
+  }
+
+  .svg_icon2{
+    width: 4rem !important;
+    height: 6rem !important;
+    padding-top: 5px;
+  padding: 10px !important;
+  color: black;
+  border: none;
+  outline: none;
+  }
+
+  .svg_icon3{
+    width: 4rem !important;
+    height: 3rem !important;
+  padding: 10px !important;
+  color: black;
+  border: none;
+  outline: none;
+  }
   .logout_icon{
 	height: 2.5rem;
 	width: 4rem;
@@ -65,3 +93,19 @@ ul li:checked {
     background: #888 !important;
     color: #fff;
 }
+
+.pitchname{
+    margin-left: 10px;
+    font-size: 20px;
+    font-family: 'Roboto Mono';
+    
+}
+.next-button{
+    background-color: white;
+    opacity: 80%;
+    margin-bottom: 3rem;
+    text-align:center;
+  }
+  .myUL{
+      margin-left: 10px;
+  }
