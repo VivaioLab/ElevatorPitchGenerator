@@ -121,9 +121,9 @@ mat-icon.disabled {
 
 
 textarea{
+  overflow-y: scroll;
   width:100%;
   border: none;  
-  overflow:hidden;
   font-size: 20px;  
   text-align: left;
   outline: none;

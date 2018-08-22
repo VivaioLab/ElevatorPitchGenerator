@@ -7,9 +7,11 @@
           <mat-toolbar-row>
               <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
             <span class="spacer"></span>
-            <span> <a  class="menu_icon" routerLink="/home" routerLinkActive="active" >Generate-Pitch</a></span>
-           
-            <a  class="menu_icon" (click)="logout()">Logout</a>
+            <span> <img src="assets/images/pitches_list.svg" routerLink="/home" routerLinkActive="active" class="svg_icon1" >
+              <img src="assets/images/profile.svg" routerLink="/home" routerLinkActive="active" class="svg_icon2" >
+              <img src="assets/images/menu icon.svg" routerLink="/home" routerLinkActive="active" class="svg_icon3" ></span>
+            
+            <!-- <a  class="menu_icon" (click)="logout()">Logout</a> -->
           </mat-toolbar-row>
         </mat-toolbar>
    
@@ -21,9 +23,23 @@
             <label *ngIf="pitchSaved" class="validation">
               Pitch Saved Successfully
             </label>
-            <ul id="myUL" *ngFor = "let pitch of pitches">
+            <label class="pitchname">
+                Your pitches
+              </label>
+            <!-- <ul id="myUL" *ngFor = "let pitch of pitches">
               <li (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </li>
-            </ul>
+              <mat-icon svgIcon="edit-icon" class="menu_icon"  routerLinkActive="active"></mat-icon>
+            </ul> -->
+
+            <div class="myUL" *ngFor = "let pitch of pitches">
+              <span (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </span>
+              <span><mat-icon svgIcon="edit-icon" class="menu_icon"  routerLinkActive="active"></mat-icon></span>
+              <span><mat-icon svgIcon="trash" class="menu_icon"  routerLinkActive="active"></mat-icon></span>
+
+              
+
+            </div>
+            
             <!-- <div *ngFor = "let pitch of pitches">
               <a  (click)= "showPitchdetail(pitch.id)">{{pitch.pitch_name}} </a>
             </div> -->
@@ -36,6 +52,11 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="next-button fixed-bottom">
+        <button routerLink="/questions/1"   type="button" mat-raised-button class="button-width">
+            Generate a new pitch </button>
+
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
