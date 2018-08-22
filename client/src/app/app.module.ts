@@ -9,7 +9,6 @@ import { StorageServiceModule} from 'angular-webstorage-service';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { AppComponent } from './app.component';
-import { Question5Component } from './question5/question5.component';
 import { ReviewpageComponent } from './reviewpage/reviewpage.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import {ModalModule} from 'ngx-bootstrap/modal';
@@ -24,6 +23,7 @@ import { PitchListComponent } from './pitch-list/pitch-list.component';
 import {AuthGuard} from './auth.guard';
 import {LoginServiceService} from '../service/login-service.service';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 
 @NgModule({
@@ -31,7 +31,6 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     AppComponent,
     HomeComponent,
     NavComponent,
-    Question5Component,
     ReviewpageComponent,
     ThankyouComponent,
     SidenavComponent,
@@ -41,6 +40,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     RegisterComponent,
     PitchListComponent,
     ForgotPasswordComponent,
+    UserprofileComponent,
   ],
   imports: [
     BrowserModule,

@@ -35,7 +35,8 @@ export class CorouselComponent implements OnInit {
   
   constructor(private answerService: AnswerService,private router: Router,private route: ActivatedRoute,private questionService: QuestionsService) { }
 
-  ngOnInit() {
+  ngOnInit() {  
+    
     this.route.params.subscribe(params => {
       this.q_id = params['id'];
       
