@@ -2,6 +2,7 @@
   <mat-toolbar-row>
       <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
     <span class="spacer"></span>
+    <span style="padding: 10px;"> <label  *ngIf="!login" routerLink="/userprofile" routerLinkActive="active" >Your-profile</label></span>
     <span style="padding: 10px;"> <label  *ngIf="!login" routerLink="/pitch-list" routerLinkActive="active" >Your-pitches</label></span>
     <label svgIcon="menu icon" *ngIf="login" routerLink="/login" routerLinkActive="active" >login</label>
     <label svgIcon="menu icon" *ngIf="!login" (click)="logout()">logout</label>

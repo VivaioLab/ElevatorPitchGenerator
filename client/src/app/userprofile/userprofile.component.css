@@ -1,0 +1,50 @@
+.svg_icon{
+    width: 8rem !important;
+    height: auto !important;
+  padding: 10px !important;
+  color: black;
+  border: none;
+  outline: none;
+  }
+  .svg_icon1{
+    width: 2.4rem !important;
+    height: 7rem !important;
+margin: 0.2rem;
+  color: black;
+  border: none;
+  outline: none;
+  }
+  .svg_icon2{
+    width: 1.2rem !important;
+    height: 7rem !important;
+margin: 0.8rem;
+  color: black;
+  border: none;
+  outline: none;
+  }
+
+
+ 
+.margin{
+    margin-bottom: 1rem;
+}
+
+.fonts{
+    font-family: 'Roboto Mono', monospace !important;
+    font-size: 1em !important;
+}
+.forms{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.forms:disabled{
+    background: whitesmoke;
+    opacity: .5;
+}
