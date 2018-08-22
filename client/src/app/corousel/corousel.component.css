@@ -20,16 +20,23 @@
     border: none;
     outline: none;
 }
-.current-stage{
+.current-image{
     background:white !important;
 }
-.disable-grey{
+.current-texts{
+  color: black !important;
+}
+.disable-text{
   color: #cccccc ;
 }
-.answered{
+.disable-image{
+  background-color: #cccccc ;
+  color: black
+}
+.answered-text{
   color: #acff48;
 }
-.disable-class{
+.answered-image{
   background: #acff48 ;
   color : black;
 }
@@ -39,19 +46,7 @@
   text-align: center;
   font-size: 1rem;
 }
-.text-answered{
-  color: #acff48;
 
-}
-.current-texts{
-  color: black !important;
-}
-.disable-texts{
-  color: #cccccc;
-}
-.answered{
-  background-color: #acff48;
-}
   @media only screen and (max-width: 365px) {
     .corr-name{
       text-align: center;
