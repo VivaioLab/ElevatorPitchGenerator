@@ -3,58 +3,34 @@
     <app-sidenav ></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content style="background-color: white;color:black;">
-     <mat-toolbar >
+      <mat-toolbar>
           <mat-toolbar-row>
-              <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
+            <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon">
             <span class="spacer"></span>
-            <span> <img src="assets/images/pitches_list.svg" routerLink="/home" routerLinkActive="active" class="svg_icon1" >
-              <img src="assets/images/profile.svg" routerLink="/userprofile" routerLinkActive="active" class="svg_icon2" >
-              <img src="assets/images/menu icon.svg" routerLink="/home" routerLinkActive="active" class="svg_icon3" ></span>
-            
-            <!-- <a  class="menu_icon" (click)="logout()">Logout</a> -->
+            <span>
+              <img src="assets/images/pitches_list.svg" routerLink="/pitch-list" routerLinkActive="active" class="svg_icon1">
+              <img src="assets/images/profile.svg" routerLink="/userprofile" routerLinkActive="active" class="svg_icon1">
+              <img src="assets/images/menu icon.svg" routerLink="/home" routerLinkActive="active" class="svg_icon2">
+            </span>
+    
           </mat-toolbar-row>
         </mat-toolbar>
-   
-   
-    <div class="jumbotron" style="background-color: white;">
-      <div class="container">
-        <div class="row">
-          <div class=" fl-left">
-            <label *ngIf="pitchSaved" class="validation">
-              Pitch Saved Successfully
-            </label>
-            <label class="pitchname">
-                Your pitches
-              </label>
-            <!-- <ul id="myUL" *ngFor = "let pitch of pitches">
-              <li (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </li>
-              <mat-icon svgIcon="edit-icon" class="menu_icon"  routerLinkActive="active"></mat-icon>
-            </ul> -->
-
-            <div class="myUL" *ngFor = "let pitch of pitches">
-              <span (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </span>
-              <span><mat-icon svgIcon="edit-icon" class="menu_icon"  routerLinkActive="active"></mat-icon></span>
-              <span><mat-icon svgIcon="trash" class="menu_icon"  routerLinkActive="active"></mat-icon></span>
-
-              
-
-            </div>
-            
-            <!-- <div *ngFor = "let pitch of pitches">
-              <a  (click)= "showPitchdetail(pitch.id)">{{pitch.pitch_name}} </a>
-            </div> -->
-          </div>
-          <div *ngIf="answerBol" class=" fl-right">
-            <div class="fl-center" *ngFor="let ans of answers">
-              <span>{{ans.answer}}</span>
-
+        <div class="jumbotron" style="background-color: white;">
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6 offset-sm-3 all-fonts">
+                    <label *ngIf="pitchSaved" class="validation">
+                        Pitch Saved Successfully
+                      </label>
+                  <h2>Your Pitches</h2>
+                 <div class="bord" *ngFor = "let pitch of pitches"><span style="margin-top: 1rem;" (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </span><span style="float: right" ><span style="float: right;margin-right: 0.2rem;"><img class="delete-image"src="assets/images/trash.svg"/></span><mat-icon svgIcon="edit-icon" class="edit-delete-icons" ></mat-icon></span>
+                 </div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
     <div class="next-button fixed-bottom">
-        <button routerLink="/questions/1"   type="button" mat-raised-button class="button-width">
+        <button routerLink="/questions/1" (click)="clickButton()"   type="button" mat-raised-button class="button-width">
             Generate a new pitch </button>
 
     </div>

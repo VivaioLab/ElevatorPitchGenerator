@@ -4,6 +4,8 @@ import {Pitch} from '../../model/pitchModel';
 import {PitchService} from '../../service/pitch-service.service';
 import {AnswerService} from '../../service/answer.service';
 import { LoginServiceService } from '../../service/login-service.service';
+import {QuestionsService} from '../../service/questions.service';
+import {Quest} from "../../model/question-model"
 import {Answer} from '../../model/answerModel';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
@@ -15,19 +17,25 @@ import { DomSanitizer } from "@angular/platform-browser";
 export class PitchListComponent implements OnInit {
   answerBol = false;
 pitches : Pitch[];
+questions : Quest[];
 showingPitchNumbers : number[];
 pitchSaved = false;
 answers : Answer[];
 megaAnswers : string[];
 pitchid : number;
 currentUser : string;
-  constructor(private matIconRegistry: MatIconRegistry,private domSanitizer:DomSanitizer, private router : Router,private pitchService : PitchService,private answerService : AnswerService,private loginService : LoginServiceService) {
-    this.matIconRegistry.addSvgIcon("close-popup", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/close icon popup.svg"))
-      .addSvgIcon("edit-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"))
-      .addSvgIcon("trash", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"));
+  constructor(private questionService : QuestionsService,private matIconRegistry: MatIconRegistry,private domSanitizer:DomSanitizer, private router : Router,private pitchService : PitchService,private answerService : AnswerService,private loginService : LoginServiceService) {
+    this.matIconRegistry.addSvgIcon("edit-icon", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/edit icon.svg"));
+      this.matIconRegistry.addSvgIcon("trash", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/trash.svg"));
   }
 
   ngOnInit() {
+    this.questionService.getQuestions()
+    .subscribe(
+      questions => {
+       this.questions = questions
+      }
+     );
     this.pitchid = JSON.parse(localStorage.getItem('pitch_id'));
     if(this.pitchid && localStorage.getItem('pitch_name'))
     {
@@ -93,5 +101,15 @@ currentUser : string;
 
   }
 
-  
+  clickButton()
+  {
+    this.pitchService.createNewPitch().then(
+      data => {
+        let newPitch = data.id;
+        localStorage.setItem('pitch_id',newPitch);
+        this.router.navigate(['/questions', this.questions[0].id]);
+      });
+   
+    
+  }
 }

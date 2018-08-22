@@ -1,3 +1,7 @@
+.validation{
+    font-size: 1rem;
+    animation: fadeinout 2s linear forwards;
+  }
 .svg_icon{
     width: 8rem !important;
     height: auto !important;
@@ -23,7 +27,9 @@ margin: 0.8rem;
   outline: none;
   }
 
-
+.slider{
+    transition: all 3s linear;
+}
  
 .margin{
     margin-bottom: 1rem;
