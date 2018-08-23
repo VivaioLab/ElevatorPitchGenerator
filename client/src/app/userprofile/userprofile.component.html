@@ -1,45 +1,66 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenavright mode="push" position="end">
-    <app-sidenav ></app-sidenav>
+    <app-sidenav></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content style="background-color: white;color:black;">
-      <mat-toolbar >
-          <mat-toolbar-row>
-              <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
-            <span class="spacer"></span>
-          </mat-toolbar-row>
-        </mat-toolbar>
-   
+      <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+
     <div class="jumbotron" style="background-color: white;">
       <div class="container">
         <div class="row">
           <div class="col-sm-6 offset-sm-3">
-            <h2>User Profile</h2>
-            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-              <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"
-                />
-                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-                  <div *ngIf="f.username.errors.required">Username is required</div>
+            <h2 class="margin">User Profile</h2>
+            <form class="fonts">
+                <label *ngIf="updatesuccess" class="validation"> Data updated successfully</label>
+
+              <div style="margin-top: 1rem;">
+                <span style="float: left;width: 85%">
+                  <label for="username">Username</label>
+                </span>
+                <span style="float: right;">
+                  <mat-icon svgIcon="edit-icon" (click)="editUsername()" style="width: 1.2rem"></mat-icon>
+                </span>
+                <input [disabled]="!edit_username" type="text" class="forms" [(ngModel)]="username" name="username" />
+                <div class="slider">
+                  <a class="slider" *ngIf="edit_username" style="float:left;color:black;font-size: 1rem;margin-top:10px;" (click)="undoUsername()">
+                    cancel</a>
+                  <button class="slider" *ngIf="edit_username" (click)="saveUsername()" mat-button style="background-color: black;color:white;float: right;margin-top:10px;margin-bottom:1.5rem;">Save</button>
                 </div>
+
               </div>
-              <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-                />
-                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-                  <div *ngIf="f.password.errors.required">Password is required</div>
-                </div>
+              <div style="margin-top: 1rem;">
+                <span style="float: left;width: 85%">
+                  <label for="email">Email</label>
+                </span>
+                <span style="float: right;">
+                  <mat-icon svgIcon="edit-icon" (click)="editEmail()" style="width: 1.2rem;"></mat-icon>
+                </span>
+                <input [disabled]="!edit_email" type="text" class="forms" [(ngModel)]="email" name="email" />
+                <a *ngIf="edit_email" style="float:left;color:black;font-size: 1rem;margin-top:10px;" (click)="undoEmail()"> cancel</a>
+                <button *ngIf="edit_email"  (click)="saveUsername()" mat-button style="background-color: black;color:white;float: right;margin-top:10px;margin-bottom:1.5rem;">Save</button>
               </div>
-              <div class="form-group"><a style="color: black;" [routerLink]="['/forgot-password']" > Forgot password?</a></div>
-              <div class="form-group">
-                <button [disabled]="loading" class="btn btn-primary" style="background-color: black;color:white;">Login</button>
-                <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="
-                />
-                <a [routerLink]="['/register']" class="btn btn-link" style="color: black;">Register</a>
+              <div style="margin-top: 1rem;">
+                <span style="float: left;width: 85%">
+                  <label for="password">Password</label>
+                </span>
+                <span style="float: right;">
+                  <mat-icon svgIcon="edit-icon" (click)="editPassword()" style="width: 1.2rem"></mat-icon>
+                </span>
+                <input [disabled]="!edit_password" type="password" class="forms" [(ngModel)]="password" name="password" />
+                <a *ngIf="edit_password" style="float:left;color:black;font-size: 1rem;margin-top:10px;" (click)="undoPassword()"> cancel</a>
+                <button *ngIf="edit_password"  (click)="saveUsername()" mat-button style="background-color: black;color:white;float: right;margin-top:10px;margin-bottom:1.5rem;">Save</button>
               </div>
+
+
+
             </form>
+            <div (click)="logout()">
+              <label for="logout" style="float: right;margin:3em;text-align: center">Logout
+                <mat-icon svgIcon="logout" style="float: right;text-align: center"></mat-icon>
+              </label>
+            </div>
+
+
           </div>
         </div>
       </div>

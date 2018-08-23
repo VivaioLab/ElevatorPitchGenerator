@@ -100,6 +100,9 @@ login(username :string,password : string)  : Promise<any>{
         resolve(data);
         localStorage.setItem('currentUser',JSON.stringify(data));
       }
+      else{
+        alert("Invalid username/password. Please try again");
+      }
    
     },
     error => {

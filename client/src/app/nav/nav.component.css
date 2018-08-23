@@ -3,11 +3,28 @@
 	width: 4rem;
 	padding-right: 5px;
 	}
-	.svg_icon{
-		width: 8rem !important;
-		height: auto !important;
-	  padding: 10px !important;
-	  color: black;
-	  border: none;
-	  outline: none;
-	  }
+    .svg_icon{
+        width: 8rem !important;
+        height: auto !important;
+      padding: 10px !important;
+      color: black;
+      border: none;
+      outline: none;
+      }
+      .svg_icon1{
+        width: 2.4rem !important;
+        height: 7rem !important;
+    margin: 0.2rem;
+      color: black;
+      border: none;
+      outline: none;
+      }
+      .svg_icon2{
+        width: 1.2rem !important;
+        height: 7rem !important;
+    margin: 0.8rem;
+      color: black;
+      border: none;
+      outline: none;
+      }
+    

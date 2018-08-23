@@ -7,6 +7,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {PitchListComponent} from './pitch-list/pitch-list.component';
 import  {ForgotPasswordComponent} from './forgot-password/forgot-password.component';
+import {UserprofileComponent} from './userprofile/userprofile.component';
 import {AuthGuard} from './auth.guard';
  const appRoutes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -17,6 +18,7 @@ import {AuthGuard} from './auth.guard';
     {path : 'login', component : LoginComponent, data: { state: 'login'}},
     {path : 'register', component : RegisterComponent, data: { state: 'register'}},
     {path : 'forgot-password', component : ForgotPasswordComponent, data: { state: 'forgot-password'}},
+    {path : 'userprofile', component : UserprofileComponent, data: { state: 'userprofile'},canActivate: [AuthGuard]},
     {path : 'pitch-list', component : PitchListComponent, data: { state: 'pitch-list'},canActivate: [AuthGuard]},
     // otherwise redirect to home
     { path: '**', redirectTo: '' }

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 import {LoginServiceService} from '../../service/login-service.service';
  
+import {Email} from '../../model/loginModel';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,6 +15,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
+  data : Email;
   constructor(
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
@@ -35,23 +37,28 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
     if (this.loginForm.invalid) {
         return;
     }
 
-    this.loading = true;
     this.loginService.login(this.f.username.value, this.f.password.value)
         .then(
             data => {
+                this.data = data;
+                console.log(data)
+        
+                if(data)
+                {
                 alert("successfully logged in")
                 this.router.navigate(['/pitch-list']);
+                }
+                
+               
             },
             error => {
-              alert("could not login")
-                this.loading = false;
             });
+         
 }
 
 }
