@@ -4,7 +4,6 @@ import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { MatIconRegistry } from "@angular/material/icon";
 import { DomSanitizer } from "@angular/platform-browser";
-import { Questions } from '../../model/questionsModel';
 import {Router} from '@angular/router';
 import { QuestionsService } from '../../service/questions.service';
 import { LoginServiceService } from '../../service/login-service.service';
@@ -39,7 +38,6 @@ export class ReviewpageComponent implements OnInit {
   question5: string;
   answer1: string;
   modalRef: BsModalRef;
-  questionsModel: Questions;
   pitchModel: Pitch;
   quest_id: number;
   value : string;
@@ -99,16 +97,6 @@ export class ReviewpageComponent implements OnInit {
 
   }
   
-  savToBackend() {
-
-    if (this.questionsModel) {
-
-      this.questionService.saveQuestions(this.questionsModel).subscribe();
-
-    }
-
-  }
-
 
   openModal(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);

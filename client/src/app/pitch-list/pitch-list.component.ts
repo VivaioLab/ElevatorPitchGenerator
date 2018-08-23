@@ -56,15 +56,13 @@ currentUser : string;
   
     this.pitchService.getAllPitchofCurrentUser(this.currentUser).then(
       data =>{
-        this.pitches = data; 
-        console.log((this.pitches.length));  
+        this.pitches = data;  
         for(var i =0;i<(this.pitches).length;i++)
         {
           this.answerService.getAnswers(this.pitches[i].id).then(
             
               data => {
                 this.answers = data;
-                console.log(this.answers)
               }
             
           )
@@ -111,5 +109,32 @@ currentUser : string;
       });
    
     
+  }
+  deletePitch(pitch){
+    this.pitchService.deletePitch(pitch).subscribe(
+      data =>{
+        this.answerService.deleteAnswers(pitch.id).then(
+          data=>{
+            console.log("succsess");
+            console.log(data);
+          }
+        )
+        this.pitchService.getAllPitchofCurrentUser(this.currentUser).then(
+          data =>{
+            this.pitches = data; 
+            for(var i =0;i<(this.pitches).length;i++)
+            {
+              this.answerService.getAnswers(this.pitches[i].id).then(
+                
+                  data => {
+                    this.answers = data;
+                  }
+                
+              )
+            } 
+            }
+        )
+      }
+    )
   }
 }
