@@ -15,6 +15,7 @@ const httpOptions = {
 })
 export class AnswerService {
   answerURL ='https://salty-temple-18987.herokuapp.com/api/answers/create-answer';
+  deleteAnswerURL ='https://salty-temple-18987.herokuapp.com/api/answers/delete-answers';
   pitchAnswersURL = 'https://salty-temple-18987.herokuapp.com/api/answers/get-answers-by-pitchID';
   questionAnswersURL = 'https://salty-temple-18987.herokuapp.com/api/answers/get-answers-by-pitchID-and-QuestionID';
   constructor(private http: HttpClient,    private route: ActivatedRoute,
@@ -65,6 +66,20 @@ export class AnswerService {
     updateAnswer(answer: Answer) : Promise<any>{
       let promise = new Promise((resolve, reject) => {
           this.http.put<any>(this.answerURL,answer)
+          .subscribe(data => { 
+            resolve(data);
+          },
+          error => {
+            reject(error);
+          });  
+      });
+      return promise;
+    }
+   
+    deleteAnswers(pitch_id) : Promise<any>{
+      let promise = new Promise((resolve, reject) => {
+  
+          this.http.post<any>(this.pitchAnswersURL,{pitch_id})
           .subscribe(data => { 
             resolve(data);
           },

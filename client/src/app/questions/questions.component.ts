@@ -7,7 +7,6 @@ import { CdkTextareaAutosize } from '@angular/cdk/text-field';
 import { Router } from '@angular/router';
 import { QuestionsService } from '../../service/questions.service';
 import { AnswerService } from '../../service/answer.service';
-import { Questions } from '../../model/questionsModel';
 import { Answer } from '../../model/answerModel';
 
 import {Quest} from '../../model/question-model';
@@ -51,7 +50,6 @@ export class QuestionsComponent implements OnInit {
   answers : string;
   id : number ;
   question : string;
-  questionsModel: Questions;
   answermodel: Answer;
   q_id: number;
   pitch_id :number;

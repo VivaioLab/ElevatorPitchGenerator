@@ -1,7 +1,6 @@
 import { Injectable, Input } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
 import { Router, ActivatedRoute } from '@angular/router';
-import {Questions} from '../model/questionsModel';
 import {Quest} from '../model/question-model';
 import {Pitch} from '../model/pitchModel';
 import {Email} from '../model/loginModel';
@@ -24,24 +23,6 @@ export class QuestionsService {
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
     private router: Router) {
-  }
-
-  saveQuestions(questions : Questions) : Observable<Questions>{
-    return this.http.post<Questions> (this.questionsURL,questions,httpOptions);
-  }
-  getUsers(){
-    let promise = new Promise((resolve, reject) => {
-      this.http.get<Array<Questions>>(this.getUserURL)
-      .subscribe(data => {
-        resolve(data);
-        console.log("all users:"+data);
-      },
-      error => {
-       
-        reject(error);
-      });
-    });
-    return promise;
   }
 
   getQuestions (): Observable<Quest[]> {

@@ -12,6 +12,7 @@ const httpOptions = {
 })
 export class PitchService {
   pitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/link-pitch';
+  deletePitchURL ='https://salty-temple-18987.herokuapp.com/api/questions/delete-pitch';
   getPitchesbyEmailURL = 'https://salty-temple-18987.herokuapp.com/api/questions/get-pitch-by-email';
 
   constructor(private http: HttpClient,    private route: ActivatedRoute,
@@ -49,5 +50,11 @@ export class PitchService {
         });  
     });
     return promise;
+  }
+  deletePitch (pitch: Pitch | number): Observable<Pitch> {
+    const id = typeof pitch === 'number' ? pitch : pitch.id;
+    const url = `${this.deletePitchURL}/${id}`;
+
+    return this.http.delete<Pitch>(url, httpOptions);
   }
 }

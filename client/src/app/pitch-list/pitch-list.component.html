@@ -1,26 +1,33 @@
 <mat-sidenav-container>
   <mat-sidenav #sidenavright mode="push" position="end">
-    <app-sidenav ></app-sidenav>
+    <app-sidenav></app-sidenav>
   </mat-sidenav>
   <mat-sidenav-content style="background-color: white;color:black;">
-      <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
-        <div class="jumbotron" style="background-color: white;">
-            <div class="container">
-              <div class="row">
-                <div class="col-sm-6 offset-sm-3 all-fonts">
-                    <label *ngIf="pitchSaved" class="validation">
-                        Pitch Saved Successfully
-                      </label>
-                  <h2>Your Pitches</h2>
-                 <div class="bord" *ngFor = "let pitch of pitches"><span style="margin-top: 1rem;" (click)= "showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </span><span style="float: right" ><span style="float: right;margin-right: 0.2rem;"><img class="delete-image"src="assets/images/trash.svg"/></span><mat-icon svgIcon="edit-icon" class="edit-delete-icons" ></mat-icon></span>
-                 </div>
-                </div>
-              </div>
+    <app-nav (navToggle)="sidenavright.toggle()"></app-nav>
+    <div class="jumbotron" style="background-color: white;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 offset-sm-3 all-fonts">
+            <label *ngIf="pitchSaved" class="validation">
+              Pitch Saved Successfully
+            </label>
+            <h2>Your Pitches</h2>
+            <div class="bord" *ngFor="let pitch of pitches">
+              <span style="margin-top: 1rem;" (click)="showPitchdetail(pitch.id)"> {{pitch.pitch_name}} </span>
+              <span style="float: right">
+                <span style="float: right;margin-right: 0.2rem;">
+                  <img class="delete-image" src="assets/images/trash.svg" (click)="deletePitch(pitch)"/>
+                </span>
+                <mat-icon svgIcon="edit-icon" class="edit-delete-icons"></mat-icon>
+              </span>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
     <div class="next-button fixed-bottom">
-        <button routerLink="/questions/1" (click)="clickButton()"   type="button" mat-raised-button class="button-width">
-            Generate a new pitch </button>
+      <button routerLink="/questions/1" (click)="clickButton()" type="button" mat-raised-button class="button-width">
+        Generate a new pitch </button>
 
     </div>
   </mat-sidenav-content>
