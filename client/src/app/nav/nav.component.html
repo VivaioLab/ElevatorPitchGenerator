@@ -2,10 +2,10 @@
   <mat-toolbar-row>
       <img src="assets/images/elevatorlylogo.svg" routerLink="/home" routerLinkActive="active" class="svg_icon" >
     <span class="spacer"></span>
-    <span style="padding: 10px;"> <label  *ngIf="!login" routerLink="/userprofile" routerLinkActive="active" >Your-profile</label></span>
-    <span style="padding: 10px;"> <label  *ngIf="!login" routerLink="/pitch-list" routerLinkActive="active" >Your-pitches</label></span>
-    <label svgIcon="menu icon" *ngIf="login" routerLink="/login" routerLinkActive="active" >login</label>
-    <label svgIcon="menu icon" *ngIf="!login" (click)="logout()">logout</label>
-    <mat-icon svgIcon="menu icon" class="menu_icon" (click)="navOpen()"></mat-icon>
+    <img *ngIf="login" src="assets/images/login.svg" routerLink="/pitch-list" routerLinkActive="active" class="svg_icon1">
+    <img *ngIf="!login" src="assets/images/pitches_list.svg" routerLink="/pitch-list" routerLinkActive="active" class="svg_icon1">
+    <img *ngIf="!login" src="assets/images/profile.svg" routerLink="/userprofile" routerLinkActive="active" class="svg_icon1">
+
+    <mat-icon svgIcon="menu icon" class="svg_icon2" (click)="navOpen()"></mat-icon>
   </mat-toolbar-row>
 </mat-toolbar>
