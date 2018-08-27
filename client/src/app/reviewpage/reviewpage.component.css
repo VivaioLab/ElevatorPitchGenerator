@@ -167,6 +167,7 @@ textarea{
 }
 .container{
   margin-top: 2rem;
+  align-content: center;
   /* margin-left: 4rem; */
 }
 @media only screen and (min-width: 1000px) {
@@ -177,4 +178,8 @@ textarea{
     border:none;
     /* text-align: center; */
   }
+}
+
+.in{
+  align-content: center;
 }

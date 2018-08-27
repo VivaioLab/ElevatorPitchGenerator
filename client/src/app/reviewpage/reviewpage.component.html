@@ -36,9 +36,11 @@
         <p class="para">Give a name this pitch</p>
         <br/>
         <br/>
-        <input type="text" name="pitch_name" [(ngModel)]="pitch_name" />
+        <div class="in"> <input class= "input" type="text" name="pitch_name" [(ngModel)]="pitch_name" /></div>
+       
+        <br/>
         <div style="text-align:center;">
-          <button  type="button" (click)="savePitchName(); modalRef.hide() " mat-raised-button style="width:80%;background-color: #cccccc; color: grey;">
+          <button  type="button" (click)="savePitchName(); modalRef.hide() " mat-raised-button style="width:75%;background-color: #cccccc; color: grey;">
             Submit </button>
         </div>
       </div>
