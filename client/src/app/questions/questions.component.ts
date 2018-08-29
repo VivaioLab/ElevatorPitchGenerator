@@ -65,6 +65,7 @@ export class QuestionsComponent implements OnInit {
   question_count : number;
   answers_count : number;
   nextButton: boolean;
+  submit : boolean;
   
   constructor(private answerService:AnswerService, private route: ActivatedRoute,private questionService: QuestionsService,private router: Router, private matIconRegistry: MatIconRegistry, private domSanitizer: DomSanitizer, private ngZone: NgZone, private modalService: BsModalService) {
     this.matIconRegistry.addSvgIcon("questions", this.domSanitizer.bypassSecurityTrustResourceUrl("assets/images/question info.svg"))
@@ -145,6 +146,9 @@ this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));
   }
   saveChanges()
   {
+    this.submit = true;
+    this.emptyAnswerError = false;
+  
     if(this.name){
     this.answerService.saveAnswers(this.label + " " + this.name,this.some_id,JSON.parse(localStorage.getItem('pitch_id'))).then(
       data => {
@@ -177,6 +181,11 @@ this.pitch_id = JSON.parse((localStorage.getItem('pitch_id')));
     let passedString = event;
    if (/\S/.test(passedString)) {
        this.buttonIsDisabled=false;
+   }
+   if(this.submit == true && /\S/.test(passedString))
+   {
+     
+    this.emptyAnswerError = false;
    }
   }
   replaceString(oldS, newS, fullS) {
